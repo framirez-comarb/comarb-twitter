@@ -1,0 +1,58 @@
+name: '📊 Actualizar Reporte de Sentimiento'
+
+on:
+  schedule:
+    - cron: '0 11 * * *'
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'main.py'
+      - 'report_generator.py'
+      - '.github/workflows/update-report.yml'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: 📥 Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 📦 Instalar dependencias
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          python -m textblob.download_corpora lite || true
+
+      - name: 🔍 Ejecutar scraping y generar reporte
+        env:
+          CI: 'true'
+          TWITTER_COOKIES: ${{ secrets.TWITTER_COOKIES }}
+          OUTPUT_DIR: 'docs'
+        run: |
+          python main.py
+
+      - name: 📤 Commit y push del reporte
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/ tweets_data.json
+          if git diff --staged --quiet; then
+            echo "Sin cambios en el reporte."
+          else
+            TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
+            git commit -m "📊 Reporte actualizado: ${TIMESTAMP}"
+            git push
+          fi
