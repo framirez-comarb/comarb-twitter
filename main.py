@@ -1,30 +1,4 @@
-#!/usr/bin/env python3
-"""
-═══════════════════════════════════════════════════════════════
-  COMARB Twitter/X Sentiment Analysis Dashboard
-  Analiza tweets sobre sistemas tributarios argentinos
-  Palabras clave: comarb, sifere, sircar, sirpei, sircreb, sircupa, sirtac
-═══════════════════════════════════════════════════════════════
 
-  Soporta dos modos de ejecución:
-  - LOCAL:  python main.py  (interactivo, pide credenciales)
-  - CI:     Se ejecuta en GitHub Actions con cookies como secret
-═══════════════════════════════════════════════════════════════
-"""
-
-import asyncio
-import base64
-import json
-import os
-import sys
-from datetime import datetime
-
-# ── Detectar modo CI ──
-CI_MODE = os.environ.get("CI", "").lower() == "true"
-OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "docs")  # Para GitHub Pages
-
-# ── Verificar e instalar dependencias ──
-def install_dependencies():
     """Instala las dependencias necesarias."""
     if not CI_MODE:
         print("📦 Verificando twikit (última versión)...")
@@ -60,10 +34,84 @@ COOKIES_FILE = "twitter_cookies.json"
 DATA_FILE = "tweets_data.json"
 REPORT_FILE = os.path.join(OUTPUT_DIR, "index.html")
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+PAUSE_BETWEEN_KEYWORDS = 30  # segundos entre cada keyword
 
+
+# ═══════════════════════════════════════════════════════════════
+#  GESTIÓN DE CUENTAS MÚLTIPLES
+# ═══════════════════════════════════════════════════════════════
+
+class AccountManager:
+    """Gestiona múltiples cuentas de Twitter para rotación."""
+
+    def __init__(self):
+        self.accounts = []
+        self.current_index = 0
+        self.clients = {}  # account_id -> Client
+        self._load_accounts()
+
+    def _load_accounts(self):
+        """Carga cuentas desde secrets o input del usuario."""
+        if CI_MODE:
+            self._load_accounts_ci()
+        # En modo local las cuentas se gestionan interactivamente
+
+    def _load_accounts_ci(self):
+        """Carga cuentas desde GitHub Secrets."""
+
+        # ── Método 1: TWITTER_ACCOUNTS (JSON con múltiples cuentas) ──
+        accounts_json = os.environ.get("TWITTER_ACCOUNTS")
+        if accounts_json:
+            try:
+                # Puede estar en base64 o en JSON directo
+                try:
+                    decoded = base64.b64decode(accounts_json).decode("utf-8")
+                    self.accounts = json.loads(decoded)
+                except Exception:
+                    self.accounts = json.loads(accounts_json)
+
+                print(f"✅ CI: {len(self.accounts)} cuentas cargadas desde TWITTER_ACCOUNTS")
+                # Mezclar para distribuir el uso
+                random.shuffle(self.accounts)
+                return
+            except Exception as e:
+                print(f"⚠️  CI: error parseando TWITTER_ACCOUNTS: {e}")
+
+        # ── Método 2: credenciales simples ──
+        username = os.environ.get("TWITTER_USERNAME")
+        email = os.environ.get("TWITTER_EMAIL")
+        password = os.environ.get("TWITTER_PASSWORD")
+
+        if username and password:
+            self.accounts = [{
+                "username": username,
+                "email": email or "",
+                "password": password,
+                "label": username
+            }]
+            print(f"✅ CI: cuenta cargada desde TWITTER_USERNAME/PASSWORD")
+
+    def has_accounts(self):
+        return len(self.accounts) > 0
+
+    def get_next_account(self):
+        """Retorna la siguiente cuenta en la rotación."""
+        if not self.accounts:
+            return None
+        account = self.accounts[self.current_index % len(self.accounts)]
+        self.current_index += 1
+        return account
+
+    def get_account_count(self):
+        return len(self.accounts)
+
+
+# ═══════════════════════════════════════════════════════════════
+#  AUTENTICACIÓN
+# ═══════════════════════════════════════════════════════════════
 
 def get_credentials():
-    """Obtiene las credenciales de Twitter del usuario."""
+    """Obtiene las credenciales de Twitter del usuario (modo local)."""
     print("\n" + "═" * 60)
     print("  🔐 LOGIN DE TWITTER/X")
     print("═" * 60)
@@ -83,10 +131,8 @@ def get_browser_cookies():
     print("\n" + "═" * 60)
     print("  🍪 IMPORTAR COOKIES DEL NAVEGADOR")
     print("═" * 60)
-    print("  El login directo falló. Podés importar cookies desde tu navegador:")
-    print()
     print("  1. Abrí Twitter/X en tu navegador y logueate normalmente")
-    print("  2. Presioná F12 → pestaña Application → Cookies → https://x.com")
+    print("  2. Presioná F12 → Application → Cookies → https://x.com")
     print("  3. Copiá los valores de 'auth_token' y 'ct0'")
     print()
 
@@ -101,31 +147,24 @@ def get_browser_cookies():
 
 
 def load_cookies_from_secret():
-    """
-    Carga cookies desde el GitHub Secret TWITTER_COOKIES (base64).
-    Retorna True si tuvo éxito.
-    """
+    """Carga cookies desde el GitHub Secret TWITTER_COOKIES (base64)."""
     cookies_b64 = os.environ.get("TWITTER_COOKIES")
     if not cookies_b64:
-        print("❌ CI Mode: no se encontró el secret TWITTER_COOKIES")
         return False
 
     try:
         cookies_json = base64.b64decode(cookies_b64).decode("utf-8")
         with open(COOKIES_FILE, "w", encoding="utf-8") as f:
             f.write(cookies_json)
-        print("✅ CI Mode: cookies cargadas desde secret.")
+        print("✅ CI: cookies cargadas desde TWITTER_COOKIES secret.")
         return True
     except Exception as e:
-        print(f"❌ CI Mode: error decodificando cookies: {e}")
+        print(f"⚠️  CI: error decodificando cookies: {e}")
         return False
 
 
 def export_cookies_for_ci():
-    """
-    Después de un login exitoso, muestra el base64 de las cookies
-    para que el usuario lo copie a GitHub Secrets.
-    """
+    """Muestra el base64 de las cookies para GitHub Secrets."""
     if not os.path.exists(COOKIES_FILE):
         return
 
@@ -134,23 +173,137 @@ def export_cookies_for_ci():
             cookies_json = f.read()
         cookies_b64 = base64.b64encode(cookies_json.encode("utf-8")).decode("utf-8")
 
-        print("\n" + "═" * 60)
-        print("  🔑 COOKIES PARA GITHUB ACTIONS")
-        print("═" * 60)
-        print("  Copiá TODO el texto de abajo y pegalo como GitHub Secret")
-        print("  con el nombre: TWITTER_COOKIES\n")
-        print("  ── INICIO (copiar desde la línea siguiente) ──")
-        print(cookies_b64)
-        print("  ── FIN ──\n")
-        print("  Instrucciones:")
-        print("  1. Andá a tu repo → Settings → Secrets and variables → Actions")
-        print("  2. New repository secret")
-        print("  3. Name: TWITTER_COOKIES")
-        print("  4. Value: pegá el texto de arriba")
-        print("═" * 60)
+        if CI_MODE:
+            # Guardar en GITHUB_OUTPUT para posible uso
+            github_output = os.environ.get("GITHUB_OUTPUT")
+            if github_output:
+                with open(github_output, "a") as f:
+                    f.write(f"updated_cookies={cookies_b64}\n")
+            print("✅ CI: cookies actualizadas exportadas.")
+        else:
+            print("\n" + "═" * 60)
+            print("  🔑 COOKIES PARA GITHUB ACTIONS")
+            print("═" * 60)
+            print("  Copiá TODO el texto de abajo y pegalo como GitHub Secret")
+            print("  con el nombre: TWITTER_COOKIES\n")
+            print("  ── INICIO ──")
+            print(cookies_b64)
+            print("  ── FIN ──\n")
+            print("═" * 60)
     except Exception as e:
         print(f"  ⚠️ No se pudo exportar cookies: {e}")
 
+
+async def try_login_with_credentials(client, account):
+    """Intenta login con credenciales. Retorna True si tuvo éxito."""
+    label = account.get("label", account.get("username", "?"))
+    print(f"  🔑 Intentando login con cuenta: {label}...", end="", flush=True)
+
+    try:
+        await client.login(
+            auth_info_1=account["username"],
+            auth_info_2=account.get("email", ""),
+            password=account["password"],
+            cookies_file=COOKIES_FILE
+        )
+        print(" ✅ OK")
+        return True
+    except Exception as e:
+        err = str(e)
+        if "366" in err:
+            print(f" ❌ bloqueado por Twitter")
+        elif "398" in err:
+            print(f" ❌ CAPTCHA detectado")
+        elif "429" in err:
+            print(f" ❌ rate limited")
+        else:
+            print(f" ❌ {err[:80]}")
+        return False
+
+
+async def do_login(client, account_mgr, force_new=False):
+    """Intenta autenticar con Twitter/X usando múltiples métodos."""
+
+    # ═══ CI MODE ═══
+    if CI_MODE:
+        # Intento 1: Cookies del secret
+        if not force_new and load_cookies_from_secret():
+            try:
+                client.load_cookies(COOKIES_FILE)
+                print("✅ CI: sesión restaurada desde cookies.")
+                return True
+            except Exception as e:
+                print(f"⚠️  CI: cookies expiradas ({e}). Intentando auto-login...")
+
+        # Intento 2: Login con credenciales de secrets
+        if account_mgr.has_accounts():
+            print(f"🔄 CI: intentando login con {account_mgr.get_account_count()} cuenta(s)...")
+            for _ in range(account_mgr.get_account_count()):
+                account = account_mgr.get_next_account()
+                if await try_login_with_credentials(client, account):
+                    # Guardar cookies para próximas ejecuciones
+                    export_cookies_for_ci()
+                    return True
+                await asyncio.sleep(5)
+
+            print("❌ CI: ninguna cuenta pudo loguearse.")
+
+        return False
+
+    # ═══ LOCAL MODE ═══
+    if not force_new and os.path.exists(COOKIES_FILE):
+        print("\n🍪 Cargando cookies guardadas...")
+        try:
+            client.load_cookies(COOKIES_FILE)
+            print("✅ Sesión restaurada desde cookies.\n")
+            return True
+        except Exception as e:
+            print(f"⚠️  Cookies inválidas ({e}), necesitás loguearte de nuevo.\n")
+
+    if force_new and os.path.exists(COOKIES_FILE):
+        os.remove(COOKIES_FILE)
+        print("🗑️  Cookies anteriores eliminadas.")
+
+    username, email, password = get_credentials()
+    try:
+        await client.login(
+            auth_info_1=username,
+            auth_info_2=email,
+            password=password,
+            cookies_file=COOKIES_FILE
+        )
+        print("\n✅ Login exitoso. Cookies guardadas.\n")
+        export_cookies_for_ci()
+        return True
+    except Exception as e:
+        error_msg = str(e)
+        print(f"\n⚠️  Login con credenciales falló: {error_msg}")
+
+        if "366" in error_msg:
+            print("   Twitter bloqueó el flujo de login automatizado.")
+        elif "398" in error_msg:
+            print("   Twitter detectó actividad no humana (CAPTCHA).")
+        else:
+            print("   Twitter rechazó la autenticación.")
+
+        print("\n   Probando método alternativo: cookies del navegador...")
+        cookies = get_browser_cookies()
+        if cookies:
+            try:
+                client.set_cookies(cookies, clear_cookies=True)
+                client.save_cookies(COOKIES_FILE)
+                print("  ✅ Cookies del navegador importadas correctamente.\n")
+                export_cookies_for_ci()
+                return True
+            except Exception as e2:
+                print(f"  ❌ Error importando cookies: {e2}")
+
+    return False
+
+
+# ═══════════════════════════════════════════════════════════════
+#  ANÁLISIS DE SENTIMIENTO
+# ═══════════════════════════════════════════════════════════════
 
 def analyze_sentiment(text):
     """Analiza el sentimiento de un texto."""
@@ -194,88 +347,24 @@ def analyze_sentiment(text):
         return "neutro", round(combined_score, 3)
 
 
-async def do_login(client, force_new=False):
-    """Intenta autenticar con Twitter/X."""
-
-    # ── CI MODE: usar cookies del secret ──
-    if CI_MODE:
-        if load_cookies_from_secret():
-            try:
-                client.load_cookies(COOKIES_FILE)
-                print("✅ CI Mode: sesión restaurada.")
-                return True
-            except Exception as e:
-                print(f"❌ CI Mode: cookies inválidas: {e}")
-                return False
-        return False
-
-    # ── LOCAL MODE: flujo interactivo ──
-    if not force_new and os.path.exists(COOKIES_FILE):
-        print("\n🍪 Cargando cookies guardadas...")
-        try:
-            client.load_cookies(COOKIES_FILE)
-            print("✅ Sesión restaurada desde cookies.\n")
-            return True
-        except Exception as e:
-            print(f"⚠️  Cookies inválidas ({e}), necesitás loguearte de nuevo.\n")
-
-    if force_new and os.path.exists(COOKIES_FILE):
-        os.remove(COOKIES_FILE)
-        print("🗑️  Cookies anteriores eliminadas.")
-
-    username, email, password = get_credentials()
-    try:
-        await client.login(
-            auth_info_1=username,
-            auth_info_2=email,
-            password=password,
-            cookies_file=COOKIES_FILE
-        )
-        print("\n✅ Login exitoso. Cookies guardadas.\n")
-        # Mostrar cookies para CI
-        export_cookies_for_ci()
-        return True
-    except Exception as e:
-        error_msg = str(e)
-        print(f"\n⚠️  Login con credenciales falló: {error_msg}")
-
-        if "366" in error_msg:
-            print("   Twitter bloqueó el flujo de login automatizado.")
-        elif "398" in error_msg:
-            print("   Twitter detectó actividad no humana (CAPTCHA).")
-            print("   Tip: Intentá resetear tu contraseña de Twitter y volver a probar.")
-        else:
-            print("   Twitter rechazó la autenticación.")
-
-        print("\n   Probando método alternativo: cookies del navegador...")
-        cookies = get_browser_cookies()
-        if cookies:
-            try:
-                client.set_cookies(cookies, clear_cookies=True)
-                client.save_cookies(COOKIES_FILE)
-                print("  ✅ Cookies del navegador importadas correctamente.\n")
-                export_cookies_for_ci()
-                return True
-            except Exception as e2:
-                print(f"  ❌ Error importando cookies: {e2}")
-
-    return False
-
+# ═══════════════════════════════════════════════════════════════
+#  SCRAPING CON ROTACIÓN DE CUENTAS
+# ═══════════════════════════════════════════════════════════════
 
 async def scrape_tweets():
-    """Scrapea tweets para cada palabra clave usando Twikit."""
+    """Scrapea tweets para cada palabra clave."""
+    account_mgr = AccountManager()
     client = Client("es-AR", user_agent=USER_AGENT)
 
-    if not await do_login(client):
+    if not await do_login(client, account_mgr):
         print("\n❌ No se pudo autenticar con Twitter/X.")
         if CI_MODE:
-            print("   Revisá que el secret TWITTER_COOKIES esté actualizado.")
-            print("   Ejecutá localmente para regenerar las cookies.")
-        else:
             print("   Opciones:")
-            print("   1. Verificá usuario, email y contraseña")
-            print("   2. Reseteá tu contraseña de Twitter e intentá de nuevo")
-            print("   3. Importá cookies del navegador (auth_token y ct0)")
+            print("   1. Actualizá TWITTER_COOKIES con setup_cookies.py")
+            print("   2. Agregá TWITTER_ACCOUNTS con credenciales para auto-login")
+            print("   3. Agregá TWITTER_USERNAME + TWITTER_EMAIL + TWITTER_PASSWORD")
+        else:
+            print("   Verificá credenciales o importá cookies del navegador.")
         sys.exit(1)
 
     since_date = f"{datetime.now().year}-01-01"
@@ -286,9 +375,13 @@ async def scrape_tweets():
         "keywords": []
     }
 
-    print("═" * 60)
+    print("\n" + "═" * 60)
     print("  🔍 BUSCANDO TWEETS")
+    if account_mgr.has_accounts() and account_mgr.get_account_count() > 1:
+        print(f"  🔄 {account_mgr.get_account_count()} cuentas disponibles para rotación")
     print("═" * 60)
+
+    rate_limit_count = 0  # Contador de rate limits consecutivos
 
     for i, keyword in enumerate(KEYWORDS):
         print(f"\n  [{i+1}/{len(KEYWORDS)}] Buscando: #{keyword.upper()}", end="", flush=True)
@@ -302,29 +395,62 @@ async def scrape_tweets():
 
         try:
             tweet_list = []
+
+            # ── Búsqueda inicial ──
             try:
                 tweets = await client.search_tweet(
                     f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
                 )
+                rate_limit_count = 0  # Reset si tuvo éxito
             except Exception as search_err:
                 err_str = str(search_err)
-                if "404" in err_str:
-                    print(f" → 404, reautenticando...", flush=True)
-                    if await do_login(client, force_new=not CI_MODE):
+
+                if "401" in err_str:
+                    # ── Cookies expiradas: intentar re-login ──
+                    print(f" → 401 (sesión expirada)", flush=True)
+                    if await do_login(client, account_mgr, force_new=True):
                         tweets = await client.search_tweet(
                             f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
                         )
                     else:
-                        raise Exception("No se pudo reautenticar tras error 404")
+                        raise Exception("No se pudo reautenticar tras 401")
+
+                elif "404" in err_str:
+                    print(f" → 404, reautenticando...", flush=True)
+                    if await do_login(client, account_mgr, force_new=True):
+                        tweets = await client.search_tweet(
+                            f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
+                        )
+                    else:
+                        raise Exception("No se pudo reautenticar tras 404")
+
                 elif "429" in err_str:
-                    print(f" (rate limit, esperando 60s...)", end="", flush=True)
-                    await asyncio.sleep(60)
-                    tweets = await client.search_tweet(
-                        f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
-                    )
+                    rate_limit_count += 1
+
+                    # Si hay múltiples cuentas, rotar
+                    if account_mgr.has_accounts() and account_mgr.get_account_count() > 1:
+                        print(f" → 429, rotando a otra cuenta...", flush=True)
+                        client = Client("es-AR", user_agent=USER_AGENT)
+                        account = account_mgr.get_next_account()
+                        if account and await try_login_with_credentials(client, account):
+                            tweets = await client.search_tweet(
+                                f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
+                            )
+                            rate_limit_count = 0
+                        else:
+                            raise Exception("No se pudo rotar cuenta tras 429")
+                    else:
+                        # Sin cuentas extra: esperar
+                        wait_time = min(60 * rate_limit_count, 300)  # Max 5 min
+                        print(f" → 429, esperando {wait_time}s...", end="", flush=True)
+                        await asyncio.sleep(wait_time)
+                        tweets = await client.search_tweet(
+                            f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
+                        )
                 else:
                     raise
 
+            # ── Recolectar tweets con paginación ──
             while tweets:
                 for tweet in tweets:
                     if len(tweet_list) >= MAX_TWEETS_PER_KEYWORD:
@@ -357,15 +483,41 @@ async def scrape_tweets():
                 except Exception as page_err:
                     err_str = str(page_err)
                     if "429" in err_str:
-                        print(" (rate limit, esperando 60s...)", end="", flush=True)
-                        await asyncio.sleep(60)
-                        try:
-                            tweets = await tweets.next()
-                        except Exception:
+                        if account_mgr.has_accounts() and account_mgr.get_account_count() > 1:
+                            print(" (429, rotando cuenta...)", end="", flush=True)
+                            client = Client("es-AR", user_agent=USER_AGENT)
+                            account = account_mgr.get_next_account()
+                            if account and await try_login_with_credentials(client, account):
+                                try:
+                                    tweets = await client.search_tweet(
+                                        f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
+                                    )
+                                    continue
+                                except Exception:
+                                    break
+                            else:
+                                break
+                        else:
+                            print(" (429, esperando 60s...)", end="", flush=True)
+                            await asyncio.sleep(60)
+                            try:
+                                tweets = await tweets.next()
+                            except Exception:
+                                break
+                    elif "401" in err_str:
+                        print(" (401, reautenticando...)", flush=True)
+                        if await do_login(client, account_mgr, force_new=True):
+                            try:
+                                tweets = await client.search_tweet(
+                                    f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
+                                )
+                            except Exception:
+                                break
+                        else:
                             break
                     elif "404" in err_str:
-                        print(" (404 en paginación, reautenticando...)", flush=True)
-                        if await do_login(client, force_new=not CI_MODE):
+                        print(" (404, reautenticando...)", flush=True)
+                        if await do_login(client, account_mgr, force_new=True):
                             try:
                                 tweets = await client.search_tweet(
                                     f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
@@ -394,28 +546,15 @@ async def scrape_tweets():
         all_data["keywords"].append(keyword_data)
 
         if i < len(KEYWORDS) - 1:
-            await asyncio.sleep(30)
-
-    # En CI, guardar cookies actualizadas para el próximo run
-    if CI_MODE and os.path.exists(COOKIES_FILE):
-        try:
-            with open(COOKIES_FILE, "r") as f:
-                cookies_json = f.read()
-            cookies_b64 = base64.b64encode(cookies_json.encode()).decode()
-            # GitHub Actions puede leer esto del output
-            print(f"\n::set-output name=updated_cookies::{cookies_b64}")
-        except Exception:
-            pass
+            await asyncio.sleep(PAUSE_BETWEEN_KEYWORDS)
 
     return all_data
 
 
 def save_data(data):
     """Guarda los datos scrapados en JSON."""
-    # Guardar en raíz
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-    # También en docs/ para que esté disponible en GitHub Pages
     docs_data = os.path.join(OUTPUT_DIR, "tweets_data.json")
     with open(docs_data, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
@@ -433,7 +572,6 @@ async def main():
         print("  💻 Modo: Local")
     print("═" * 60)
 
-    # Crear directorio de salida
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     # 1. Scraping
@@ -470,7 +608,6 @@ async def main():
         print(f"\n  Abrí el archivo HTML en tu navegador para ver el dashboard.")
     print("═" * 60 + "\n")
 
-    # Abrir reporte automáticamente (solo local)
     if not CI_MODE:
         try:
             import webbrowser
