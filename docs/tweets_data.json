@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-02-20T04:54:06.427231",
+  "period": {
+    "from": "2026-01-01",
+    "to": "2026-02-20"
+  },
+  "keywords": [
+    {
+      "keyword": "comarb",
+      "posts": [],
+      "sentiment_summary": {
+        "positivo": 0,
+        "negativo": 0,
+        "neutro": 0
+      },
+      "total_found": 0,
+      "error": "status: 404, message: \"\""
+    },
+    {
+      "keyword": "sifere",
+      "posts": [],
+      "sentiment_summary": {
+        "positivo": 0,
+        "negativo": 0,
+        "neutro": 0
+      },
+      "total_found": 0,
+      "error": "status: 404, message: \"\""
+    },
+    {
+      "keyword": "sircar",
+      "posts": [],
+      "sentiment_summary": {
+        "positivo": 0,
+        "negativo": 0,
+        "neutro": 0
+      },
+      "total_found": 0,
+      "error": "status: 404, message: \"\""
+    },
+    {
+      "keyword": "sirpei",
+      "posts": [],
+      "sentiment_summary": {
+        "positivo": 0,
+        "negativo": 0,
+        "neutro": 0
+      },
+      "total_found": 0,
+      "error": "status: 404, message: \"\""
+    },
+    {
+      "keyword": "sircreb",
+      "posts": [],
+      "sentiment_summary": {
+        "positivo": 0,
+        "negativo": 0,
+        "neutro": 0
+      },
+      "total_found": 0,
+      "error": "status: 404, message: \"\""
+    },
+    {
+      "keyword": "sircupa",
+      "posts": [],
+      "sentiment_summary": {
+        "positivo": 0,
+        "negativo": 0,
+        "neutro": 0
+      },
+      "total_found": 0,
+      "error": "status: 404, message: \"\""
+    },
+    {
+      "keyword": "sirtac",
+      "posts": [],
+      "sentiment_summary": {
+        "positivo": 0,
+        "negativo": 0,
+        "neutro": 0
+      },
+      "total_found": 0,
+      "error": "status: 404, message: \"\""
+    }
+  ]
+}
