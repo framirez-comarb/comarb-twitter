@@ -1,0 +1,484 @@
+#!/usr/bin/env python3
+"""
+═══════════════════════════════════════════════════════════════
+  COMARB Twitter/X Sentiment Analysis Dashboard
+  Analiza tweets sobre sistemas tributarios argentinos
+  Palabras clave: comarb, sifere, sircar, sirpei, sircreb, sircupa, sirtac
+═══════════════════════════════════════════════════════════════
+
+  Soporta dos modos de ejecución:
+  - LOCAL:  python main.py  (interactivo, pide credenciales)
+  - CI:     Se ejecuta en GitHub Actions con cookies como secret
+═══════════════════════════════════════════════════════════════
+"""
+
+import asyncio
+import base64
+import json
+import os
+import sys
+from datetime import datetime
+
+# ── Detectar modo CI ──
+CI_MODE = os.environ.get("CI", "").lower() == "true"
+OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "docs")  # Para GitHub Pages
+
+# ── Verificar e instalar dependencias ──
+def install_dependencies():
+    """Instala las dependencias necesarias."""
+    if not CI_MODE:
+        print("📦 Verificando twikit (última versión)...")
+    os.system(f"{sys.executable} -m pip install twikit --upgrade -q 2>/dev/null")
+
+    deps = {"textblob": "textblob"}
+    for module, package in deps.items():
+        try:
+            __import__(module)
+        except ImportError:
+            if not CI_MODE:
+                print(f"📦 Instalando {package}...")
+            os.system(f"{sys.executable} -m pip install {package} -q 2>/dev/null")
+
+    try:
+        from textblob import TextBlob
+        TextBlob("test").sentiment
+    except Exception:
+        if not CI_MODE:
+            print("📦 Descargando datos de TextBlob...")
+        os.system(f"{sys.executable} -m textblob.download_corpora lite -q 2>/dev/null")
+
+install_dependencies()
+
+from twikit import Client
+from textblob import TextBlob
+from report_generator import generate_html_report
+
+# ── Configuración ──
+KEYWORDS = ["comarb", "sifere", "sircar", "sirpei", "sircreb", "sircupa", "sirtac"]
+MAX_TWEETS_PER_KEYWORD = 200
+COOKIES_FILE = "twitter_cookies.json"
+DATA_FILE = "tweets_data.json"
+REPORT_FILE = os.path.join(OUTPUT_DIR, "index.html")
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+
+def get_credentials():
+    """Obtiene las credenciales de Twitter del usuario."""
+    print("\n" + "═" * 60)
+    print("  🔐 LOGIN DE TWITTER/X")
+    print("═" * 60)
+    print("  Necesitás una cuenta de Twitter/X para buscar tweets.")
+    print("  Las credenciales solo se usan para loguearte y se")
+    print("  guardan como cookies locales para no pedirlas de nuevo.\n")
+
+    username = input("  👤 Usuario de Twitter (sin @): ").strip()
+    email = input("  📧 Email de la cuenta: ").strip()
+    password = input("  🔑 Contraseña: ").strip()
+
+    return username, email, password
+
+
+def get_browser_cookies():
+    """Obtiene cookies de Twitter/X desde el navegador del usuario."""
+    print("\n" + "═" * 60)
+    print("  🍪 IMPORTAR COOKIES DEL NAVEGADOR")
+    print("═" * 60)
+    print("  El login directo falló. Podés importar cookies desde tu navegador:")
+    print()
+    print("  1. Abrí Twitter/X en tu navegador y logueate normalmente")
+    print("  2. Presioná F12 → pestaña Application → Cookies → https://x.com")
+    print("  3. Copiá los valores de 'auth_token' y 'ct0'")
+    print()
+
+    auth_token = input("  🔑 auth_token: ").strip()
+    ct0 = input("  🔑 ct0: ").strip()
+
+    if not auth_token or not ct0:
+        print("  ❌ Ambos valores son obligatorios.")
+        return None
+
+    return {"auth_token": auth_token, "ct0": ct0}
+
+
+def load_cookies_from_secret():
+    """
+    Carga cookies desde el GitHub Secret TWITTER_COOKIES (base64).
+    Retorna True si tuvo éxito.
+    """
+    cookies_b64 = os.environ.get("TWITTER_COOKIES")
+    if not cookies_b64:
+        print("❌ CI Mode: no se encontró el secret TWITTER_COOKIES")
+        return False
+
+    try:
+        cookies_json = base64.b64decode(cookies_b64).decode("utf-8")
+        with open(COOKIES_FILE, "w", encoding="utf-8") as f:
+            f.write(cookies_json)
+        print("✅ CI Mode: cookies cargadas desde secret.")
+        return True
+    except Exception as e:
+        print(f"❌ CI Mode: error decodificando cookies: {e}")
+        return False
+
+
+def export_cookies_for_ci():
+    """
+    Después de un login exitoso, muestra el base64 de las cookies
+    para que el usuario lo copie a GitHub Secrets.
+    """
+    if not os.path.exists(COOKIES_FILE):
+        return
+
+    try:
+        with open(COOKIES_FILE, "r", encoding="utf-8") as f:
+            cookies_json = f.read()
+        cookies_b64 = base64.b64encode(cookies_json.encode("utf-8")).decode("utf-8")
+
+        print("\n" + "═" * 60)
+        print("  🔑 COOKIES PARA GITHUB ACTIONS")
+        print("═" * 60)
+        print("  Copiá TODO el texto de abajo y pegalo como GitHub Secret")
+        print("  con el nombre: TWITTER_COOKIES\n")
+        print("  ── INICIO (copiar desde la línea siguiente) ──")
+        print(cookies_b64)
+        print("  ── FIN ──\n")
+        print("  Instrucciones:")
+        print("  1. Andá a tu repo → Settings → Secrets and variables → Actions")
+        print("  2. New repository secret")
+        print("  3. Name: TWITTER_COOKIES")
+        print("  4. Value: pegá el texto de arriba")
+        print("═" * 60)
+    except Exception as e:
+        print(f"  ⚠️ No se pudo exportar cookies: {e}")
+
+
+def analyze_sentiment(text):
+    """Analiza el sentimiento de un texto."""
+    negative_words = [
+        "error", "problema", "falla", "no funciona", "caída", "lento",
+        "imposible", "frustración", "queja", "demora", "bug", "reclamo",
+        "horrible", "pésimo", "desastre", "inútil", "vergüenza", "mal",
+        "peor", "molesta", "odio", "bronca", "cansado", "harto",
+        "no puedo", "no anda", "se cayó", "no carga", "no sirve",
+        "traba", "cuelga", "actualización", "incompatible", "rechazado",
+        "vencido", "multa", "intimación", "deuda", "apremio", "eliminar",
+        "lastre", "lentisimo", "LPQLP", "carreta", "no funcione",
+        "no cambia", "elimine", "feroces", "no tienen bolas", "dinosaurios",
+        "robo", "roba", "enano", "privilegios", "mierda", "renegando",
+        "Faltan huevos", "Demencial"
+    ]
+    positive_words = [
+        "excelente", "genial", "muy bien", "rápido", "fácil",
+        "perfecto", "útil", "práctico", "mejoró", "mejor",
+        "bueno", "correcto", "ok"
+    ]
+
+    text_lower = text.lower()
+    neg_count = sum(1 for w in negative_words if w.lower() in text_lower)
+    pos_count = sum(1 for w in positive_words if w.lower() in text_lower)
+
+    try:
+        blob = TextBlob(text)
+        tb_polarity = blob.sentiment.polarity
+    except Exception:
+        tb_polarity = 0
+
+    keyword_score = (pos_count - neg_count) * 0.3
+    combined_score = keyword_score + (tb_polarity * 0.2)
+
+    if combined_score > 0.05 or pos_count > neg_count:
+        return "positivo", round(combined_score, 3)
+    elif combined_score < -0.05 or neg_count > pos_count:
+        return "negativo", round(combined_score, 3)
+    else:
+        return "neutro", round(combined_score, 3)
+
+
+async def do_login(client, force_new=False):
+    """Intenta autenticar con Twitter/X."""
+
+    # ── CI MODE: usar cookies del secret ──
+    if CI_MODE:
+        if load_cookies_from_secret():
+            try:
+                client.load_cookies(COOKIES_FILE)
+                print("✅ CI Mode: sesión restaurada.")
+                return True
+            except Exception as e:
+                print(f"❌ CI Mode: cookies inválidas: {e}")
+                return False
+        return False
+
+    # ── LOCAL MODE: flujo interactivo ──
+    if not force_new and os.path.exists(COOKIES_FILE):
+        print("\n🍪 Cargando cookies guardadas...")
+        try:
+            client.load_cookies(COOKIES_FILE)
+            print("✅ Sesión restaurada desde cookies.\n")
+            return True
+        except Exception as e:
+            print(f"⚠️  Cookies inválidas ({e}), necesitás loguearte de nuevo.\n")
+
+    if force_new and os.path.exists(COOKIES_FILE):
+        os.remove(COOKIES_FILE)
+        print("🗑️  Cookies anteriores eliminadas.")
+
+    username, email, password = get_credentials()
+    try:
+        await client.login(
+            auth_info_1=username,
+            auth_info_2=email,
+            password=password,
+            cookies_file=COOKIES_FILE
+        )
+        print("\n✅ Login exitoso. Cookies guardadas.\n")
+        # Mostrar cookies para CI
+        export_cookies_for_ci()
+        return True
+    except Exception as e:
+        error_msg = str(e)
+        print(f"\n⚠️  Login con credenciales falló: {error_msg}")
+
+        if "366" in error_msg:
+            print("   Twitter bloqueó el flujo de login automatizado.")
+        elif "398" in error_msg:
+            print("   Twitter detectó actividad no humana (CAPTCHA).")
+            print("   Tip: Intentá resetear tu contraseña de Twitter y volver a probar.")
+        else:
+            print("   Twitter rechazó la autenticación.")
+
+        print("\n   Probando método alternativo: cookies del navegador...")
+        cookies = get_browser_cookies()
+        if cookies:
+            try:
+                client.set_cookies(cookies, clear_cookies=True)
+                client.save_cookies(COOKIES_FILE)
+                print("  ✅ Cookies del navegador importadas correctamente.\n")
+                export_cookies_for_ci()
+                return True
+            except Exception as e2:
+                print(f"  ❌ Error importando cookies: {e2}")
+
+    return False
+
+
+async def scrape_tweets():
+    """Scrapea tweets para cada palabra clave usando Twikit."""
+    client = Client("es-AR", user_agent=USER_AGENT)
+
+    if not await do_login(client):
+        print("\n❌ No se pudo autenticar con Twitter/X.")
+        if CI_MODE:
+            print("   Revisá que el secret TWITTER_COOKIES esté actualizado.")
+            print("   Ejecutá localmente para regenerar las cookies.")
+        else:
+            print("   Opciones:")
+            print("   1. Verificá usuario, email y contraseña")
+            print("   2. Reseteá tu contraseña de Twitter e intentá de nuevo")
+            print("   3. Importá cookies del navegador (auth_token y ct0)")
+        sys.exit(1)
+
+    since_date = f"{datetime.now().year}-01-01"
+    until_date = datetime.now().strftime("%Y-%m-%d")
+    all_data = {
+        "generated_at": datetime.now().isoformat(),
+        "period": {"from": since_date, "to": until_date},
+        "keywords": []
+    }
+
+    print("═" * 60)
+    print("  🔍 BUSCANDO TWEETS")
+    print("═" * 60)
+
+    for i, keyword in enumerate(KEYWORDS):
+        print(f"\n  [{i+1}/{len(KEYWORDS)}] Buscando: #{keyword.upper()}", end="", flush=True)
+
+        keyword_data = {
+            "keyword": keyword,
+            "posts": [],
+            "sentiment_summary": {"positivo": 0, "negativo": 0, "neutro": 0},
+            "total_found": 0
+        }
+
+        try:
+            tweet_list = []
+            try:
+                tweets = await client.search_tweet(
+                    f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
+                )
+            except Exception as search_err:
+                err_str = str(search_err)
+                if "404" in err_str:
+                    print(f" → 404, reautenticando...", flush=True)
+                    if await do_login(client, force_new=not CI_MODE):
+                        tweets = await client.search_tweet(
+                            f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
+                        )
+                    else:
+                        raise Exception("No se pudo reautenticar tras error 404")
+                elif "429" in err_str:
+                    print(f" (rate limit, esperando 60s...)", end="", flush=True)
+                    await asyncio.sleep(60)
+                    tweets = await client.search_tweet(
+                        f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
+                    )
+                else:
+                    raise
+
+            while tweets:
+                for tweet in tweets:
+                    if len(tweet_list) >= MAX_TWEETS_PER_KEYWORD:
+                        break
+                    sentiment, score = analyze_sentiment(tweet.text)
+
+                    tweet_info = {
+                        "id": tweet.id,
+                        "text": tweet.text,
+                        "user": tweet.user.name if tweet.user else "Desconocido",
+                        "username": tweet.user.screen_name if tweet.user else "unknown",
+                        "date": str(tweet.created_at_datetime) if tweet.created_at_datetime else str(tweet.created_at),
+                        "sentiment": sentiment,
+                        "sentiment_score": score,
+                        "likes": tweet.favorite_count or 0,
+                        "retweets": tweet.retweet_count or 0,
+                        "replies": tweet.reply_count or 0,
+                        "url": f"https://x.com/{tweet.user.screen_name}/status/{tweet.id}" if tweet.user else None
+                    }
+                    tweet_list.append(tweet_info)
+                    keyword_data["sentiment_summary"][sentiment] += 1
+
+                print(f" → {len(tweet_list)} tweets...", end="", flush=True)
+
+                if len(tweet_list) >= MAX_TWEETS_PER_KEYWORD:
+                    break
+
+                try:
+                    tweets = await tweets.next()
+                except Exception as page_err:
+                    err_str = str(page_err)
+                    if "429" in err_str:
+                        print(" (rate limit, esperando 60s...)", end="", flush=True)
+                        await asyncio.sleep(60)
+                        try:
+                            tweets = await tweets.next()
+                        except Exception:
+                            break
+                    elif "404" in err_str:
+                        print(" (404 en paginación, reautenticando...)", flush=True)
+                        if await do_login(client, force_new=not CI_MODE):
+                            try:
+                                tweets = await client.search_tweet(
+                                    f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
+                                )
+                            except Exception:
+                                break
+                        else:
+                            break
+                    else:
+                        break
+
+                await asyncio.sleep(3)
+
+            tweet_list.sort(key=lambda x: x["date"], reverse=True)
+            keyword_data["posts"] = tweet_list
+            keyword_data["total_found"] = len(tweet_list)
+
+            print(f" → {len(tweet_list)} tweets encontrados ✓")
+            s = keyword_data["sentiment_summary"]
+            print(f"      Sentimiento: +{s['positivo']} ~{s['neutro']} -{s['negativo']}")
+
+        except Exception as e:
+            print(f" → Error: {e}")
+            keyword_data["error"] = str(e)
+
+        all_data["keywords"].append(keyword_data)
+
+        if i < len(KEYWORDS) - 1:
+            await asyncio.sleep(10)
+
+    # En CI, guardar cookies actualizadas para el próximo run
+    if CI_MODE and os.path.exists(COOKIES_FILE):
+        try:
+            with open(COOKIES_FILE, "r") as f:
+                cookies_json = f.read()
+            cookies_b64 = base64.b64encode(cookies_json.encode()).decode()
+            # GitHub Actions puede leer esto del output
+            print(f"\n::set-output name=updated_cookies::{cookies_b64}")
+        except Exception:
+            pass
+
+    return all_data
+
+
+def save_data(data):
+    """Guarda los datos scrapados en JSON."""
+    # Guardar en raíz
+    with open(DATA_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    # También en docs/ para que esté disponible en GitHub Pages
+    docs_data = os.path.join(OUTPUT_DIR, "tweets_data.json")
+    with open(docs_data, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    print(f"\n💾 Datos guardados en: {DATA_FILE}")
+
+
+async def main():
+    """Flujo principal de la aplicación."""
+    print("\n" + "═" * 60)
+    print("  📊 COMARB — Análisis de Sentimiento Twitter/X")
+    print("  Sistemas: SIFERE | SIRCAR | SIRPEI | SIRCREB | SIRCUPA | SIRTAC")
+    if CI_MODE:
+        print("  🤖 Modo: GitHub Actions (CI)")
+    else:
+        print("  💻 Modo: Local")
+    print("═" * 60)
+
+    # Crear directorio de salida
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+    # 1. Scraping
+    data = await scrape_tweets()
+
+    # 2. Guardar datos
+    save_data(data)
+
+    # 3. Generar reporte HTML
+    print("\n" + "═" * 60)
+    print("  📄 GENERANDO REPORTE HTML")
+    print("═" * 60)
+    generate_html_report(data, REPORT_FILE)
+
+    # 4. Resumen final
+    total_tweets = sum(k["total_found"] for k in data["keywords"])
+    total_pos = sum(k["sentiment_summary"]["positivo"] for k in data["keywords"])
+    total_neg = sum(k["sentiment_summary"]["negativo"] for k in data["keywords"])
+    total_neu = sum(k["sentiment_summary"]["neutro"] for k in data["keywords"])
+
+    print("\n" + "═" * 60)
+    print("  ✅ RESUMEN FINAL")
+    print("═" * 60)
+    print(f"  📝 Total tweets encontrados: {total_tweets}")
+    print(f"  😊 Positivos: {total_pos}")
+    print(f"  😐 Neutros: {total_neu}")
+    print(f"  😠 Negativos: {total_neg}")
+    print(f"\n  📄 Reporte HTML: {os.path.abspath(REPORT_FILE)}")
+    print(f"  💾 Datos JSON:   {os.path.abspath(DATA_FILE)}")
+
+    if CI_MODE:
+        print(f"\n  🌐 El reporte se publicará en GitHub Pages automáticamente.")
+    else:
+        print(f"\n  Abrí el archivo HTML en tu navegador para ver el dashboard.")
+    print("═" * 60 + "\n")
+
+    # Abrir reporte automáticamente (solo local)
+    if not CI_MODE:
+        try:
+            import webbrowser
+            webbrowser.open(f"file://{os.path.abspath(REPORT_FILE)}")
+            print("  🌐 Abriendo reporte en el navegador...\n")
+        except Exception:
+            pass
+
+
+if __name__ == "__main__":
+    asyncio.run(main())

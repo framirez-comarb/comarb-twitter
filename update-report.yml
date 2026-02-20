@@ -1,0 +1,82 @@
+name: '📊 Actualizar Reporte de Sentimiento'
+
+on:
+  # ── Ejecución automática: todos los días a las 08:00 AM (Argentina, UTC-3) ──
+  schedule:
+    - cron: '0 15 * * *'  # 11:00 UTC = 08:00 Argentina
+
+  # ── Ejecución manual desde GitHub ──
+  workflow_dispatch:
+
+  # ── También al hacer push (para primer deploy) ──
+  push:
+    branches: [ main ]
+    paths:
+      - 'main.py'
+      - 'report_generator.py'
+      - '.github/workflows/update-report.yml'
+
+# Permisos para escribir en el repo y desplegar Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      # 1. Checkout del repo
+      - name: 📥 Checkout repositorio
+        uses: actions/checkout@v4
+
+      # 2. Setup Python
+      - name: 🐍 Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # 3. Cache de pip
+      - name: 📦 Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      # 4. Instalar dependencias
+      - name: 📦 Instalar dependencias
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          python -m textblob.download_corpora lite || true
+
+      # 5. Ejecutar el scraping
+      - name: 🔍 Ejecutar scraping y generar reporte
+        env:
+          CI: 'true'
+          TWITTER_COOKIES: ${{ secrets.TWITTER_COOKIES }}
+          OUTPUT_DIR: 'docs'
+        run: |
+          python main.py
+
+      # 6. Commit y push del reporte actualizado
+      - name: 📤 Commit y push del reporte
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add docs/ tweets_data.json
+          
+          # Solo commitear si hay cambios
+          if git diff --staged --quiet; then
+            echo "Sin cambios en el reporte."
+          else
+            TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
+            git commit -m "📊 Reporte actualizado: ${TIMESTAMP}"
+            git push
+            echo "✅ Reporte actualizado y publicado."
+          fi

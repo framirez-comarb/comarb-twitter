@@ -1,0 +1,21 @@
+# ── Cookies y sesión (NUNCA subir) ──
+twitter_cookies.json
+cookies_secret.txt
+
+# ── Python ──
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+.venv/
+
+# ── IDE ──
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── OS ──
+.DS_Store
+Thumbs.db

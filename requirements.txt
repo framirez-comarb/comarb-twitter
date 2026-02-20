@@ -1,0 +1,2 @@
+twikit>=2.3.0
+textblob>=0.18.0
