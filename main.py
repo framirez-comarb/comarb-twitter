@@ -394,7 +394,7 @@ async def scrape_tweets():
         all_data["keywords"].append(keyword_data)
 
         if i < len(KEYWORDS) - 1:
-            await asyncio.sleep(10)
+            await asyncio.sleep(30)
 
     # En CI, guardar cookies actualizadas para el próximo run
     if CI_MODE and os.path.exists(COOKIES_FILE):
