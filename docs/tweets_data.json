@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-20T15:06:44.468723",
+  "generated_at": "2026-02-20T15:24:07.710263",
   "period": {
     "from": "2026-01-01",
     "to": "2026-02-20"
@@ -14,7 +14,7 @@
         "neutro": 0
       },
       "total_found": 0,
-      "error": "status: 401, message: \"{\"errors\":[{\"message\":\"Could not authenticate you\",\"code\":32}]}\n\""
+      "error": "status: 404, message: \"\""
     },
     {
       "keyword": "sifere",
@@ -25,7 +25,7 @@
         "neutro": 0
       },
       "total_found": 0,
-      "error": "status: 401, message: \"{\"errors\":[{\"message\":\"Could not authenticate you\",\"code\":32}]}\n\""
+      "error": "status: 404, message: \"\""
     },
     {
       "keyword": "sircar",
@@ -36,7 +36,7 @@
         "neutro": 0
       },
       "total_found": 0,
-      "error": "status: 401, message: \"{\"errors\":[{\"message\":\"Could not authenticate you\",\"code\":32}]}\n\""
+      "error": "status: 404, message: \"\""
     },
     {
       "keyword": "sirpei",
@@ -47,7 +47,7 @@
         "neutro": 0
       },
       "total_found": 0,
-      "error": "status: 401, message: \"{\"errors\":[{\"message\":\"Could not authenticate you\",\"code\":32}]}\n\""
+      "error": "status: 404, message: \"\""
     },
     {
       "keyword": "sircreb",
@@ -58,7 +58,7 @@
         "neutro": 0
       },
       "total_found": 0,
-      "error": "status: 401, message: \"{\"errors\":[{\"message\":\"Could not authenticate you\",\"code\":32}]}\n\""
+      "error": "status: 404, message: \"\""
     },
     {
       "keyword": "sircupa",
@@ -69,7 +69,7 @@
         "neutro": 0
       },
       "total_found": 0,
-      "error": "status: 401, message: \"{\"errors\":[{\"message\":\"Could not authenticate you\",\"code\":32}]}\n\""
+      "error": "status: 404, message: \"\""
     },
     {
       "keyword": "sirtac",
@@ -80,7 +80,7 @@
         "neutro": 0
       },
       "total_found": 0,
-      "error": "status: 401, message: \"{\"errors\":[{\"message\":\"Could not authenticate you\",\"code\":32}]}\n\""
+      "error": "status: 404, message: \"\""
     }
   ]
 }
