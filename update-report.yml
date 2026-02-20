@@ -3,7 +3,7 @@ name: '📊 Actualizar Reporte de Sentimiento'
 on:
   # ── Ejecución automática: todos los días a las 08:00 AM (Argentina, UTC-3) ──
   schedule:
-    - cron: '0 15 * * *'  # 11:00 UTC = 08:00 Argentina
+    - cron: '0 11 * * *'  # 11:00 UTC = 08:00 Argentina
 
   # ── Ejecución manual desde GitHub ──
   workflow_dispatch:
