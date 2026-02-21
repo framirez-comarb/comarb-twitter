@@ -1,4 +1,38 @@
+#!/usr/bin/env python3
+"""
+═══════════════════════════════════════════════════════════════
+  COMARB Twitter/X Sentiment Analysis Dashboard
+  Analiza tweets sobre sistemas tributarios argentinos
+  Palabras clave: comarb, sifere, sircar, sirpei, sircreb, sircupa, sirtac
+═══════════════════════════════════════════════════════════════
 
+  Modos de ejecución:
+  - LOCAL:  python main.py  (interactivo)
+  - CI:     GitHub Actions con secrets
+
+  Secrets soportados:
+  - TWITTER_COOKIES        → cookies base64 (método principal)
+  - TWITTER_ACCOUNTS       → JSON con múltiples cuentas (fallback + rotación)
+  - TWITTER_USERNAME       → usuario simple (fallback básico)
+  - TWITTER_EMAIL          → email simple (fallback básico)
+  - TWITTER_PASSWORD       → contraseña simple (fallback básico)
+═══════════════════════════════════════════════════════════════
+"""
+
+import asyncio
+import base64
+import json
+import os
+import sys
+import random
+from datetime import datetime
+
+# ── Detectar modo CI ──
+CI_MODE = os.environ.get("CI", "").lower() == "true"
+OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "docs")
+
+# ── Verificar e instalar dependencias ──
+def install_dependencies():
     """Instala las dependencias necesarias."""
     if not CI_MODE:
         print("📦 Verificando twikit (última versión)...")
