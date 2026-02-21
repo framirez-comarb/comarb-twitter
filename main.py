@@ -68,7 +68,153 @@ COOKIES_FILE = "twitter_cookies.json"
 DATA_FILE = "tweets_data.json"
 REPORT_FILE = os.path.join(OUTPUT_DIR, "index.html")
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
-PAUSE_BETWEEN_KEYWORDS = 30  # segundos entre cada keyword
+PAUSE_BETWEEN_KEYWORDS = 30
+
+
+# ═══════════════════════════════════════════════════════════════
+#  DICCIONARIOS DE EMOJIS PARA SENTIMIENTO
+# ═══════════════════════════════════════════════════════════════
+
+# Peso: cada emoji cuenta como N palabras positivas/negativas
+POSITIVE_EMOJIS = {
+    # Caras felices
+    "😀": 1, "😃": 1, "😄": 1, "😁": 1, "😆": 1, "😊": 1, "🥰": 1.5,
+    "😍": 1.5, "🤩": 1.5, "☺️": 1, "😉": 0.5, "😋": 0.5, "😎": 1,
+    "🥳": 1.5, "😏": 0.3, "🙂": 0.5, "😌": 0.5, "🤗": 1, "😇": 1,
+    # Gestos positivos
+    "👍": 1, "👏": 1, "🙌": 1.5, "🤝": 1, "✌️": 0.5, "🤞": 0.5,
+    "💪": 1, "👌": 1, "🫡": 0.5,
+    # Corazones y amor
+    "❤️": 1.5, "🧡": 1, "💛": 1, "💚": 1, "💙": 1, "💜": 1,
+    "🖤": 0.5, "🤍": 0.5, "💕": 1.5, "💖": 1.5, "💗": 1, "💘": 1,
+    "💝": 1.5, "❤️‍🔥": 1.5, "♥️": 1,
+    # Celebración
+    "🎉": 1.5, "🎊": 1.5, "🎆": 1, "🎇": 1, "✨": 1, "🌟": 1,
+    "⭐": 1, "🏆": 1.5, "🥇": 1.5, "🎯": 1, "🏅": 1,
+    # Risa
+    "😂": 1, "🤣": 1, "😹": 1,
+    # Aprobación / OK
+    "✅": 1, "✔️": 1, "🆗": 0.5, "💯": 1.5, "🔝": 1,
+    # Otros positivos
+    "🚀": 1, "💡": 0.5, "🙏": 1, "🌈": 0.5, "☀️": 0.5,
+    "🌻": 0.5, "🎶": 0.5, "💐": 1, "🌹": 1,
+}
+
+NEGATIVE_EMOJIS = {
+    # Caras tristes / enojadas
+    "😢": 1, "😭": 1.5, "😞": 1, "😔": 1, "😟": 1, "🙁": 1,
+    "☹️": 1, "😣": 1, "😖": 1, "😫": 1.5, "😩": 1.5, "🥺": 0.5,
+    "😤": 1.5, "😡": 2, "🤬": 2.5, "😠": 1.5, "🤢": 1, "🤮": 1.5,
+    "😰": 1, "😨": 1, "😱": 1.5, "😵": 1, "😵‍💫": 1, "🥴": 0.5,
+    "😷": 0.5, "🤒": 0.5, "🤕": 0.5, "😑": 0.5, "😒": 1,
+    "🙄": 1, "😪": 0.5, "😮‍💨": 1, "💀": 1, "☠️": 1, "🤡": 1.5,
+    # Gestos negativos
+    "👎": 1.5, "🖕": 2, "🤦": 1, "🤦‍♂️": 1, "🤦‍♀️": 1,
+    # Símbolos negativos
+    "❌": 1.5, "⛔": 1, "🚫": 1, "❗": 0.5, "‼️": 1, "⚠️": 0.5,
+    "🔴": 0.5, "💔": 1.5, "🩹": 0.5, "📉": 1,
+    # Otros negativos
+    "🗑️": 1, "💩": 1.5, "🤷": 0.5, "🤷‍♂️": 0.5, "🤷‍♀️": 0.5,
+    "😬": 0.5, "🫠": 0.5, "🫤": 0.5, "😶": 0.3,
+    # Fuego (puede ser negativo en contexto de queja)
+    "🔥": 0.3,
+}
+
+
+def count_emojis(text):
+    """
+    Cuenta emojis positivos y negativos en un texto.
+    Retorna (pos_score, neg_score, emoji_details).
+    """
+    pos_score = 0.0
+    neg_score = 0.0
+    found_emojis = []
+
+    for emoji, weight in POSITIVE_EMOJIS.items():
+        count = text.count(emoji)
+        if count > 0:
+            pos_score += weight * count
+            found_emojis.append({"emoji": emoji, "type": "positivo", "count": count})
+
+    for emoji, weight in NEGATIVE_EMOJIS.items():
+        count = text.count(emoji)
+        if count > 0:
+            neg_score += weight * count
+            found_emojis.append({"emoji": emoji, "type": "negativo", "count": count})
+
+    return pos_score, neg_score, found_emojis
+
+
+# ═══════════════════════════════════════════════════════════════
+#  ANÁLISIS DE SENTIMIENTO (con emojis)
+# ═══════════════════════════════════════════════════════════════
+
+def analyze_sentiment(text):
+    """
+    Analiza el sentimiento de un texto combinando:
+    1. Diccionario de palabras en español
+    2. Diccionario de emojis con pesos
+    3. TextBlob (polarity en inglés como complemento)
+
+    Retorna: (sentimiento, score, detalles_emojis)
+    """
+    negative_words = [
+        "error", "problema", "falla", "no funciona", "caída", "lento",
+        "imposible", "frustración", "queja", "demora", "bug", "reclamo",
+        "horrible", "pésimo", "desastre", "inútil", "vergüenza", "mal",
+        "peor", "molesta", "odio", "bronca", "cansado", "harto",
+        "no puedo", "no anda", "se cayó", "no carga", "no sirve",
+        "traba", "cuelga", "actualización", "incompatible", "rechazado",
+        "vencido", "multa", "intimación", "deuda", "apremio", "eliminar",
+        "lastre", "lentisimo", "LPQLP", "carreta", "no funcione",
+        "no cambia", "elimine", "feroces", "no tienen bolas", "dinosaurios",
+        "robo", "roba", "enano", "privilegios", "mierda", "renegando",
+        "Faltan huevos", "Demencial"
+    ]
+    positive_words = [
+        "excelente", "genial", "muy bien", "rápido", "fácil",
+        "perfecto", "útil", "práctico", "mejoró", "mejor",
+        "bueno", "correcto", "ok"
+    ]
+
+    text_lower = text.lower()
+
+    # ── 1. Palabras clave ──
+    neg_word_count = sum(1 for w in negative_words if w.lower() in text_lower)
+    pos_word_count = sum(1 for w in positive_words if w.lower() in text_lower)
+
+    # ── 2. Emojis ──
+    emoji_pos, emoji_neg, emoji_details = count_emojis(text)
+
+    # ── 3. TextBlob ──
+    try:
+        blob = TextBlob(text)
+        tb_polarity = blob.sentiment.polarity
+    except Exception:
+        tb_polarity = 0
+
+    # ── Score combinado (ponderado) ──
+    # Palabras:  peso 0.30 por match
+    # Emojis:    peso 0.25 por unidad de score
+    # TextBlob:  peso 0.20 del polarity
+    word_score = (pos_word_count - neg_word_count) * 0.30
+    emoji_score = (emoji_pos - emoji_neg) * 0.25
+    tb_score = tb_polarity * 0.20
+
+    combined_score = word_score + emoji_score + tb_score
+
+    # Totales para comparación
+    total_pos = pos_word_count + emoji_pos
+    total_neg = neg_word_count + emoji_neg
+
+    if combined_score > 0.05 or total_pos > total_neg:
+        sentiment = "positivo"
+    elif combined_score < -0.05 or total_neg > total_pos:
+        sentiment = "negativo"
+    else:
+        sentiment = "neutro"
+
+    return sentiment, round(combined_score, 3), emoji_details
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -81,37 +227,28 @@ class AccountManager:
     def __init__(self):
         self.accounts = []
         self.current_index = 0
-        self.clients = {}  # account_id -> Client
+        self.clients = {}
         self._load_accounts()
 
     def _load_accounts(self):
-        """Carga cuentas desde secrets o input del usuario."""
         if CI_MODE:
             self._load_accounts_ci()
-        # En modo local las cuentas se gestionan interactivamente
 
     def _load_accounts_ci(self):
-        """Carga cuentas desde GitHub Secrets."""
-
-        # ── Método 1: TWITTER_ACCOUNTS (JSON con múltiples cuentas) ──
         accounts_json = os.environ.get("TWITTER_ACCOUNTS")
         if accounts_json:
             try:
-                # Puede estar en base64 o en JSON directo
                 try:
                     decoded = base64.b64decode(accounts_json).decode("utf-8")
                     self.accounts = json.loads(decoded)
                 except Exception:
                     self.accounts = json.loads(accounts_json)
-
                 print(f"✅ CI: {len(self.accounts)} cuentas cargadas desde TWITTER_ACCOUNTS")
-                # Mezclar para distribuir el uso
                 random.shuffle(self.accounts)
                 return
             except Exception as e:
                 print(f"⚠️  CI: error parseando TWITTER_ACCOUNTS: {e}")
 
-        # ── Método 2: credenciales simples ──
         username = os.environ.get("TWITTER_USERNAME")
         email = os.environ.get("TWITTER_EMAIL")
         password = os.environ.get("TWITTER_PASSWORD")
@@ -129,7 +266,6 @@ class AccountManager:
         return len(self.accounts) > 0
 
     def get_next_account(self):
-        """Retorna la siguiente cuenta en la rotación."""
         if not self.accounts:
             return None
         account = self.accounts[self.current_index % len(self.accounts)]
@@ -145,7 +281,6 @@ class AccountManager:
 # ═══════════════════════════════════════════════════════════════
 
 def get_credentials():
-    """Obtiene las credenciales de Twitter del usuario (modo local)."""
     print("\n" + "═" * 60)
     print("  🔐 LOGIN DE TWITTER/X")
     print("═" * 60)
@@ -156,12 +291,10 @@ def get_credentials():
     username = input("  👤 Usuario de Twitter (sin @): ").strip()
     email = input("  📧 Email de la cuenta: ").strip()
     password = input("  🔑 Contraseña: ").strip()
-
     return username, email, password
 
 
 def get_browser_cookies():
-    """Obtiene cookies de Twitter/X desde el navegador del usuario."""
     print("\n" + "═" * 60)
     print("  🍪 IMPORTAR COOKIES DEL NAVEGADOR")
     print("═" * 60)
@@ -176,16 +309,13 @@ def get_browser_cookies():
     if not auth_token or not ct0:
         print("  ❌ Ambos valores son obligatorios.")
         return None
-
     return {"auth_token": auth_token, "ct0": ct0}
 
 
 def load_cookies_from_secret():
-    """Carga cookies desde el GitHub Secret TWITTER_COOKIES (base64)."""
     cookies_b64 = os.environ.get("TWITTER_COOKIES")
     if not cookies_b64:
         return False
-
     try:
         cookies_json = base64.b64decode(cookies_b64).decode("utf-8")
         with open(COOKIES_FILE, "w", encoding="utf-8") as f:
@@ -198,17 +328,14 @@ def load_cookies_from_secret():
 
 
 def export_cookies_for_ci():
-    """Muestra el base64 de las cookies para GitHub Secrets."""
     if not os.path.exists(COOKIES_FILE):
         return
-
     try:
         with open(COOKIES_FILE, "r", encoding="utf-8") as f:
             cookies_json = f.read()
         cookies_b64 = base64.b64encode(cookies_json.encode("utf-8")).decode("utf-8")
 
         if CI_MODE:
-            # Guardar en GITHUB_OUTPUT para posible uso
             github_output = os.environ.get("GITHUB_OUTPUT")
             if github_output:
                 with open(github_output, "a") as f:
@@ -218,8 +345,7 @@ def export_cookies_for_ci():
             print("\n" + "═" * 60)
             print("  🔑 COOKIES PARA GITHUB ACTIONS")
             print("═" * 60)
-            print("  Copiá TODO el texto de abajo y pegalo como GitHub Secret")
-            print("  con el nombre: TWITTER_COOKIES\n")
+            print("  Copiá TODO el texto de abajo como GitHub Secret: TWITTER_COOKIES\n")
             print("  ── INICIO ──")
             print(cookies_b64)
             print("  ── FIN ──\n")
@@ -229,10 +355,8 @@ def export_cookies_for_ci():
 
 
 async def try_login_with_credentials(client, account):
-    """Intenta login con credenciales. Retorna True si tuvo éxito."""
     label = account.get("label", account.get("username", "?"))
     print(f"  🔑 Intentando login con cuenta: {label}...", end="", flush=True)
-
     try:
         await client.login(
             auth_info_1=account["username"],
@@ -245,9 +369,9 @@ async def try_login_with_credentials(client, account):
     except Exception as e:
         err = str(e)
         if "366" in err:
-            print(f" ❌ bloqueado por Twitter")
+            print(f" ❌ bloqueado")
         elif "398" in err:
-            print(f" ❌ CAPTCHA detectado")
+            print(f" ❌ CAPTCHA")
         elif "429" in err:
             print(f" ❌ rate limited")
         else:
@@ -256,11 +380,8 @@ async def try_login_with_credentials(client, account):
 
 
 async def do_login(client, account_mgr, force_new=False):
-    """Intenta autenticar con Twitter/X usando múltiples métodos."""
-
     # ═══ CI MODE ═══
     if CI_MODE:
-        # Intento 1: Cookies del secret
         if not force_new and load_cookies_from_secret():
             try:
                 client.load_cookies(COOKIES_FILE)
@@ -269,19 +390,15 @@ async def do_login(client, account_mgr, force_new=False):
             except Exception as e:
                 print(f"⚠️  CI: cookies expiradas ({e}). Intentando auto-login...")
 
-        # Intento 2: Login con credenciales de secrets
         if account_mgr.has_accounts():
             print(f"🔄 CI: intentando login con {account_mgr.get_account_count()} cuenta(s)...")
             for _ in range(account_mgr.get_account_count()):
                 account = account_mgr.get_next_account()
                 if await try_login_with_credentials(client, account):
-                    # Guardar cookies para próximas ejecuciones
                     export_cookies_for_ci()
                     return True
                 await asyncio.sleep(5)
-
             print("❌ CI: ninguna cuenta pudo loguearse.")
-
         return False
 
     # ═══ LOCAL MODE ═══
@@ -331,72 +448,21 @@ async def do_login(client, account_mgr, force_new=False):
                 return True
             except Exception as e2:
                 print(f"  ❌ Error importando cookies: {e2}")
-
     return False
 
 
 # ═══════════════════════════════════════════════════════════════
-#  ANÁLISIS DE SENTIMIENTO
-# ═══════════════════════════════════════════════════════════════
-
-def analyze_sentiment(text):
-    """Analiza el sentimiento de un texto."""
-    negative_words = [
-        "error", "problema", "falla", "no funciona", "caída", "lento",
-        "imposible", "frustración", "queja", "demora", "bug", "reclamo",
-        "horrible", "pésimo", "desastre", "inútil", "vergüenza", "mal",
-        "peor", "molesta", "odio", "bronca", "cansado", "harto",
-        "no puedo", "no anda", "se cayó", "no carga", "no sirve",
-        "traba", "cuelga", "actualización", "incompatible", "rechazado",
-        "vencido", "multa", "intimación", "deuda", "apremio", "eliminar",
-        "lastre", "lentisimo", "LPQLP", "carreta", "no funcione",
-        "no cambia", "elimine", "feroces", "no tienen bolas", "dinosaurios",
-        "robo", "roba", "enano", "privilegios", "mierda", "renegando",
-        "Faltan huevos", "Demencial"
-    ]
-    positive_words = [
-        "excelente", "genial", "muy bien", "rápido", "fácil",
-        "perfecto", "útil", "práctico", "mejoró", "mejor",
-        "bueno", "correcto", "ok"
-    ]
-
-    text_lower = text.lower()
-    neg_count = sum(1 for w in negative_words if w.lower() in text_lower)
-    pos_count = sum(1 for w in positive_words if w.lower() in text_lower)
-
-    try:
-        blob = TextBlob(text)
-        tb_polarity = blob.sentiment.polarity
-    except Exception:
-        tb_polarity = 0
-
-    keyword_score = (pos_count - neg_count) * 0.3
-    combined_score = keyword_score + (tb_polarity * 0.2)
-
-    if combined_score > 0.05 or pos_count > neg_count:
-        return "positivo", round(combined_score, 3)
-    elif combined_score < -0.05 or neg_count > pos_count:
-        return "negativo", round(combined_score, 3)
-    else:
-        return "neutro", round(combined_score, 3)
-
-
-# ═══════════════════════════════════════════════════════════════
-#  SCRAPING CON ROTACIÓN DE CUENTAS
+#  SCRAPING
 # ═══════════════════════════════════════════════════════════════
 
 async def scrape_tweets():
-    """Scrapea tweets para cada palabra clave."""
     account_mgr = AccountManager()
     client = Client("es-AR", user_agent=USER_AGENT)
 
     if not await do_login(client, account_mgr):
         print("\n❌ No se pudo autenticar con Twitter/X.")
         if CI_MODE:
-            print("   Opciones:")
-            print("   1. Actualizá TWITTER_COOKIES con setup_cookies.py")
-            print("   2. Agregá TWITTER_ACCOUNTS con credenciales para auto-login")
-            print("   3. Agregá TWITTER_USERNAME + TWITTER_EMAIL + TWITTER_PASSWORD")
+            print("   Revisá los secrets: TWITTER_COOKIES, TWITTER_ACCOUNTS, o TWITTER_USERNAME/PASSWORD")
         else:
             print("   Verificá credenciales o importá cookies del navegador.")
         sys.exit(1)
@@ -415,7 +481,7 @@ async def scrape_tweets():
         print(f"  🔄 {account_mgr.get_account_count()} cuentas disponibles para rotación")
     print("═" * 60)
 
-    rate_limit_count = 0  # Contador de rate limits consecutivos
+    rate_limit_count = 0
 
     for i, keyword in enumerate(KEYWORDS):
         print(f"\n  [{i+1}/{len(KEYWORDS)}] Buscando: #{keyword.upper()}", end="", flush=True)
@@ -424,23 +490,22 @@ async def scrape_tweets():
             "keyword": keyword,
             "posts": [],
             "sentiment_summary": {"positivo": 0, "negativo": 0, "neutro": 0},
+            "emoji_stats": {"total_positive_emojis": 0, "total_negative_emojis": 0, "top_emojis": {}},
             "total_found": 0
         }
 
         try:
             tweet_list = []
+            all_emoji_counter = {}
 
-            # ── Búsqueda inicial ──
             try:
                 tweets = await client.search_tweet(
                     f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
                 )
-                rate_limit_count = 0  # Reset si tuvo éxito
+                rate_limit_count = 0
             except Exception as search_err:
                 err_str = str(search_err)
-
                 if "401" in err_str:
-                    # ── Cookies expiradas: intentar re-login ──
                     print(f" → 401 (sesión expirada)", flush=True)
                     if await do_login(client, account_mgr, force_new=True):
                         tweets = await client.search_tweet(
@@ -448,7 +513,6 @@ async def scrape_tweets():
                         )
                     else:
                         raise Exception("No se pudo reautenticar tras 401")
-
                 elif "404" in err_str:
                     print(f" → 404, reautenticando...", flush=True)
                     if await do_login(client, account_mgr, force_new=True):
@@ -457,13 +521,10 @@ async def scrape_tweets():
                         )
                     else:
                         raise Exception("No se pudo reautenticar tras 404")
-
                 elif "429" in err_str:
                     rate_limit_count += 1
-
-                    # Si hay múltiples cuentas, rotar
                     if account_mgr.has_accounts() and account_mgr.get_account_count() > 1:
-                        print(f" → 429, rotando a otra cuenta...", flush=True)
+                        print(f" → 429, rotando cuenta...", flush=True)
                         client = Client("es-AR", user_agent=USER_AGENT)
                         account = account_mgr.get_next_account()
                         if account and await try_login_with_credentials(client, account):
@@ -474,8 +535,7 @@ async def scrape_tweets():
                         else:
                             raise Exception("No se pudo rotar cuenta tras 429")
                     else:
-                        # Sin cuentas extra: esperar
-                        wait_time = min(60 * rate_limit_count, 300)  # Max 5 min
+                        wait_time = min(60 * rate_limit_count, 300)
                         print(f" → 429, esperando {wait_time}s...", end="", flush=True)
                         await asyncio.sleep(wait_time)
                         tweets = await client.search_tweet(
@@ -484,12 +544,21 @@ async def scrape_tweets():
                 else:
                     raise
 
-            # ── Recolectar tweets con paginación ──
             while tweets:
                 for tweet in tweets:
                     if len(tweet_list) >= MAX_TWEETS_PER_KEYWORD:
                         break
-                    sentiment, score = analyze_sentiment(tweet.text)
+
+                    sentiment, score, emoji_details = analyze_sentiment(tweet.text)
+
+                    # Acumular emojis para estadísticas
+                    for ed in emoji_details:
+                        emoji = ed["emoji"]
+                        all_emoji_counter[emoji] = all_emoji_counter.get(emoji, 0) + ed["count"]
+                        if ed["type"] == "positivo":
+                            keyword_data["emoji_stats"]["total_positive_emojis"] += ed["count"]
+                        else:
+                            keyword_data["emoji_stats"]["total_negative_emojis"] += ed["count"]
 
                     tweet_info = {
                         "id": tweet.id,
@@ -499,6 +568,7 @@ async def scrape_tweets():
                         "date": str(tweet.created_at_datetime) if tweet.created_at_datetime else str(tweet.created_at),
                         "sentiment": sentiment,
                         "sentiment_score": score,
+                        "emojis_found": emoji_details,
                         "likes": tweet.favorite_count or 0,
                         "retweets": tweet.retweet_count or 0,
                         "replies": tweet.reply_count or 0,
@@ -569,9 +639,17 @@ async def scrape_tweets():
             keyword_data["posts"] = tweet_list
             keyword_data["total_found"] = len(tweet_list)
 
+            # Top emojis por keyword
+            top_emojis = sorted(all_emoji_counter.items(), key=lambda x: x[1], reverse=True)[:10]
+            keyword_data["emoji_stats"]["top_emojis"] = dict(top_emojis)
+
             print(f" → {len(tweet_list)} tweets encontrados ✓")
             s = keyword_data["sentiment_summary"]
+            es = keyword_data["emoji_stats"]
             print(f"      Sentimiento: +{s['positivo']} ~{s['neutro']} -{s['negativo']}")
+            if es["total_positive_emojis"] or es["total_negative_emojis"]:
+                top_3 = " ".join([e for e, _ in top_emojis[:5]])
+                print(f"      Emojis: 😊{es['total_positive_emojis']} 😡{es['total_negative_emojis']}  Top: {top_3}")
 
         except Exception as e:
             print(f" → Error: {e}")
@@ -586,7 +664,6 @@ async def scrape_tweets():
 
 
 def save_data(data):
-    """Guarda los datos scrapados en JSON."""
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     docs_data = os.path.join(OUTPUT_DIR, "tweets_data.json")
@@ -596,7 +673,6 @@ def save_data(data):
 
 
 async def main():
-    """Flujo principal de la aplicación."""
     print("\n" + "═" * 60)
     print("  📊 COMARB — Análisis de Sentimiento Twitter/X")
     print("  Sistemas: SIFERE | SIRCAR | SIRPEI | SIRCREB | SIRCUPA | SIRTAC")
@@ -608,23 +684,20 @@ async def main():
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-    # 1. Scraping
     data = await scrape_tweets()
-
-    # 2. Guardar datos
     save_data(data)
 
-    # 3. Generar reporte HTML
     print("\n" + "═" * 60)
     print("  📄 GENERANDO REPORTE HTML")
     print("═" * 60)
     generate_html_report(data, REPORT_FILE)
 
-    # 4. Resumen final
     total_tweets = sum(k["total_found"] for k in data["keywords"])
     total_pos = sum(k["sentiment_summary"]["positivo"] for k in data["keywords"])
     total_neg = sum(k["sentiment_summary"]["negativo"] for k in data["keywords"])
     total_neu = sum(k["sentiment_summary"]["neutro"] for k in data["keywords"])
+    total_emoji_pos = sum(k.get("emoji_stats", {}).get("total_positive_emojis", 0) for k in data["keywords"])
+    total_emoji_neg = sum(k.get("emoji_stats", {}).get("total_negative_emojis", 0) for k in data["keywords"])
 
     print("\n" + "═" * 60)
     print("  ✅ RESUMEN FINAL")
@@ -633,6 +706,7 @@ async def main():
     print(f"  😊 Positivos: {total_pos}")
     print(f"  😐 Neutros: {total_neu}")
     print(f"  😠 Negativos: {total_neg}")
+    print(f"  🎭 Emojis detectados: {total_emoji_pos} positivos, {total_emoji_neg} negativos")
     print(f"\n  📄 Reporte HTML: {os.path.abspath(REPORT_FILE)}")
     print(f"  💾 Datos JSON:   {os.path.abspath(DATA_FILE)}")
 
