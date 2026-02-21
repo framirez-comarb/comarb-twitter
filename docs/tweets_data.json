@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-02-20T15:37:58.423019",
+  "generated_at": "2026-02-21T05:40:18.472812",
   "period": {
     "from": "2026-01-01",
-    "to": "2026-02-20"
+    "to": "2026-02-21"
   },
   "keywords": [
     {
@@ -14,7 +14,7 @@
         "neutro": 0
       },
       "total_found": 0,
-      "error": "status: 404, message: \"\""
+      "error": "No se pudo reautenticar tras 401"
     },
     {
       "keyword": "sifere",
@@ -25,7 +25,7 @@
         "neutro": 0
       },
       "total_found": 0,
-      "error": "status: 404, message: \"\""
+      "error": "No se pudo reautenticar tras 401"
     },
     {
       "keyword": "sircar",
@@ -36,7 +36,7 @@
         "neutro": 0
       },
       "total_found": 0,
-      "error": "status: 404, message: \"\""
+      "error": "No se pudo reautenticar tras 401"
     },
     {
       "keyword": "sirpei",
@@ -47,7 +47,7 @@
         "neutro": 0
       },
       "total_found": 0,
-      "error": "status: 404, message: \"\""
+      "error": "No se pudo reautenticar tras 401"
     },
     {
       "keyword": "sircreb",
@@ -58,7 +58,7 @@
         "neutro": 0
       },
       "total_found": 0,
-      "error": "status: 404, message: \"\""
+      "error": "No se pudo reautenticar tras 401"
     },
     {
       "keyword": "sircupa",
@@ -69,7 +69,7 @@
         "neutro": 0
       },
       "total_found": 0,
-      "error": "status: 404, message: \"\""
+      "error": "No se pudo reautenticar tras 401"
     },
     {
       "keyword": "sirtac",
@@ -80,7 +80,7 @@
         "neutro": 0
       },
       "total_found": 0,
-      "error": "status: 404, message: \"\""
+      "error": "No se pudo reautenticar tras 401"
     }
   ]
 }
