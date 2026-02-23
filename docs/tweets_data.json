@@ -1,13 +1,27 @@
 {
-  "generated_at": "2026-02-22T11:45:11.675773",
+  "generated_at": "2026-02-23T12:05:08.311608",
   "period": {
     "from": "2026-01-01",
-    "to": "2026-02-22"
+    "to": "2026-02-23"
   },
   "keywords": [
     {
       "keyword": "comarb",
       "posts": [
+        {
+          "id": "2025389587871240450",
+          "text": "@ConsejoCABA @Olivitta21 Respondieron q en algunos proveedores de Internet los problemas seguían pero que en la mayoría funcionaba. Se que en caba funciono pero en mi zona ( san miguel) no!  Me pareció cualquiera la rta de comarb. Qm invito a q me mueva d zona",
+          "user": "alita.1287",
+          "username": "1287Pioja",
+          "date": "2026-02-22 01:58:02+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.3,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/1287Pioja/status/2025389587871240450"
+        },
         {
           "id": "2024599459003240827",
           "text": "@ConsejoCABA Ya hice los reclamos en comarb y m dicen q vaya a otro lado a liquidar xq es problema del proveedor  de Internet.. q ellos hoy arreglaron los problema d las mayoría..  unos copados  si no me contacto nunca se q es",
@@ -261,7 +275,7 @@
       ],
       "sentiment_summary": {
         "positivo": 1,
-        "negativo": 8,
+        "negativo": 9,
         "neutro": 8
       },
       "emoji_stats": {
@@ -271,7 +285,7 @@
           "‼️": 2
         }
       },
-      "total_found": 17
+      "total_found": 18
     },
     {
       "keyword": "sifere",
@@ -939,20 +953,6 @@
           "url": "https://x.com/marcela26208477/status/2021964860813455831"
         },
         {
-          "id": "2021958004942516700",
-          "text": "Está funcionando lento sifere ….@BlogDelContador @sistemas_jorge @ComArbitral",
-          "user": "Ariela Romero",
-          "username": "aricero",
-          "date": "2026-02-12 14:42:09+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.3,
-          "emojis_found": [],
-          "likes": 4,
-          "retweets": 2,
-          "replies": 1,
-          "url": "https://x.com/aricero/status/2021958004942516700"
-        },
-        {
           "id": "2021956820634365980",
           "text": "Habrá algún fucking mes que SIFERE WEB funcione bien?!?!\n\nLPQLP! https://t.co/ehzlHUL7uy",
           "user": "agnesdeburns",
@@ -1219,7 +1219,7 @@
       ],
       "sentiment_summary": {
         "positivo": 1,
-        "negativo": 39,
+        "negativo": 38,
         "neutro": 25
       },
       "emoji_stats": {
@@ -1232,11 +1232,25 @@
           "💩": 1
         }
       },
-      "total_found": 65
+      "total_found": 64
     },
     {
       "keyword": "sircar",
       "posts": [
+        {
+          "id": "2025556177208103256",
+          "text": "#BuenDomingo 👋\n\n🧵 Resumen semanal con las novedades impositivas a nivel nacional.\n\n1⃣ Convenio Multilateral – SIRCAR 2026\n\nLa Comisión Arbitral confirmó la modificación de los vencimientos para la segunda quincena de enero, febrero, mayo, julio y octubre 2026, según Disp.",
+          "user": "Errepar",
+          "username": "errepar",
+          "date": "2026-02-22 13:00:00+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.02,
+          "emojis_found": [],
+          "likes": 3,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/errepar/status/2025556177208103256"
+        },
         {
           "id": "2024508669837398143",
           "text": "@RetroMoviesDB Tiya Sircar https://t.co/RDoiwnHh7Z",
@@ -1527,7 +1541,7 @@
       "sentiment_summary": {
         "positivo": 1,
         "negativo": 2,
-        "neutro": 17
+        "neutro": 18
       },
       "emoji_stats": {
         "total_positive_emojis": 4,
@@ -1536,7 +1550,7 @@
           "🥳": 4
         }
       },
-      "total_found": 20
+      "total_found": 21
     },
     {
       "keyword": "sirpei",
@@ -1600,6 +1614,34 @@
       "keyword": "sircreb",
       "posts": [
         {
+          "id": "2025570114943238496",
+          "text": "@frigeriorogelio Rogelio, bajá los impuestos, SIRCREB se come la plata de las empresas, los impuestos a patentes e inmobiliarios son r altos, ahora metieron la eliminación de la exención de 5 años de patente a híbridos, estamos cansados",
+          "user": "Pammpa",
+          "username": "pammpa30",
+          "date": "2026-02-22 13:55:23+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.3,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/pammpa30/status/2025570114943238496"
+        },
+        {
+          "id": "2025364110708253008",
+          "text": "@alejobongio Y terminar con el nefasto SIRCREB, una estafa",
+          "user": "Diego",
+          "username": "hermosadivina72",
+          "date": "2026-02-22 00:16:48+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 1,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/hermosadivina72/status/2025364110708253008"
+        },
+        {
           "id": "2025341161506759038",
           "text": "@alejobongio @gispatagonia Eso lo podes exigir cuando el gobierno dé el ejemplo y no le patee toda la gestión a las Pcias sin hacer el primero el ajuste ni realizar obras \nDe roba el impuesto a los combustibles y las Pcias deben hacer caminos y rutas \nGcias xq no bajo el gobierno su porcentaje? Sircreb?",
           "user": "Suzuki",
@@ -1608,7 +1650,7 @@
           "sentiment": "negativo",
           "sentiment_score": -0.3,
           "emojis_found": [],
-          "likes": 0,
+          "likes": 2,
           "retweets": 0,
           "replies": 1,
           "url": "https://x.com/SusukiOpina/status/2025341161506759038"
@@ -1624,7 +1666,7 @@
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
-          "replies": 1,
+          "replies": 2,
           "url": "https://x.com/camela_ben16544/status/2025286938568040750"
         },
         {
@@ -3438,7 +3480,7 @@
           "sentiment": "neutro",
           "sentiment_score": 0.0,
           "emojis_found": [],
-          "likes": 296,
+          "likes": 297,
           "retweets": 88,
           "replies": 18,
           "url": "https://x.com/diegotefraga/status/2020859402425630741"
@@ -3578,7 +3620,7 @@
           "sentiment": "neutro",
           "sentiment_score": 0.0,
           "emojis_found": [],
-          "likes": 516,
+          "likes": 515,
           "retweets": 53,
           "replies": 43,
           "url": "https://x.com/moreno_2023/status/2020587236228751786"
@@ -4394,40 +4436,12 @@
           "retweets": 0,
           "replies": 1,
           "url": "https://x.com/SusukiOpina/status/2018635359199056025"
-        },
-        {
-          "id": "2018614120166359226",
-          "text": "El SIRCREB no es un impuesto. La Pampa adhirió en octubre de 2004 y en julio de 2006 incorporó a los contribuyentes locales. Es ilegal, abusivo y una violación a la propiedad privada del contribuyente.\nEl SIRCREB DEBE ELIMINARSE CUANTO ANTES!\n@fedesturze @AdrianRavier",
-          "user": "Miguel Sole",
-          "username": "migueljsole",
-          "date": "2026-02-03 09:14:44+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.3,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/migueljsole/status/2018614120166359226"
-        },
-        {
-          "id": "2018486880510075183",
-          "text": "Si quieren que las Provincias empiecen a pensar en serio en bajar y eventualmente eliminar IIBB, deberían empezar por apagarles el SIRCREB",
-          "user": "Alejandro🇦🇷📈📊",
-          "username": "AOlaguerF",
-          "date": "2026-02-03 00:49:08+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.3,
-          "emojis_found": [],
-          "likes": 1,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/AOlaguerF/status/2018486880510075183"
         }
       ],
       "sentiment_summary": {
         "positivo": 13,
-        "negativo": 63,
-        "neutro": 124
+        "negativo": 62,
+        "neutro": 125
       },
       "emoji_stats": {
         "total_positive_emojis": 5,
