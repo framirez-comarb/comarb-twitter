@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-02-23T12:05:08.311608",
+  "generated_at": "2026-02-24T14:35:18.319904",
   "period": {
     "from": "2026-01-01",
-    "to": "2026-02-23"
+    "to": "2026-02-24"
   },
   "keywords": [
     {
@@ -803,7 +803,7 @@
           "emojis_found": [],
           "likes": 2,
           "retweets": 0,
-          "replies": 2,
+          "replies": 3,
           "url": "https://x.com/virginiacopello/status/2022324846512705866"
         },
         {
@@ -1238,6 +1238,20 @@
       "keyword": "sircar",
       "posts": [
         {
+          "id": "2026030857199186071",
+          "text": "Sircreb, sircar, Sirtac y todo con sir",
+          "user": "GABI C 👩🏼‍💻🦋🌟🐕💖",
+          "username": "GabiC2020",
+          "date": "2026-02-23 20:26:12+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 4,
+          "retweets": 1,
+          "replies": 0,
+          "url": "https://x.com/GabiC2020/status/2026030857199186071"
+        },
+        {
           "id": "2025556177208103256",
           "text": "#BuenDomingo 👋\n\n🧵 Resumen semanal con las novedades impositivas a nivel nacional.\n\n1⃣ Convenio Multilateral – SIRCAR 2026\n\nLa Comisión Arbitral confirmó la modificación de los vencimientos para la segunda quincena de enero, febrero, mayo, julio y octubre 2026, según Disp.",
           "user": "Errepar",
@@ -1541,7 +1555,7 @@
       "sentiment_summary": {
         "positivo": 1,
         "negativo": 2,
-        "neutro": 18
+        "neutro": 19
       },
       "emoji_stats": {
         "total_positive_emojis": 4,
@@ -1550,7 +1564,7 @@
           "🥳": 4
         }
       },
-      "total_found": 21
+      "total_found": 22
     },
     {
       "keyword": "sirpei",
@@ -1614,6 +1628,160 @@
       "keyword": "sircreb",
       "posts": [
         {
+          "id": "2026073851134632152",
+          "text": "@Natalin441 @LuisCaputoAR @JMilei @MenemMartin @cristianritondo @SilvanaGiudici El SIRCREB, se puede eliminar x decreto, ya q no afecta la recaudacion de las provincias, sino su forma de pago.\nEs imperativo, ultra necesario y URGENTE.",
+          "user": "martinvalerio",
+          "username": "martinv1688",
+          "date": "2026-02-23 23:17:03+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.3,
+          "emojis_found": [],
+          "likes": 7,
+          "retweets": 1,
+          "replies": 0,
+          "url": "https://x.com/martinv1688/status/2026073851134632152"
+        },
+        {
+          "id": "2026036427117535308",
+          "text": "@Natalin441 @LuisCaputoAR @JMilei @MenemMartin @cristianritondo @SilvanaGiudici sircreb e imp ley, para arrancar, sino pasa esto es parche",
+          "user": "Damian",
+          "username": "damian_hamdan",
+          "date": "2026-02-23 20:48:20+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 2,
+          "retweets": 1,
+          "replies": 0,
+          "url": "https://x.com/damian_hamdan/status/2026036427117535308"
+        },
+        {
+          "id": "2026035872387199167",
+          "text": "@madorni \"Que nadie se quede con lo que es tuyo\"\nELIMINEN EL SIRCREB ENTONCES!!!!!!!!!!!!!!!!!",
+          "user": "Correcaminos",
+          "username": "gordosavora",
+          "date": "2026-02-23 20:46:08+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.3,
+          "emojis_found": [],
+          "likes": 1,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/gordosavora/status/2026035872387199167"
+        },
+        {
+          "id": "2026030857199186071",
+          "text": "Sircreb, sircar, Sirtac y todo con sir",
+          "user": "GABI C 👩🏼‍💻🦋🌟🐕💖",
+          "username": "GabiC2020",
+          "date": "2026-02-23 20:26:12+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 4,
+          "retweets": 1,
+          "replies": 0,
+          "url": "https://x.com/GabiC2020/status/2026030857199186071"
+        },
+        {
+          "id": "2026029346167611522",
+          "text": "@fedesturze @LuisCaputoAR Genial y el SIRCREB?",
+          "user": "CONDOR🆗",
+          "username": "condorlois",
+          "date": "2026-02-23 20:20:12+00:00",
+          "sentiment": "positivo",
+          "sentiment_score": 0.3,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/condorlois/status/2026029346167611522"
+        },
+        {
+          "id": "2026022700959809829",
+          "text": "@dosinaga2 El dólar baja pero los servicios suben \nComerciante es lo q más incide ademas de expensas si es galería o shopping y ni hablar el Sircreb \nSi no sabes instruiré antes de opinar",
+          "user": "Suzuki",
+          "username": "SusukiOpina",
+          "date": "2026-02-23 19:53:48+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 1,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/SusukiOpina/status/2026022700959809829"
+        },
+        {
+          "id": "2025992974547530082",
+          "text": "@ImpuestosyE Si no reactiva la economía el año que viene chau. No hay motivo de mantenerlo. Último año de gracia, aunque la reforma laboral sacando derechos a trabajadores y chupando pijas a gobernadores bajo muchos puntos. Espero que los que viven de iibb y SIRCREB lo voten 100%",
+          "user": "Mariano Lacuadra",
+          "username": "Nanodecalchin",
+          "date": "2026-02-23 17:55:40+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.3,
+          "emojis_found": [],
+          "likes": 2,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/Nanodecalchin/status/2025992974547530082"
+        },
+        {
+          "id": "2025989964580655294",
+          "text": "REFORMA TRIBUTARIA, Debe contener si o si la eliminacion del SIRCREB bancario.\n\nNo puede ser que cobren por cada peso que entra en las cuentas bancarias. \n\nDIGAMOS BASTA!\n\n@LuisCaputoAR @JMilei @MenemMartin @cristianritondo @SilvanaGiudici \n\nRT RT",
+          "user": "Natalin",
+          "username": "Natalin441",
+          "date": "2026-02-23 17:43:43+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 1183,
+          "retweets": 407,
+          "replies": 37,
+          "url": "https://x.com/Natalin441/status/2025989964580655294"
+        },
+        {
+          "id": "2025947592702538138",
+          "text": "@cristiannmillo Muerte al SIRCREB por favor",
+          "user": "Maxi Cavalera 🔴⚫️⭐️",
+          "username": "maxicavalera",
+          "date": "2026-02-23 14:55:21+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 3,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/maxicavalera/status/2025947592702538138"
+        },
+        {
+          "id": "2025944480889581609",
+          "text": "@cristiannmillo Hay que lograr una reforma que adhieran las provincias que bajen 20% IIBB en 2026-2027\nSi Entre Rios puede hacerlo lo pueden hacer Córdoba Santa Fe Caba \nY eliminar el SIRCREB yaaaa\nBasta de retenciones de IVA IIBB",
+          "user": "Robert",
+          "username": "roberto_Lod",
+          "date": "2026-02-23 14:42:59+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.3,
+          "emojis_found": [],
+          "likes": 17,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/roberto_Lod/status/2025944480889581609"
+        },
+        {
+          "id": "2025944466356367468",
+          "text": "@criptonewslatam @cristiannmillo Y sircreb",
+          "user": "Mariano Lacuadra",
+          "username": "Nanodecalchin",
+          "date": "2026-02-23 14:42:55+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/Nanodecalchin/status/2025944466356367468"
+        },
+        {
           "id": "2025570114943238496",
           "text": "@frigeriorogelio Rogelio, bajá los impuestos, SIRCREB se come la plata de las empresas, los impuestos a patentes e inmobiliarios son r altos, ahora metieron la eliminación de la exención de 5 años de patente a híbridos, estamos cansados",
           "user": "Pammpa",
@@ -1650,7 +1818,7 @@
           "sentiment": "negativo",
           "sentiment_score": -0.3,
           "emojis_found": [],
-          "likes": 2,
+          "likes": 3,
           "retweets": 0,
           "replies": 1,
           "url": "https://x.com/SusukiOpina/status/2025341161506759038"
@@ -3410,7 +3578,7 @@
           "sentiment": "neutro",
           "sentiment_score": 0.0,
           "emojis_found": [],
-          "likes": 352,
+          "likes": 351,
           "retweets": 53,
           "replies": 10,
           "url": "https://x.com/diegotefraga/status/2020955562385735873"
@@ -3480,7 +3648,7 @@
           "sentiment": "neutro",
           "sentiment_score": 0.0,
           "emojis_found": [],
-          "likes": 297,
+          "likes": 296,
           "retweets": 88,
           "replies": 18,
           "url": "https://x.com/diegotefraga/status/2020859402425630741"
@@ -3620,7 +3788,7 @@
           "sentiment": "neutro",
           "sentiment_score": 0.0,
           "emojis_found": [],
-          "likes": 515,
+          "likes": 516,
           "retweets": 53,
           "replies": 43,
           "url": "https://x.com/moreno_2023/status/2020587236228751786"
@@ -4282,166 +4450,12 @@
           "retweets": 0,
           "replies": 0,
           "url": "https://x.com/ManuDesantisok/status/2019208892119675046"
-        },
-        {
-          "id": "2019187066177999324",
-          "text": "@ChefPacoAlmeida Fíjate porque te están percibiendo en varias jurisdicciones. En algún momento debes haber estado inscripto. Sino entra en https://t.co/cQPYlsoqBA y con tu cuit sabes quienes te están reteniendo",
-          "user": "Fer",
-          "username": "fernandofaba",
-          "date": "2026-02-04 23:11:25+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 2,
-          "retweets": 0,
-          "replies": 1,
-          "url": "https://x.com/fernandofaba/status/2019187066177999324"
-        },
-        {
-          "id": "2019164426553946472",
-          "text": "@laromadelsur Hay q generalizarlo para que salgan los dólares del colchón.\nLos dólares salen por estímulo.\nPropongo que bajen el impuesto al CH para transacciones en dólares y tope o eliminación de sircreb, etc.",
-          "user": "dani33",
-          "username": "danipala33",
-          "date": "2026-02-04 21:41:28+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 4,
-          "retweets": 1,
-          "replies": 0,
-          "url": "https://x.com/danipala33/status/2019164426553946472"
-        },
-        {
-          "id": "2019102605809709496",
-          "text": "@HoracioCabak @WalhallaMann @fedesturze Y también pregúntale por el ROBO del SIRCREB, se tiene que terminar eso, es una ESTAFA",
-          "user": "Diego",
-          "username": "hermosadivina72",
-          "date": "2026-02-04 17:35:48+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.3,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/hermosadivina72/status/2019102605809709496"
-        },
-        {
-          "id": "2019084610777342217",
-          "text": "@ChefPacoAlmeida Y cuando al supermercado se le acredite en su cuenta esos 22 mil. Sacan con débitos y crédito + otra vez retenciones de IIBB con el famoso y nefasto SIRCREB. \nToda se va a los bolsillos de los gobernantes de turno no importa el color político. Al pueblo no le vuelve un mango",
-          "user": "Pablo Patrault",
-          "username": "PPatrault",
-          "date": "2026-02-04 16:24:18+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 1,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/PPatrault/status/2019084610777342217"
-        },
-        {
-          "id": "2019040364351586419",
-          "text": "@fedesturze @UIAok Mira, con SOLO bajar o eliminar los sistemas de recaudación anticipada de impuestos (IIBB, aduana, SIRCREB), bajar la tasa de interés a 20 puntos, habremos avanzado varios casilleros.",
-          "user": "Pyme Acuartelada 🇦🇷🇵🇾🇺🇾🇺🇸",
-          "username": "losquepagamos",
-          "date": "2026-02-04 13:28:29+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 24,
-          "retweets": 1,
-          "replies": 1,
-          "url": "https://x.com/losquepagamos/status/2019040364351586419"
-        },
-        {
-          "id": "2018895238459257157",
-          "text": "@Cadena3_Rosario Empezá sacando el sircreb, baja ingresos brutos, esa es la forma de cuidar las pymes",
-          "user": "Diego Sauret",
-          "username": "DiegoSauret",
-          "date": "2026-02-04 03:51:48+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 2,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/DiegoSauret/status/2018895238459257157"
-        },
-        {
-          "id": "2018861966392177143",
-          "text": "@BlogDelContador Amargo como SIRCREB al 5%",
-          "user": "gastondip",
-          "username": "gastondip",
-          "date": "2026-02-04 01:39:36+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 1,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/gastondip/status/2018861966392177143"
-        },
-        {
-          "id": "2018810340822434123",
-          "text": "@SusukiOpina @javierlanari @monisame Padecen sircreb, debito/crédito,  tasa hig y seguridad, 931, ART, juicios,  tasa de residuos, habilitacion asp, gaseosos, líquidos, tasa impacto ambiental,  y demas... pero el problema es que las pymes son usureras con los precios... el gobierno es un santo!",
-          "user": "Lalo Padron",
-          "username": "sinmas_tlg",
-          "date": "2026-02-03 22:14:27+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.3,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/sinmas_tlg/status/2018810340822434123"
-        },
-        {
-          "id": "2018798429108150541",
-          "text": "@DoctorKruz @Graciel74063965 Sircreb q funde q pymes y comercios q facturan en blanco y con tarjeta",
-          "user": "Suzuki",
-          "username": "SusukiOpina",
-          "date": "2026-02-03 21:27:07+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 2,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/SusukiOpina/status/2018798429108150541"
-        },
-        {
-          "id": "2018771180585369864",
-          "text": "@hernanlacunza Patético si no bajan el Sircreb q mata pymes y comercios \nEso están negociando y ya sabemos q lo q se co participa no se saca mas",
-          "user": "Suzuki",
-          "username": "SusukiOpina",
-          "date": "2026-02-03 19:38:51+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 2,
-          "retweets": 1,
-          "replies": 0,
-          "url": "https://x.com/SusukiOpina/status/2018771180585369864"
-        },
-        {
-          "id": "2018635359199056025",
-          "text": "@javierlanari @monisame Y los puestos de trabajo q se pierden ? \nEso no los absorbe la minería, energía o el campo \nSe nota q mucho no sabes del sector privado \nSi ese es el plan lo debes hacer gradual xq una pyme y comercio sigue padeciendo el Sircreb y no puede competir",
-          "user": "Suzuki",
-          "username": "SusukiOpina",
-          "date": "2026-02-03 10:39:08+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.3,
-          "emojis_found": [],
-          "likes": 3,
-          "retweets": 0,
-          "replies": 1,
-          "url": "https://x.com/SusukiOpina/status/2018635359199056025"
         }
       ],
       "sentiment_summary": {
-        "positivo": 13,
-        "negativo": 62,
-        "neutro": 125
+        "positivo": 14,
+        "negativo": 63,
+        "neutro": 123
       },
       "emoji_stats": {
         "total_positive_emojis": 5,
@@ -4458,6 +4472,20 @@
     {
       "keyword": "sircupa",
       "posts": [
+        {
+          "id": "2026081055036363246",
+          "text": "@DiPace4 El problema de la gente piensa que recibe plata por transferencia no tiene que facturar porque ya le cobraron la retención impuesto ingreso bruto sircupa (bsas)",
+          "user": "J",
+          "username": "J3rlin19886",
+          "date": "2026-02-23 23:45:40+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.3,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/J3rlin19886/status/2026081055036363246"
+        },
         {
           "id": "2024675991042269477",
           "text": "@leoncito_abrazo al día siguiente hay que dar de baja el sicreb, sircupa y todas esas mierdas",
@@ -4811,7 +4839,7 @@
       ],
       "sentiment_summary": {
         "positivo": 1,
-        "negativo": 6,
+        "negativo": 7,
         "neutro": 18
       },
       "emoji_stats": {
@@ -4819,11 +4847,25 @@
         "total_negative_emojis": 0,
         "top_emojis": {}
       },
-      "total_found": 25
+      "total_found": 26
     },
     {
       "keyword": "sirtac",
       "posts": [
+        {
+          "id": "2026030857199186071",
+          "text": "Sircreb, sircar, Sirtac y todo con sir",
+          "user": "GABI C 👩🏼‍💻🦋🌟🐕💖",
+          "username": "GabiC2020",
+          "date": "2026-02-23 20:26:12+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 4,
+          "retweets": 1,
+          "replies": 0,
+          "url": "https://x.com/GabiC2020/status/2026030857199186071"
+        },
         {
           "id": "2024961794142601540",
           "text": "@dzapatillas No, hace 3 meses lo dimos (lo di) porque el sistema es muy malo, los pagos son por cantidad de días habiles, sirtac, sircreb, débito y crédito, iibb 2.5% caba, iva, percepción de iva. Para pymes payway no rinde en absoluto.",
@@ -4918,7 +4960,7 @@
       "sentiment_summary": {
         "positivo": 0,
         "negativo": 3,
-        "neutro": 3
+        "neutro": 4
       },
       "emoji_stats": {
         "total_positive_emojis": 0,
@@ -4927,7 +4969,7 @@
           "🤷": 1
         }
       },
-      "total_found": 6
+      "total_found": 7
     }
   ]
 }
