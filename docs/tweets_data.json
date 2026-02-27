@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-02-26T14:16:33.250400",
+  "generated_at": "2026-02-27T11:59:00.523215",
   "period": {
     "from": "2026-01-01",
-    "to": "2026-02-26"
+    "to": "2026-02-27"
   },
   "keywords": [
     {
@@ -1628,6 +1628,118 @@
       "keyword": "sircreb",
       "posts": [
         {
+          "id": "2027152117035639176",
+          "text": "@germanfermo Mientras rija el sircreb seguiremos rehenes",
+          "user": "claudio paya",
+          "username": "CGPaya",
+          "date": "2026-02-26 22:41:42+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/CGPaya/status/2027152117035639176"
+        },
+        {
+          "id": "2027109829798482026",
+          "text": "@BlogDelContador Será que toman el total recaudado por SIRCREB para estimar las ventas?",
+          "user": "Isidoro Franco",
+          "username": "IsidoroFranco",
+          "date": "2026-02-26 19:53:39+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/IsidoroFranco/status/2027109829798482026"
+        },
+        {
+          "id": "2027081871062868008",
+          "text": "@RespOficial_Arg Che, entonces eliminen el sircreb y el impuesto al cheque, porque cada vez que le transfiero o me transfiere mi esposa me sacan plata.",
+          "user": "Melon Usk",
+          "username": "Pertinais",
+          "date": "2026-02-26 18:02:34+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.3,
+          "emojis_found": [],
+          "likes": 5,
+          "retweets": 3,
+          "replies": 1,
+          "url": "https://x.com/Pertinais/status/2027081871062868008"
+        },
+        {
+          "id": "2027054608275714530",
+          "text": "@esteban_a_secas @BlogDelContador @RespOficial_Arg Cuando me pase a monotributo unificado fue un antes y un después, no aplica ni sircreb ni sircupa.\n. Nada de retención a cuenta como si fuera un delincuente.",
+          "user": "Fernando",
+          "username": "origonero",
+          "date": "2026-02-26 16:14:14+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/origonero/status/2027054608275714530"
+        },
+        {
+          "id": "2026980111874920527",
+          "text": "@TenkanTrading @qubit_sgr Totalmente en desacuerdo.\n\nPrimero que puede entrar dinero por otros motivos que no sean ventas, lo cual no es evasión. Mismo principio que SIRCREB.\n\nSegundo, con el nivel de evasión que hay, decir que te encuentran es un chiste.\n\nSi no estás inscripto, no te recategorizan",
+          "user": "Lisandro Ongay",
+          "username": "sardonob",
+          "date": "2026-02-26 11:18:12+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 1,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/sardonob/status/2026980111874920527"
+        },
+        {
+          "id": "2026964285549658289",
+          "text": "@ImpuestosyE Tienen que sacar impuestos que verdaderamente hacen la diferencia. Débitos y créditos, sircreb, IVA tenemos 21% que es una locura, iibb",
+          "user": "Alejandro",
+          "username": "SSalesito",
+          "date": "2026-02-26 10:15:19+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/SSalesito/status/2026964285549658289"
+        },
+        {
+          "id": "2026925568248127815",
+          "text": "@ImpuestosyE No sacan Sircreb ni gcias aunque sea la parte nacional",
+          "user": "Suzuki",
+          "username": "SusukiOpina",
+          "date": "2026-02-26 07:41:28+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 2,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/SusukiOpina/status/2026925568248127815"
+        },
+        {
+          "id": "2026819431439994987",
+          "text": "@tunykollmann @parrillimarcelo Lo mismo q hace el sircreb. Te retienen sin criterio",
+          "user": "Laura Calogero GdD",
+          "username": "lauracalogero",
+          "date": "2026-02-26 00:39:43+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/lauracalogero/status/2026819431439994987"
+        },
+        {
           "id": "2026807964649091199",
           "text": "@atucumanado No son los peores, somos de las pocas provincias que no tiene sircreb",
           "user": "Gonzalo P",
@@ -1636,7 +1748,7 @@
           "sentiment": "negativo",
           "sentiment_score": -0.3,
           "emojis_found": [],
-          "likes": 1,
+          "likes": 2,
           "retweets": 0,
           "replies": 0,
           "url": "https://x.com/GonchipV2/status/2026807964649091199"
@@ -1682,20 +1794,6 @@
           "retweets": 0,
           "replies": 0,
           "url": "https://x.com/fedemengelle/status/2026708030767640864"
-        },
-        {
-          "id": "2026700456706146554",
-          "text": "@lacha @hamaxx1 Exacto, banco Galicia, 50 hojas, 5 operaciones comerciales, por hoja el resto:\n-Comisiones.\n-Impuestos al cheque.\n-SIRCREB\n-IIBB Misiones\n-IIBB Tucumán.\n-IVA\n-Impuestos al cheque sobre:\n     IIBB\n     Comisiones.\n     Pago de impuesto\n     Sueldos.",
-          "user": "El Republicano",
-          "username": "osvaldobru",
-          "date": "2026-02-25 16:46:57+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/osvaldobru/status/2026700456706146554"
         },
         {
           "id": "2026673155482259939",
@@ -1762,7 +1860,7 @@
           "sentiment": "negativo",
           "sentiment_score": -0.6,
           "emojis_found": [],
-          "likes": 18,
+          "likes": 19,
           "retweets": 1,
           "replies": 2,
           "url": "https://x.com/boogieboomp/status/2026433904635171277"
@@ -4054,7 +4152,7 @@
           "sentiment": "neutro",
           "sentiment_score": 0.0,
           "emojis_found": [],
-          "likes": 48,
+          "likes": 47,
           "retweets": 4,
           "replies": 5,
           "url": "https://x.com/leoncordobe/status/2020595458498810059"
@@ -4352,110 +4450,12 @@
           "retweets": 0,
           "replies": 0,
           "url": "https://x.com/FerDeLuca1975/status/2019487854720659622"
-        },
-        {
-          "id": "2019487842552963514",
-          "text": "@deAndreis Sircreb mata al comercio y fomenta la facturación en negro \nLlega a ser de 1,8% si das un cheque para pagar proveedores con lo q se actedita",
-          "user": "Suzuki",
-          "username": "SusukiOpina",
-          "date": "2026-02-05 19:06:36+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/SusukiOpina/status/2019487842552963514"
-        },
-        {
-          "id": "2019483143565185050",
-          "text": "Que paso? Quitaron el impuesto a los débitos y créditos y dinamitaron SIRCREB?",
-          "user": "¿Asi Cambia Jujuy?",
-          "username": "AsiCambiaJujuy",
-          "date": "2026-02-05 18:47:56+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/AsiCambiaJujuy/status/2019483143565185050"
-        },
-        {
-          "id": "2019482697035292734",
-          "text": "@PregoneroL @MiguelPichetto @PregoneroL lo viste a Paolo pidiendo la baja de las tasas de seguridad e higiene que cobran los municipios? O la baja de IIBB o del SIRCREB?",
-          "user": "¿Asi Cambia Jujuy?",
-          "username": "AsiCambiaJujuy",
-          "date": "2026-02-05 18:46:09+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 1,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/AsiCambiaJujuy/status/2019482697035292734"
-        },
-        {
-          "id": "2019481947811074349",
-          "text": "@PregoneroL @pbarbieri En ICBC por cada retención de SIRCREB te descuentan impuesto al débito. Demencial",
-          "user": "¿Asi Cambia Jujuy?",
-          "username": "AsiCambiaJujuy",
-          "date": "2026-02-05 18:43:11+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.3,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/AsiCambiaJujuy/status/2019481947811074349"
-        },
-        {
-          "id": "2019475852027716067",
-          "text": "@fededomin Esto tiene que convertirse en IVA provincial por las buenas o por las malas reventando sircreb",
-          "user": "Rodrigo",
-          "username": "DeMotuCordis_",
-          "date": "2026-02-05 18:18:57+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.3,
-          "emojis_found": [],
-          "likes": 3,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/DeMotuCordis_/status/2019475852027716067"
-        },
-        {
-          "id": "2019475229525848341",
-          "text": "@minombreesgago @BlogDelContador @ChefPacoAlmeida No tenés ni idea.\n1) Al SIRCREB no te ingresan por incumplimientos, sino porque vendés en distintas . De hecho tengo certificado MiPyME que se le da a las empresas que tienen las cosas al  día.\n2) Las facturas las hace la AFIP, tengo convenio multilateral, todo lo facturado en",
-          "user": "Raiden",
-          "username": "tinteroar",
-          "date": "2026-02-05 18:16:29+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.02,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 1,
-          "url": "https://x.com/tinteroar/status/2019475229525848341"
-        },
-        {
-          "id": "2019468041025695975",
-          "text": "@RespOficial_Arg Es verdad que por activar estos nodos de ñoquis NUNCA van a desactivar el sircreb? Saludos al parasito dé desregulacion que solo desregula verga !",
-          "user": "CONDOR🆗",
-          "username": "condorlois",
-          "date": "2026-02-05 17:47:55+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/condorlois/status/2019468041025695975"
         }
       ],
       "sentiment_summary": {
         "positivo": 13,
-        "negativo": 66,
-        "neutro": 121
+        "negativo": 65,
+        "neutro": 122
       },
       "emoji_stats": {
         "total_positive_emojis": 5,
@@ -4472,6 +4472,34 @@
     {
       "keyword": "sircupa",
       "posts": [
+        {
+          "id": "2027054608275714530",
+          "text": "@esteban_a_secas @BlogDelContador @RespOficial_Arg Cuando me pase a monotributo unificado fue un antes y un después, no aplica ni sircreb ni sircupa.\n. Nada de retención a cuenta como si fuera un delincuente.",
+          "user": "Fernando",
+          "username": "origonero",
+          "date": "2026-02-26 16:14:14+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/origonero/status/2027054608275714530"
+        },
+        {
+          "id": "2027033588428922896",
+          "text": "@DiegoMT991 @renapiermarini @Loop142 Ya se. El tema es el gasto en tramites que hay que hacer.\n\nCómo el que tengo con misiones para que entiendan que no vivo en misiones ni le vendo nada a misioneros como para estar en Sircupa (se expiden en 180 días).",
+          "user": "SoydeAka",
+          "username": "AkaSoyde",
+          "date": "2026-02-26 14:50:42+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/AkaSoyde/status/2027033588428922896"
+        },
         {
           "id": "2026352825114968098",
           "text": "@lacha @lacha  es cuenta de banco nación 😅😅 nada mas chorro que el estado mismo.. me pasa igual.. bna me cobra sircupa aún transfiriendo desde Santander de mi propia cuenta.  Que ya me lo retuvo.. son todos estafadores . Y Caputo te dice que confíes en bna .. increíble.",
@@ -4854,18 +4882,32 @@
       "sentiment_summary": {
         "positivo": 1,
         "negativo": 7,
-        "neutro": 19
+        "neutro": 21
       },
       "emoji_stats": {
         "total_positive_emojis": 0,
         "total_negative_emojis": 0,
         "top_emojis": {}
       },
-      "total_found": 27
+      "total_found": 29
     },
     {
       "keyword": "sirtac",
       "posts": [
+        {
+          "id": "2026998483463311709",
+          "text": "@diegotefraga En la mayoría de los casos son compras y ventas x plataformas virtuales que sufrieron SIRTAC xero no se facturaron durante años.\nAhora el timming es pésimo y recuerda al 2018.",
+          "user": "Snake",
+          "username": "LeathalWhisper",
+          "date": "2026-02-26 12:31:12+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.3,
+          "emojis_found": [],
+          "likes": 3,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/LeathalWhisper/status/2026998483463311709"
+        },
         {
           "id": "2026101475433132341",
           "text": "@flatteryARG Ganancia no es problema, incluso el iva 21% es tolerable (brasil tiene 26%), el problema es y será ingresos butros y todo el sistema que lo rodea, sirtac, sircreb, percepciones y retenciones. Este costo representa en muchos casos el 30%, financiamos las provincias vía Percep.",
@@ -4987,7 +5029,7 @@
       ],
       "sentiment_summary": {
         "positivo": 0,
-        "negativo": 4,
+        "negativo": 5,
         "neutro": 4
       },
       "emoji_stats": {
@@ -4997,7 +5039,7 @@
           "🤷": 1
         }
       },
-      "total_found": 8
+      "total_found": 9
     }
   ]
 }
