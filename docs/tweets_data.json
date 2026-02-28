@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-02-27T11:59:00.523215",
+  "generated_at": "2026-02-28T11:36:56.409571",
   "period": {
     "from": "2026-01-01",
-    "to": "2026-02-27"
+    "to": "2026-02-28"
   },
   "keywords": [
     {
@@ -1238,6 +1238,20 @@
       "keyword": "sircar",
       "posts": [
         {
+          "id": "2027337454156718277",
+          "text": "@Mahesh10816 45 engine Sircar",
+          "user": "Terminatos",
+          "username": "resurrecteqk",
+          "date": "2026-02-27 10:58:09+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/resurrecteqk/status/2027337454156718277"
+        },
+        {
           "id": "2026030857199186071",
           "text": "Sircreb, sircar, Sirtac y todo con sir",
           "user": "GABI C 👩🏼‍💻🦋🌟🐕💖",
@@ -1555,7 +1569,7 @@
       "sentiment_summary": {
         "positivo": 1,
         "negativo": 2,
-        "neutro": 19
+        "neutro": 20
       },
       "emoji_stats": {
         "total_positive_emojis": 4,
@@ -1564,7 +1578,7 @@
           "🥳": 4
         }
       },
-      "total_found": 22
+      "total_found": 23
     },
     {
       "keyword": "sirpei",
@@ -1628,6 +1642,146 @@
       "keyword": "sircreb",
       "posts": [
         {
+          "id": "2027486155323691107",
+          "text": "@sardonob @BlogDelContador Volvé a leer el posteo. Arca toma un elemento objetivo para cumplir con la LPT ingresos no facturados. Que tiene que ver sircreb en este tema?",
+          "user": "El Pasante🤹🏻‍♀️🍷🔜",
+          "username": "elpasante_ok",
+          "date": "2026-02-27 20:49:02+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/elpasante_ok/status/2027486155323691107"
+        },
+        {
+          "id": "2027473328953294971",
+          "text": "@elpasante_ok @BlogDelContador Vos decís que uno es culpable hasta que demuestre ser inocente.\n\nLa presunción de inocencia esa en la CN.\n\nHay muchos casos que tienen acreditaciones por otros motivos, no por facturación, y los recategorizaron igual.\n\nPara vos estaría bien el sistema SIRCREB entonces",
+          "user": "Lisandro Ongay",
+          "username": "sardonob",
+          "date": "2026-02-27 19:58:04+00:00",
+          "sentiment": "positivo",
+          "sentiment_score": 0.3,
+          "emojis_found": [],
+          "likes": 2,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/sardonob/status/2027473328953294971"
+        },
+        {
+          "id": "2027438195072180469",
+          "text": "@fedesturze @BatmanDC1976 Todo humo para los gordos virgos , SIRCREB, IIBB e IVA 15% es lo importante",
+          "user": "CONDOR🆗",
+          "username": "condorlois",
+          "date": "2026-02-27 17:38:28+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/condorlois/status/2027438195072180469"
+        },
+        {
+          "id": "2027410715967983801",
+          "text": "@ImpuestosyE Con saldos a favor crecientes mes a mes!!! Ret, percep, sircreb...",
+          "user": "Raúl Rauch",
+          "username": "cotorauch",
+          "date": "2026-02-27 15:49:16+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 1,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/cotorauch/status/2027410715967983801"
+        },
+        {
+          "id": "2027394753193529522",
+          "text": "En China no hay SIRCREB\n\nAbrazo Gladiador",
+          "user": "Gladiador Urbano",
+          "username": "tyagohome",
+          "date": "2026-02-27 14:45:50+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 95,
+          "retweets": 8,
+          "replies": 0,
+          "url": "https://x.com/tyagohome/status/2027394753193529522"
+        },
+        {
+          "id": "2027391957866029205",
+          "text": "@uala_arg Hace casi un mes me hicieron una retención de Sircreb por una transferencia  desde una cuenta propia; reclamo y la inoperacia es total!",
+          "user": "Matias Subira",
+          "username": "SubiraMatias",
+          "date": "2026-02-27 14:34:44+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.3,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/SubiraMatias/status/2027391957866029205"
+        },
+        {
+          "id": "2027388167146315857",
+          "text": "Muy ladron el gob de la ciudad. Monotributista incripto en Pcia de BS As en regimen simplificado, o sea pagando la alicuota del IB incluida en el monotributo y se sigue metiendo en la cuenta descontando sircreb. Chorros inutiles.",
+          "user": "Marcelo",
+          "username": "Urbania07",
+          "date": "2026-02-27 14:19:40+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 2,
+          "retweets": 1,
+          "replies": 1,
+          "url": "https://x.com/Urbania07/status/2027388167146315857"
+        },
+        {
+          "id": "2027385381923000826",
+          "text": "@LuisCaputoAR @fedesturze \nCobrás $10.000\n• $122 en impuestos\n• $490 en comisiones\nTe quedan $9.387\nPerdiste 6,1% en segundos. Y todavía falta el simpático #SIRCREB amigo de @lacha\nLo más interesante:\nNo te descuentan sobre tu ganancia.\nTe descuentan sobre tu facturación.\n\nSi https://t.co/r6PavglEro",
+          "user": "Ignacio M. Iturbe",
+          "username": "ignacio_iturbe",
+          "date": "2026-02-27 14:08:36+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 1,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/ignacio_iturbe/status/2027385381923000826"
+        },
+        {
+          "id": "2027351582778552375",
+          "text": "Las cuentas de uso personal y no comercial deberían ser INTOCABLES para ARCA, Pcias, sircreb, sircupa, impuesto al cheque, etc. \nPodrían elaborarse normas en este sentido aprovechando esta movida, en conjunto con las billeteras virtuales y bancos .\nY si alguno la usa para fines",
+          "user": "Diego Fraga",
+          "username": "diegotefraga",
+          "date": "2026-02-27 11:54:18+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 33,
+          "retweets": 2,
+          "replies": 3,
+          "url": "https://x.com/diegotefraga/status/2027351582778552375"
+        },
+        {
+          "id": "2027200928449773908",
+          "text": "@Hyliana_ @Lucas_ATLM @DylanFue @porqetendencias Cuando sos comerciante o monotributista todo cambia drásticamente. Este gobierno de mierda aún mantiene el SIRCREB, en PBA te roban con ARBA que hace recolecciones bancarias, ahora ARCA calcula todo con lo que compres, porque no diferencian qué es para el comercio y qué para vos.",
+          "user": "fernan.cspr",
+          "username": "difemac",
+          "date": "2026-02-27 01:55:39+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.6,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/difemac/status/2027200928449773908"
+        },
+        {
           "id": "2027152117035639176",
           "text": "@germanfermo Mientras rija el sircreb seguiremos rehenes",
           "user": "claudio paya",
@@ -1636,7 +1790,7 @@
           "sentiment": "neutro",
           "sentiment_score": 0.0,
           "emojis_found": [],
-          "likes": 0,
+          "likes": 1,
           "retweets": 0,
           "replies": 0,
           "url": "https://x.com/CGPaya/status/2027152117035639176"
@@ -1862,7 +2016,7 @@
           "emojis_found": [],
           "likes": 19,
           "retweets": 1,
-          "replies": 2,
+          "replies": 1,
           "url": "https://x.com/boogieboomp/status/2026433904635171277"
         },
         {
@@ -2114,7 +2268,7 @@
           "emojis_found": [],
           "likes": 1288,
           "retweets": 455,
-          "replies": 44,
+          "replies": 45,
           "url": "https://x.com/Natalin441/status/2025989964580655294"
         },
         {
@@ -4152,7 +4306,7 @@
           "sentiment": "neutro",
           "sentiment_score": 0.0,
           "emojis_found": [],
-          "likes": 47,
+          "likes": 48,
           "retweets": 4,
           "replies": 5,
           "url": "https://x.com/leoncordobe/status/2020595458498810059"
@@ -4310,152 +4464,12 @@
           "retweets": 0,
           "replies": 0,
           "url": "https://x.com/JacintoCastilla/status/2019852061668704757"
-        },
-        {
-          "id": "2019780795339026618",
-          "text": "@Santiagobulat @pbarbieri El problema es mayor aún. La tasa efectiva es mayor. Puedo darte el caso de cada cliente en la pampa. Sircreb que supera la tasa de iibb y percepciones y retenciones que generan saldos a favor irrecuperables. Ej: compras te perciben, vendes te retienen, saldo positivo siempre.",
-          "user": "Lucrecia",
-          "username": "lufraire",
-          "date": "2026-02-06 14:30:41+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.3,
-          "emojis_found": [],
-          "likes": 1,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/lufraire/status/2019780795339026618"
-        },
-        {
-          "id": "2019766087244447776",
-          "text": "@Kicillofok @CostaAugusto9 @JavoRodriguezL @waltercorreaok @juanmmena @sbatakis @fsaintout @solemartinezw @mariebembi @ArielFerAguilar @GildoOnorato Y porque aumentas los impuestos provinciales y tus intendentes las tasas municipales? Hacele la vida mas facil al que invierte y saca IIBB, Sircreb y las tasas de mierda que ponen!",
-          "user": "DrBCG",
-          "username": "bganino",
-          "date": "2026-02-06 13:32:15+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/bganino/status/2019766087244447776"
-        },
-        {
-          "id": "2019752956099198996",
-          "text": "@j0__niii @FernandoMarull En un solo pago liquidas arca e ing brutos. No se presentan ddjj. \nNecesitarias contador por si te cobran sircreb o impuestos a cuenta de iibb, o para el control de pagos, compras y gastos. \n\nFuera de eso no necesitarias presentar nada.",
-          "user": "Gabo del Sur",
-          "username": "mileiabrazo23",
-          "date": "2026-02-06 12:40:04+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 1,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/mileiabrazo23/status/2019752956099198996"
-        },
-        {
-          "id": "2019574572031570387",
-          "text": "@jultarres y el SIRCREB que es peor que IIBB",
-          "user": "fernando de luca",
-          "username": "FerDeLuca1975",
-          "date": "2026-02-06 00:51:14+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.3,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/FerDeLuca1975/status/2019574572031570387"
-        },
-        {
-          "id": "2019553349255983436",
-          "text": "@Miguel_Boggiano @guadavazquez @JonatanViale y el Sircreb q no hablan?",
-          "user": "Suzuki",
-          "username": "SusukiOpina",
-          "date": "2026-02-05 23:26:54+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 1,
-          "retweets": 1,
-          "replies": 0,
-          "url": "https://x.com/SusukiOpina/status/2019553349255983436"
-        },
-        {
-          "id": "2019512381802467484",
-          "text": "@pbarbieri @cromaget07 Y de la cuota si tenes actividad te descuentan además el Sircreb",
-          "user": "Suzuki",
-          "username": "SusukiOpina",
-          "date": "2026-02-05 20:44:07+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/SusukiOpina/status/2019512381802467484"
-        },
-        {
-          "id": "2019508837506859501",
-          "text": "@Santiagobulat @pbarbieri Cortales el SIRCREB y las matás. Faltan huevos",
-          "user": "Benito Camela",
-          "username": "camela_ben16544",
-          "date": "2026-02-05 20:30:02+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.3,
-          "emojis_found": [],
-          "likes": 5,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/camela_ben16544/status/2019508837506859501"
-        },
-        {
-          "id": "2019489417321226743",
-          "text": "@EnojadaTipita Sircreb q lo único q fomenta es facturación en negro",
-          "user": "Suzuki",
-          "username": "SusukiOpina",
-          "date": "2026-02-05 19:12:52+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 1,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/SusukiOpina/status/2019489417321226743"
-        },
-        {
-          "id": "2019487958584225920",
-          "text": "@BlogDelContador @LuisCaputoAR De paso eliminen o por lo menos topeen Sircreb...",
-          "user": "Nico9",
-          "username": "Nic_Olass_",
-          "date": "2026-02-05 19:07:04+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.3,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/Nic_Olass_/status/2019487958584225920"
-        },
-        {
-          "id": "2019487854720659622",
-          "text": "@lacha y el SIRCREB... el padre",
-          "user": "fernando de luca",
-          "username": "FerDeLuca1975",
-          "date": "2026-02-05 19:06:39+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/FerDeLuca1975/status/2019487854720659622"
         }
       ],
       "sentiment_summary": {
-        "positivo": 13,
-        "negativo": 65,
-        "neutro": 122
+        "positivo": 14,
+        "negativo": 63,
+        "neutro": 123
       },
       "emoji_stats": {
         "total_positive_emojis": 5,
@@ -4472,6 +4486,34 @@
     {
       "keyword": "sircupa",
       "posts": [
+        {
+          "id": "2027351582778552375",
+          "text": "Las cuentas de uso personal y no comercial deberían ser INTOCABLES para ARCA, Pcias, sircreb, sircupa, impuesto al cheque, etc. \nPodrían elaborarse normas en este sentido aprovechando esta movida, en conjunto con las billeteras virtuales y bancos .\nY si alguno la usa para fines",
+          "user": "Diego Fraga",
+          "username": "diegotefraga",
+          "date": "2026-02-27 11:54:18+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 33,
+          "retweets": 2,
+          "replies": 3,
+          "url": "https://x.com/diegotefraga/status/2027351582778552375"
+        },
+        {
+          "id": "2027177122255540464",
+          "text": "@natalitttta No esta mal. Si sos monotributista, toda cta ligada a vs se contabiliza en el fisco, muchos vieron q la retencion de SIRCUPA era  menor al costo de de pago con Qr o posnet. Y cada moviento es tomado como comercial, para ARCA estas evadiendo.",
+          "user": "hector velasquez",
+          "username": "hecdav00",
+          "date": "2026-02-27 00:21:03+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.3,
+          "emojis_found": [],
+          "likes": 1,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/hecdav00/status/2027177122255540464"
+        },
         {
           "id": "2027054608275714530",
           "text": "@esteban_a_secas @BlogDelContador @RespOficial_Arg Cuando me pase a monotributo unificado fue un antes y un después, no aplica ni sircreb ni sircupa.\n. Nada de retención a cuenta como si fuera un delincuente.",
@@ -4881,19 +4923,33 @@
       ],
       "sentiment_summary": {
         "positivo": 1,
-        "negativo": 7,
-        "neutro": 21
+        "negativo": 8,
+        "neutro": 22
       },
       "emoji_stats": {
         "total_positive_emojis": 0,
         "total_negative_emojis": 0,
         "top_emojis": {}
       },
-      "total_found": 29
+      "total_found": 31
     },
     {
       "keyword": "sirtac",
       "posts": [
+        {
+          "id": "2027421775378731169",
+          "text": "@alerosenfeld No entiendo Ale, Mercado Pago paso todo los ingresos ‘transf, qr, point ‘ …. En principio pensé era solo qr y point, chequeable desde el sirtac… \nPero bueno mejor así se corta con el mito ‘transferencias no se facturan 😅’ \n\nYo no haría tanto alarde porq para mi solo fue ML 😅",
+          "user": "Chano ⭐",
+          "username": "Chanoo_O",
+          "date": "2026-02-27 16:33:13+00:00",
+          "sentiment": "positivo",
+          "sentiment_score": 0.6,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/Chanoo_O/status/2027421775378731169"
+        },
         {
           "id": "2026998483463311709",
           "text": "@diegotefraga En la mayoría de los casos son compras y ventas x plataformas virtuales que sufrieron SIRTAC xero no se facturaron durante años.\nAhora el timming es pésimo y recuerda al 2018.",
@@ -5028,7 +5084,7 @@
         }
       ],
       "sentiment_summary": {
-        "positivo": 0,
+        "positivo": 1,
         "negativo": 5,
         "neutro": 4
       },
@@ -5039,7 +5095,7 @@
           "🤷": 1
         }
       },
-      "total_found": 9
+      "total_found": 10
     }
   ]
 }
