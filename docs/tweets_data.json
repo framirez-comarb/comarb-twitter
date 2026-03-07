@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-03-06T11:55:21.506771",
+  "generated_at": "2026-03-07T11:39:41.545697",
   "period": {
     "from": "2026-01-01",
-    "to": "2026-03-06"
+    "to": "2026-03-07"
   },
   "keywords": [
     {
@@ -5851,26 +5851,6 @@
           "url": "https://x.com/APISantaFe/status/2028463167098048822"
         },
         {
-          "id": "2027843751524372890",
-          "text": "2⃣ Provincia de Buenos Aires - ARBA \n\n‼️ Recordá que por tareas de mantenimiento y actualización del sistema, la aplicación ARweb de Agentes de Recaudación de Ingresos Brutos va a estar fuera de servicio desde el 27/02 a las 13 hs hasta el domingo 01/03 a las 10 hs. \n\n3⃣ Neuquén",
-          "user": "Errepar",
-          "username": "errepar",
-          "date": "2026-02-28 20:30:00+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.25,
-          "emojis_found": [
-            {
-              "emoji": "‼️",
-              "type": "negativo",
-              "count": 1
-            }
-          ],
-          "likes": 1,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/errepar/status/2027843751524372890"
-        },
-        {
           "id": "2027337454156718277",
           "text": "@Mahesh10816 45 engine Sircar",
           "user": "Terminatos",
@@ -8449,6 +8429,20 @@
           "retweets": 2,
           "replies": 0,
           "url": "https://x.com/TgcqAsoc/status/2014639445140516930"
+        },
+        {
+          "id": "2014081670287143003",
+          "text": "OpenAI rompe su promesa y suma anuncios a ChatGPT: ¿por qué la IA no puede escapar del modelo publicitario?\n\nPor Anisha Sircar\n#Innovación \nhttps://t.co/9DKT1LDKXN",
+          "user": "Forbes Uruguay 🇺🇾",
+          "username": "forbesuruguay",
+          "date": "2026-01-21 21:04:24+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/forbesuruguay/status/2014081670287143003"
         },
         {
           "id": "2014081670287143003",
@@ -8705,15 +8699,14 @@
       ],
       "sentiment_summary": {
         "positivo": 10,
-        "negativo": 21,
-        "neutro": 169
+        "negativo": 20,
+        "neutro": 170
       },
       "emoji_stats": {
         "total_positive_emojis": 40,
-        "total_negative_emojis": 1,
+        "total_negative_emojis": 0,
         "top_emojis": {
-          "🥳": 40,
-          "‼️": 1
+          "🥳": 40
         }
       },
       "total_found": 200
