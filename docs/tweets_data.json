@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-03-07T11:39:41.545697",
+  "generated_at": "2026-03-08T11:42:10.064586",
   "period": {
     "from": "2026-01-01",
-    "to": "2026-03-07"
+    "to": "2026-03-08"
   },
   "keywords": [
     {
@@ -65,20 +65,6 @@
           "url": "https://x.com/TgcqAsoc/status/2028398542478332394"
         },
         {
-          "id": "2028083244181123564",
-          "text": "@manuelmrial Si pero la COMARB te cita como 3ero a todas las provincias se te hace una bola gigante.\nAdemás la demanda al Banco podría incluso catalogar dentro de la Ley 24.240. Es restrictivo el consumidor empresa pero se va abriendo paso.",
-          "user": "El Abogado del Diablo",
-          "username": "defensorserial",
-          "date": "2026-03-01 12:21:40+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 1,
-          "url": "https://x.com/defensorserial/status/2028083244181123564"
-        },
-        {
           "id": "2025389587871240450",
           "text": "@ConsejoCABA @Olivitta21 Respondieron q en algunos proveedores de Internet los problemas seguían pero que en la mayoría funcionaba. Se que en caba funciono pero en mi zona ( san miguel) no!  Me pareció cualquiera la rta de comarb. Qm invito a q me mueva d zona",
           "user": "alita.1287",
@@ -2379,6 +2365,20 @@
           "retweets": 0,
           "replies": 1,
           "url": "https://x.com/fernandofaba/status/2019187066177999324"
+        },
+        {
+          "id": "2018026536859811981",
+          "text": "@AnaMariaKaiser1 Me acordé del que dijo a partir de este mes voy a liquidar yo ingresos brutos! ... Se ve que se aprendió todas las leyes fiscales provinciales dónde tiene actividad más las de la Comarb",
+          "user": "Paula Croce",
+          "username": "PaulaCroce",
+          "date": "2026-02-01 18:19:54+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 1,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/PaulaCroce/status/2018026536859811981"
         },
         {
           "id": "2018026536859811981",
@@ -8715,20 +8715,6 @@
       "keyword": "sirpei",
       "posts": [
         {
-          "id": "2028084430863057166",
-          "text": "@defensorserial Con mi vieja demandamos y logramos cautelar a favor 15842/2024 en el contencioso administrativo federal (no soy abogado), pero nos dejaron de joder con sircreb y sirpei",
-          "user": "Manuel Martínez Rial",
-          "username": "manuelmrial",
-          "date": "2026-03-01 12:26:22+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 1,
-          "url": "https://x.com/manuelmrial/status/2028084430863057166"
-        },
-        {
           "id": "2021979342344224793",
           "text": "@BlogDelContador Y ahi no figura el sirpei (importadores). Te meten directo la alícuota de la actividad por coeficiente. Es decir que el resto de regimenes tienen que cubrirte el margen de venta, sino entras en el loop del saldo a favor.",
           "user": "Sebas",
@@ -9446,14 +9432,14 @@
       "sentiment_summary": {
         "positivo": 0,
         "negativo": 17,
-        "neutro": 35
+        "neutro": 34
       },
       "emoji_stats": {
         "total_positive_emojis": 0,
         "total_negative_emojis": 0,
         "top_emojis": {}
       },
-      "total_found": 52
+      "total_found": 51
     },
     {
       "keyword": "sircreb",
