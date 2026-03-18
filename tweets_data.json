@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-03-17T14:41:33.254448",
+  "generated_at": "2026-03-18T14:52:04.420588",
   "period": {
     "from": "2026-01-01",
-    "to": "2026-03-17"
+    "to": "2026-03-18"
   },
   "keywords": [
     {
@@ -19,7 +19,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "No se pudo reautenticar tras 404"
+      "error": "Couldn't get KEY_BYTE indices"
     },
     {
       "keyword": "sifere",
@@ -35,7 +35,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "No se pudo reautenticar tras 404"
+      "error": "'ClientTransaction' object has no attribute 'key'"
     },
     {
       "keyword": "sircar",
@@ -51,7 +51,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "No se pudo reautenticar tras 404"
+      "error": "'ClientTransaction' object has no attribute 'key'"
     },
     {
       "keyword": "sirpei",
@@ -67,7 +67,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "No se pudo reautenticar tras 404"
+      "error": "'ClientTransaction' object has no attribute 'key'"
     },
     {
       "keyword": "sircreb",
@@ -83,7 +83,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "No se pudo reautenticar tras 404"
+      "error": "'ClientTransaction' object has no attribute 'key'"
     },
     {
       "keyword": "sircupa",
@@ -99,7 +99,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "No se pudo reautenticar tras 404"
+      "error": "'ClientTransaction' object has no attribute 'key'"
     },
     {
       "keyword": "sirtac",
@@ -115,7 +115,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "No se pudo reautenticar tras 404"
+      "error": "'ClientTransaction' object has no attribute 'key'"
     }
   ]
 }
