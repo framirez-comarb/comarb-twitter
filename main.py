@@ -65,46 +65,39 @@ from report_generator import generate_html_report
 def _patch_twikit_transaction():
     """
     Twitter/X cambió el formato HTML donde se referencia ondemand.s.
-    Formato viejo: "ondemand.s":"<hash>"
-    Formato actual: 20113:"ondemand.s" (nombre) + 20113:"<hash>" (hash aparte)
-    twikit 2.3.x no lo soporta, este parche corrige los regex en runtime.
+    Formato viejo: "ondemand.s":"<hash>" o ,N:["ondemand.s"]
+    Formato actual: N:"ondemand.s" (nombre) + N:"<hash>" (hash aparte)
+    twikit <= 2.3.x no lo soporta, este parche corrige get_indices en runtime.
     """
     try:
         import re
         import twikit.x_client_transaction.transaction as txn
-        # Solo parchear si tiene el regex viejo o el formato con corchetes
-        current = txn.ON_DEMAND_FILE_REGEX.pattern
-        if '["ondemand' in current or '"ondemand.s":"' in current:
-            txn.ON_DEMAND_FILE_REGEX = re.compile(
-                r'(\d+):"ondemand\.s"', flags=(re.VERBOSE | re.MULTILINE))
-            txn.ON_DEMAND_HASH_PATTERN = r',{}:"([0-9a-f]+)"'
-            txn.INDICES_REGEX = re.compile(
-                r'\[(\d+)\],\s*16', flags=(re.VERBOSE | re.MULTILINE))
 
-            # Parchear get_indices para usar el nuevo formato de 2 pasos
-            async def _patched_get_indices(self, home_page_response, session, headers):
-                key_byte_indices = []
-                response = self.validate_response(home_page_response) or self.home_page_response
-                response_str = str(response)
-                on_demand_file = txn.ON_DEMAND_FILE_REGEX.search(response_str)
-                if on_demand_file:
-                    numeric_index = on_demand_file.group(1)
-                    hash_pattern = re.compile(txn.ON_DEMAND_HASH_PATTERN.format(numeric_index))
-                    hash_match = hash_pattern.search(response_str)
-                    if hash_match:
-                        on_demand_hash = hash_match.group(1)
-                        url = f"https://abs.twimg.com/responsive-web/client-web/ondemand.s.{on_demand_hash}a.js"
-                        resp = await session.request(method="GET", url=url, headers=headers)
-                        for item in txn.INDICES_REGEX.finditer(str(resp.text)):
-                            key_byte_indices.append(item.group(1))
-                if not key_byte_indices:
-                    raise Exception("Couldn't get KEY_BYTE indices")
-                key_byte_indices = list(map(int, key_byte_indices))
-                return key_byte_indices[0], key_byte_indices[1:]
+        _ON_DEMAND_NAME = re.compile(r'(\d+):"ondemand\.s"')
+        _ON_DEMAND_HASH = r',{}:"([0-9a-f]+)"'
+        _INDICES = re.compile(r'\[(\d+)\],\s*16')
 
-            txn.ClientTransaction.get_indices = _patched_get_indices
-            if not CI_MODE:
-                print("🔧 Parche twikit aplicado (regex ondemand.s actualizado).")
+        async def _patched_get_indices(self, home_page_response, session, headers):
+            key_byte_indices = []
+            response = self.validate_response(home_page_response) or self.home_page_response
+            response_str = str(response)
+            on_demand_file = _ON_DEMAND_NAME.search(response_str)
+            if on_demand_file:
+                numeric_index = on_demand_file.group(1)
+                hash_match = re.search(_ON_DEMAND_HASH.format(numeric_index), response_str)
+                if hash_match:
+                    on_demand_hash = hash_match.group(1)
+                    url = f"https://abs.twimg.com/responsive-web/client-web/ondemand.s.{on_demand_hash}a.js"
+                    resp = await session.request(method="GET", url=url, headers=headers)
+                    for item in _INDICES.finditer(str(resp.text)):
+                        key_byte_indices.append(item.group(1))
+            if not key_byte_indices:
+                raise Exception("Couldn't get KEY_BYTE indices")
+            key_byte_indices = list(map(int, key_byte_indices))
+            return key_byte_indices[0], key_byte_indices[1:]
+
+        txn.ClientTransaction.get_indices = _patched_get_indices
+        print("🔧 Parche twikit aplicado (regex ondemand.s).")
     except Exception as e:
         print(f"⚠️  No se pudo aplicar parche twikit: {e}")
 
