@@ -36,6 +36,46 @@ install_twikit()
 
 from twikit import Client
 
+# ── Parche para twikit: corrige regex de X.com (formato webpack actual) ──
+def _patch_twikit_transaction():
+    try:
+        import re
+        import twikit.x_client_transaction.transaction as txn
+        current = txn.ON_DEMAND_FILE_REGEX.pattern
+        if '["ondemand' in current or '"ondemand.s":"' in current:
+            txn.ON_DEMAND_FILE_REGEX = re.compile(
+                r'(\d+):"ondemand\.s"', flags=(re.VERBOSE | re.MULTILINE))
+            txn.ON_DEMAND_HASH_PATTERN = r',{}:"([0-9a-f]+)"'
+            txn.INDICES_REGEX = re.compile(
+                r'\[(\d+)\],\s*16', flags=(re.VERBOSE | re.MULTILINE))
+
+            async def _patched_get_indices(self, home_page_response, session, headers):
+                key_byte_indices = []
+                response = self.validate_response(home_page_response) or self.home_page_response
+                response_str = str(response)
+                on_demand_file = txn.ON_DEMAND_FILE_REGEX.search(response_str)
+                if on_demand_file:
+                    numeric_index = on_demand_file.group(1)
+                    hash_pattern = re.compile(txn.ON_DEMAND_HASH_PATTERN.format(numeric_index))
+                    hash_match = hash_pattern.search(response_str)
+                    if hash_match:
+                        on_demand_hash = hash_match.group(1)
+                        url = f"https://abs.twimg.com/responsive-web/client-web/ondemand.s.{on_demand_hash}a.js"
+                        resp = await session.request(method="GET", url=url, headers=headers)
+                        for item in txn.INDICES_REGEX.finditer(str(resp.text)):
+                            key_byte_indices.append(item.group(1))
+                if not key_byte_indices:
+                    raise Exception("Couldn't get KEY_BYTE indices")
+                key_byte_indices = list(map(int, key_byte_indices))
+                return key_byte_indices[0], key_byte_indices[1:]
+
+            txn.ClientTransaction.get_indices = _patched_get_indices
+            print("  🔧 Parche twikit aplicado.")
+    except Exception as e:
+        print(f"  ⚠️  No se pudo aplicar parche twikit: {e}")
+
+_patch_twikit_transaction()
+
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 MULTI_COOKIES_FILE = "twitter_multi_cookies.json"
 
