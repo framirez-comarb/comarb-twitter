@@ -2,7 +2,7 @@ name: '📊 Actualizar Reporte de Sentimiento'
 
 on:
   schedule:
-    - cron: '0 11 * * 1,2,3,4,5'
+    - cron: '0 11 * * 1,3,5'
   workflow_dispatch:
   push:
     branches: [ main ]
