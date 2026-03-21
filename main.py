@@ -65,6 +65,7 @@ from report_generator import generate_html_report
 KEYWORDS = ["comarb", "sifere", "sircar", "sirpei", "sircreb", "sircupa", "sirtac"]
 MAX_TWEETS_PER_KEYWORD = 200
 COOKIES_FILE = "twitter_cookies.json"
+MULTI_COOKIES_FILE = "twitter_multi_cookies.json"
 DATA_FILE = "tweets_data.json"
 REPORT_FILE = os.path.join(OUTPUT_DIR, "index.html")
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
@@ -452,20 +453,225 @@ async def do_login(client, account_mgr, force_new=False):
 
 
 # ═══════════════════════════════════════════════════════════════
+#  MULTI-CUENTA: cargar cookies y crear clientes
+# ═══════════════════════════════════════════════════════════════
+
+def load_multi_cookies_from_secret():
+    """
+    Carga cookies desde TWITTER_COOKIES secret.
+    Soporta dos formatos:
+    - Multi-cuenta: {"multi": true, "accounts": [...]}
+    - Cuenta única (legacy): contenido directo del cookies.json
+    Retorna lista de {"username": str, "cookies": dict} o None.
+    """
+    cookies_b64 = os.environ.get("TWITTER_COOKIES")
+    if not cookies_b64:
+        return None
+    try:
+        cookies_json = base64.b64decode(cookies_b64).decode("utf-8")
+        data = json.loads(cookies_json)
+
+        # Formato multi-cuenta
+        if isinstance(data, dict) and data.get("multi"):
+            accounts = data.get("accounts", [])
+            if accounts:
+                print(f"✅ CI: {len(accounts)} cuenta(s) cargadas desde TWITTER_COOKIES (multi).")
+                return accounts
+
+        # Formato legacy (cuenta única) — wrappear en lista
+        print("✅ CI: 1 cuenta cargada desde TWITTER_COOKIES (legacy).")
+        return [{"username": "default", "cookies": data}]
+
+    except Exception as e:
+        print(f"⚠️  CI: error parseando TWITTER_COOKIES: {e}")
+        return None
+
+
+def create_client():
+    """Crea un Client de twikit. La inicialización de client_transaction se hace automáticamente."""
+    return Client("es-AR", user_agent=USER_AGENT)
+
+
+async def setup_multi_clients(cookie_accounts):
+    """
+    Crea un Client de twikit por cada cuenta con cookies.
+    Retorna lista de (Client, username) para las que funcionaron.
+    """
+    clients = []
+    for acc in cookie_accounts:
+        username = acc["username"]
+        client = create_client()
+        try:
+            # Cargar cookies directamente con set_cookies
+            client.set_cookies(acc["cookies"], clear_cookies=True)
+            clients.append({"client": client, "username": username, "cookies_data": acc["cookies"]})
+            print(f"  ✅ @{username} — sesión cargada")
+        except Exception as e:
+            print(f"  ❌ @{username} — error: {e}")
+    return clients
+
+
+def save_multi_cookies(clients_info):
+    """
+    Re-guarda las cookies de todos los clientes al formato multi-cuenta.
+    Retorna el JSON para actualizar el secret.
+    """
+    accounts = []
+    for info in clients_info:
+        client = info["client"]
+        username = info["username"]
+        try:
+            tmp_file = f"_tmp_cookies_{username}.json"
+            client.save_cookies(tmp_file)
+            with open(tmp_file, "r", encoding="utf-8") as f:
+                cookies_data = json.load(f)
+            os.remove(tmp_file)
+            accounts.append({"username": username, "cookies": cookies_data})
+        except Exception as e:
+            print(f"  ⚠️ No se pudieron guardar cookies de @{username}: {e}")
+            # Mantener las cookies originales
+            accounts.append({"username": username, "cookies": info.get("cookies_data", {})})
+
+    data = {"multi": True, "accounts": accounts}
+
+    # Guardar como archivo JSON (para que el workflow lo re-suba)
+    with open(MULTI_COOKIES_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False)
+
+    # También guardar en formato legacy para compatibilidad
+    if len(accounts) == 1:
+        with open(COOKIES_FILE, "w", encoding="utf-8") as f:
+            json.dump(accounts[0]["cookies"], f, ensure_ascii=False)
+    else:
+        # Guardar el JSON multi completo como COOKIES_FILE para el workflow
+        with open(COOKIES_FILE, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False)
+
+    print(f"  🍪 Cookies re-guardadas para {len(accounts)} cuenta(s).")
+
+
+# ═══════════════════════════════════════════════════════════════
 #  SCRAPING
 # ═══════════════════════════════════════════════════════════════
 
-async def scrape_tweets():
-    account_mgr = AccountManager()
-    client = Client("es-AR", user_agent=USER_AGENT)
+async def search_keyword_with_client(client, keyword, since_date, until_date):
+    """Busca un keyword con un client específico. Retorna keyword_data."""
+    keyword_data = {
+        "keyword": keyword,
+        "posts": [],
+        "sentiment_summary": {"positivo": 0, "negativo": 0, "neutro": 0},
+        "emoji_stats": {"total_positive_emojis": 0, "total_negative_emojis": 0, "top_emojis": {}},
+        "total_found": 0
+    }
 
-    if not await do_login(client, account_mgr):
-        print("\n❌ No se pudo autenticar con Twitter/X.")
-        if CI_MODE:
-            print("   Revisá los secrets: TWITTER_COOKIES, TWITTER_ACCOUNTS, o TWITTER_USERNAME/PASSWORD")
-        else:
-            print("   Verificá credenciales o importá cookies del navegador.")
-        sys.exit(1)
+    try:
+        tweet_list = []
+        all_emoji_counter = {}
+
+        tweets = await client.search_tweet(
+            f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
+        )
+
+        while tweets:
+            for tweet in tweets:
+                if len(tweet_list) >= MAX_TWEETS_PER_KEYWORD:
+                    break
+
+                sentiment, score, emoji_details = analyze_sentiment(tweet.text)
+
+                for ed in emoji_details:
+                    emoji = ed["emoji"]
+                    all_emoji_counter[emoji] = all_emoji_counter.get(emoji, 0) + ed["count"]
+                    if ed["type"] == "positivo":
+                        keyword_data["emoji_stats"]["total_positive_emojis"] += ed["count"]
+                    else:
+                        keyword_data["emoji_stats"]["total_negative_emojis"] += ed["count"]
+
+                tweet_info = {
+                    "id": tweet.id,
+                    "text": tweet.text,
+                    "user": tweet.user.name if tweet.user else "Desconocido",
+                    "username": tweet.user.screen_name if tweet.user else "unknown",
+                    "date": str(tweet.created_at_datetime) if tweet.created_at_datetime else str(tweet.created_at),
+                    "sentiment": sentiment,
+                    "sentiment_score": score,
+                    "emojis_found": emoji_details,
+                    "likes": tweet.favorite_count or 0,
+                    "retweets": tweet.retweet_count or 0,
+                    "replies": tweet.reply_count or 0,
+                    "url": f"https://x.com/{tweet.user.screen_name}/status/{tweet.id}" if tweet.user else None
+                }
+                tweet_list.append(tweet_info)
+                keyword_data["sentiment_summary"][sentiment] += 1
+
+            print(f" → {len(tweet_list)}...", end="", flush=True)
+
+            if len(tweet_list) >= MAX_TWEETS_PER_KEYWORD:
+                break
+
+            try:
+                tweets = await tweets.next()
+            except Exception as page_err:
+                err_str = str(page_err)
+                if "429" in err_str:
+                    print(" (429, esperando 60s...)", end="", flush=True)
+                    await asyncio.sleep(60)
+                    try:
+                        tweets = await tweets.next()
+                    except Exception:
+                        break
+                else:
+                    break
+
+            await asyncio.sleep(3)
+
+        tweet_list.sort(key=lambda x: x["date"], reverse=True)
+        keyword_data["posts"] = tweet_list
+        keyword_data["total_found"] = len(tweet_list)
+
+        top_emojis = sorted(all_emoji_counter.items(), key=lambda x: x[1], reverse=True)[:10]
+        keyword_data["emoji_stats"]["top_emojis"] = dict(top_emojis)
+
+        print(f" → {len(tweet_list)} tweets ✓")
+        s = keyword_data["sentiment_summary"]
+        es = keyword_data["emoji_stats"]
+        print(f"      Sentimiento: +{s['positivo']} ~{s['neutro']} -{s['negativo']}")
+        if es["total_positive_emojis"] or es["total_negative_emojis"]:
+            top_3 = " ".join([e for e, _ in top_emojis[:5]])
+            print(f"      Emojis: 😊{es['total_positive_emojis']} 😡{es['total_negative_emojis']}  Top: {top_3}")
+
+    except Exception as e:
+        print(f" → Error: {e}")
+        keyword_data["error"] = str(e)
+
+    return keyword_data
+
+
+async def scrape_tweets():
+    """Scraping principal con distribución de keywords entre cuentas."""
+
+    # ── Intentar cargar multi-cuenta ──
+    clients_info = []
+    if CI_MODE:
+        cookie_accounts = load_multi_cookies_from_secret()
+        if cookie_accounts:
+            clients_info = await setup_multi_clients(cookie_accounts)
+
+    # ── Fallback: cuenta única (legacy) ──
+    if not clients_info:
+        account_mgr = AccountManager()
+        client = create_client()
+
+        if not await do_login(client, account_mgr):
+            print("\n❌ No se pudo autenticar con Twitter/X.")
+            if CI_MODE:
+                print("   Revisá el secret TWITTER_COOKIES.")
+                print("   Ejecutá setup_cookies.py localmente para regenerarlo.")
+            else:
+                print("   Verificá credenciales o importá cookies del navegador.")
+            sys.exit(1)
+
+        clients_info = [{"client": client, "username": "default", "cookies_data": {}}]
 
     since_date = f"{datetime.now().year}-01-01"
     until_date = datetime.now().strftime("%Y-%m-%d")
@@ -475,190 +681,33 @@ async def scrape_tweets():
         "keywords": []
     }
 
+    n_clients = len(clients_info)
+
     print("\n" + "═" * 60)
     print("  🔍 BUSCANDO TWEETS")
-    if account_mgr.has_accounts() and account_mgr.get_account_count() > 1:
-        print(f"  🔄 {account_mgr.get_account_count()} cuentas disponibles para rotación")
+    if n_clients > 1:
+        print(f"  🔄 {n_clients} cuentas — keywords distribuidas:")
+        for i, kw in enumerate(KEYWORDS):
+            acc = clients_info[i % n_clients]
+            print(f"     {kw.upper()} → @{acc['username']}")
     print("═" * 60)
 
-    rate_limit_count = 0
-
     for i, keyword in enumerate(KEYWORDS):
-        print(f"\n  [{i+1}/{len(KEYWORDS)}] Buscando: #{keyword.upper()}", end="", flush=True)
+        info = clients_info[i % n_clients]
+        client = info["client"]
+        label = f"@{info['username']}" if info["username"] != "default" else ""
 
-        keyword_data = {
-            "keyword": keyword,
-            "posts": [],
-            "sentiment_summary": {"positivo": 0, "negativo": 0, "neutro": 0},
-            "emoji_stats": {"total_positive_emojis": 0, "total_negative_emojis": 0, "top_emojis": {}},
-            "total_found": 0
-        }
+        print(f"\n  [{i+1}/{len(KEYWORDS)}] Buscando: #{keyword.upper()}{' (' + label + ')' if label else ''}", end="", flush=True)
 
-        try:
-            tweet_list = []
-            all_emoji_counter = {}
-
-            try:
-                tweets = await client.search_tweet(
-                    f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
-                )
-                rate_limit_count = 0
-            except Exception as search_err:
-                err_str = str(search_err)
-                if "401" in err_str:
-                    print(f" → 401 (sesión expirada)", flush=True)
-                    if await do_login(client, account_mgr, force_new=True):
-                        tweets = await client.search_tweet(
-                            f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
-                        )
-                    else:
-                        raise Exception("No se pudo reautenticar tras 401")
-                elif "404" in err_str:
-                    print(f" → 404, reautenticando...", flush=True)
-                    if await do_login(client, account_mgr, force_new=True):
-                        tweets = await client.search_tweet(
-                            f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
-                        )
-                    else:
-                        raise Exception("No se pudo reautenticar tras 404")
-                elif "429" in err_str:
-                    rate_limit_count += 1
-                    if account_mgr.has_accounts() and account_mgr.get_account_count() > 1:
-                        print(f" → 429, rotando cuenta...", flush=True)
-                        client = Client("es-AR", user_agent=USER_AGENT)
-                        account = account_mgr.get_next_account()
-                        if account and await try_login_with_credentials(client, account):
-                            tweets = await client.search_tweet(
-                                f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
-                            )
-                            rate_limit_count = 0
-                        else:
-                            raise Exception("No se pudo rotar cuenta tras 429")
-                    else:
-                        wait_time = min(60 * rate_limit_count, 300)
-                        print(f" → 429, esperando {wait_time}s...", end="", flush=True)
-                        await asyncio.sleep(wait_time)
-                        tweets = await client.search_tweet(
-                            f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
-                        )
-                else:
-                    raise
-
-            while tweets:
-                for tweet in tweets:
-                    if len(tweet_list) >= MAX_TWEETS_PER_KEYWORD:
-                        break
-
-                    sentiment, score, emoji_details = analyze_sentiment(tweet.text)
-
-                    # Acumular emojis para estadísticas
-                    for ed in emoji_details:
-                        emoji = ed["emoji"]
-                        all_emoji_counter[emoji] = all_emoji_counter.get(emoji, 0) + ed["count"]
-                        if ed["type"] == "positivo":
-                            keyword_data["emoji_stats"]["total_positive_emojis"] += ed["count"]
-                        else:
-                            keyword_data["emoji_stats"]["total_negative_emojis"] += ed["count"]
-
-                    tweet_info = {
-                        "id": tweet.id,
-                        "text": tweet.text,
-                        "user": tweet.user.name if tweet.user else "Desconocido",
-                        "username": tweet.user.screen_name if tweet.user else "unknown",
-                        "date": str(tweet.created_at_datetime) if tweet.created_at_datetime else str(tweet.created_at),
-                        "sentiment": sentiment,
-                        "sentiment_score": score,
-                        "emojis_found": emoji_details,
-                        "likes": tweet.favorite_count or 0,
-                        "retweets": tweet.retweet_count or 0,
-                        "replies": tweet.reply_count or 0,
-                        "url": f"https://x.com/{tweet.user.screen_name}/status/{tweet.id}" if tweet.user else None
-                    }
-                    tweet_list.append(tweet_info)
-                    keyword_data["sentiment_summary"][sentiment] += 1
-
-                print(f" → {len(tweet_list)} tweets...", end="", flush=True)
-
-                if len(tweet_list) >= MAX_TWEETS_PER_KEYWORD:
-                    break
-
-                try:
-                    tweets = await tweets.next()
-                except Exception as page_err:
-                    err_str = str(page_err)
-                    if "429" in err_str:
-                        if account_mgr.has_accounts() and account_mgr.get_account_count() > 1:
-                            print(" (429, rotando cuenta...)", end="", flush=True)
-                            client = Client("es-AR", user_agent=USER_AGENT)
-                            account = account_mgr.get_next_account()
-                            if account and await try_login_with_credentials(client, account):
-                                try:
-                                    tweets = await client.search_tweet(
-                                        f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
-                                    )
-                                    continue
-                                except Exception:
-                                    break
-                            else:
-                                break
-                        else:
-                            print(" (429, esperando 60s...)", end="", flush=True)
-                            await asyncio.sleep(60)
-                            try:
-                                tweets = await tweets.next()
-                            except Exception:
-                                break
-                    elif "401" in err_str:
-                        print(" (401, reautenticando...)", flush=True)
-                        if await do_login(client, account_mgr, force_new=True):
-                            try:
-                                tweets = await client.search_tweet(
-                                    f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
-                                )
-                            except Exception:
-                                break
-                        else:
-                            break
-                    elif "404" in err_str:
-                        print(" (404, reautenticando...)", flush=True)
-                        if await do_login(client, account_mgr, force_new=True):
-                            try:
-                                tweets = await client.search_tweet(
-                                    f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
-                                )
-                            except Exception:
-                                break
-                        else:
-                            break
-                    else:
-                        break
-
-                await asyncio.sleep(3)
-
-            tweet_list.sort(key=lambda x: x["date"], reverse=True)
-            keyword_data["posts"] = tweet_list
-            keyword_data["total_found"] = len(tweet_list)
-
-            # Top emojis por keyword
-            top_emojis = sorted(all_emoji_counter.items(), key=lambda x: x[1], reverse=True)[:10]
-            keyword_data["emoji_stats"]["top_emojis"] = dict(top_emojis)
-
-            print(f" → {len(tweet_list)} tweets encontrados ✓")
-            s = keyword_data["sentiment_summary"]
-            es = keyword_data["emoji_stats"]
-            print(f"      Sentimiento: +{s['positivo']} ~{s['neutro']} -{s['negativo']}")
-            if es["total_positive_emojis"] or es["total_negative_emojis"]:
-                top_3 = " ".join([e for e, _ in top_emojis[:5]])
-                print(f"      Emojis: 😊{es['total_positive_emojis']} 😡{es['total_negative_emojis']}  Top: {top_3}")
-
-        except Exception as e:
-            print(f" → Error: {e}")
-            keyword_data["error"] = str(e)
-
+        keyword_data = await search_keyword_with_client(client, keyword, since_date, until_date)
         all_data["keywords"].append(keyword_data)
 
         if i < len(KEYWORDS) - 1:
             await asyncio.sleep(PAUSE_BETWEEN_KEYWORDS)
+
+    # ── Re-guardar cookies al final ──
+    if n_clients > 0:
+        save_multi_cookies(clients_info)
 
     return all_data
 

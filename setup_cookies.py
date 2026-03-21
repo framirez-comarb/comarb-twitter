@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """
 ═══════════════════════════════════════════════════════════════
-  Herramienta de configuración para GitHub Actions
-  Genera las cookies de Twitter y las prepara como Secret
+  Herramienta de configuración multi-cuenta para GitHub Actions
+  Genera cookies de MÚLTIPLES cuentas de Twitter/X
+  para distribuir la búsqueda y reducir rate limits.
 ═══════════════════════════════════════════════════════════════
 
-  Ejecutá este script UNA VEZ localmente para:
-  1. Loguearte en Twitter/X
-  2. Obtener el texto base64 de tus cookies
-  3. Pegarlo como GitHub Secret
+  Ejecutá este script localmente para:
+  1. Agregar cookies de 2-3 cuentas de Twitter/X
+  2. Verificar que funcionan
+  3. Obtener el base64 para el GitHub Secret TWITTER_COOKIES
 
   Uso:  python setup_cookies.py
 ═══════════════════════════════════════════════════════════════
@@ -19,6 +20,10 @@ import base64
 import json
 import os
 import sys
+
+
+def create_client():
+    return Client("es-AR", user_agent=USER_AGENT)
 
 def install_twikit():
     try:
@@ -31,146 +36,218 @@ install_twikit()
 
 from twikit import Client
 
-COOKIES_FILE = "twitter_cookies.json"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+MULTI_COOKIES_FILE = "twitter_multi_cookies.json"
 
 
-async def main():
-    print("\n" + "═" * 60)
-    print("  🔧 CONFIGURACIÓN DE COOKIES PARA GITHUB ACTIONS")
-    print("═" * 60)
+def load_existing():
+    """Carga la estructura multi-cuenta existente si existe."""
+    if os.path.exists(MULTI_COOKIES_FILE):
+        with open(MULTI_COOKIES_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {"multi": True, "accounts": []}
+
+
+def save_multi(data):
+    """Guarda la estructura multi-cuenta."""
+    with open(MULTI_COOKIES_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+def show_accounts(data):
+    """Muestra las cuentas configuradas."""
+    if not data["accounts"]:
+        print("  (vacío — no hay cuentas configuradas)")
+        return
+    for i, acc in enumerate(data["accounts"], 1):
+        print(f"  [{i}] @{acc['username']}")
+
+
+async def add_account(data):
+    """Agrega una cuenta usando cookies del navegador."""
     print()
-    print("  Este script te va a ayudar a generar las cookies")
-    print("  de Twitter/X para que GitHub Actions pueda ejecutar")
-    print("  el scraping automáticamente.")
+    print("  Para obtener las cookies:")
+    print("  1. Abrí Twitter/X en tu navegador y logueate con la cuenta")
+    print("  2. Presioná F12 → Application → Cookies → https://x.com")
+    print("  3. Buscá 'auth_token' y 'ct0' y copiá sus valores")
     print()
 
-    client = Client("es-AR", user_agent=USER_AGENT)
-
-    # ── Verificar cookies existentes ──
-    if os.path.exists(COOKIES_FILE):
-        print("  🍪 Se encontró twitter_cookies.json existente.")
-        print()
-        use_existing = input("  ¿Usar las cookies existentes? (s/n): ").strip().lower()
-        if use_existing in ("s", "si", "sí", "y", "yes", ""):
-            try:
-                client.load_cookies(COOKIES_FILE)
-                print("  ✅ Cookies válidas.")
-                export_cookies()
-                return
-            except Exception:
-                print("  ⚠️  Cookies inválidas, necesitás loguearte de nuevo.\n")
-
-    # ── Elegir método ──
-    print()
-    print("  Elegí cómo loguearte:")
-    print("  [1] Usuario + contraseña")
-    print("  [2] Cookies del navegador (auth_token + ct0)")
-    print()
-    choice = input("  Opción (1 o 2): ").strip()
-
-    if choice == "2":
-        print()
-        print("  Para obtener las cookies:")
-        print("  1. Abrí Twitter/X en tu navegador y logueate")
-        print("  2. Presioná F12 → Application → Cookies → https://x.com")
-        print("  3. Buscá 'auth_token' y 'ct0' y copiá sus valores")
-        print()
-
-        auth_token = input("  🔑 auth_token: ").strip()
-        ct0 = input("  🔑 ct0: ").strip()
-
-        if not auth_token or not ct0:
-            print("  ❌ Ambos valores son obligatorios.")
-            sys.exit(1)
-
-        try:
-            client.set_cookies({"auth_token": auth_token, "ct0": ct0}, clear_cookies=True)
-            client.save_cookies(COOKIES_FILE)
-            print("\n  ✅ Cookies guardadas correctamente.")
-        except Exception as e:
-            print(f"\n  ❌ Error: {e}")
-            sys.exit(1)
-    else:
-        print()
-        username = input("  👤 Usuario de Twitter (sin @): ").strip()
-        email = input("  📧 Email: ").strip()
-        password = input("  🔑 Contraseña: ").strip()
-
-        try:
-            await client.login(
-                auth_info_1=username,
-                auth_info_2=email,
-                password=password,
-                cookies_file=COOKIES_FILE
-            )
-            print("\n  ✅ Login exitoso. Cookies guardadas.")
-        except Exception as e:
-            print(f"\n  ⚠️  Login falló: {e}")
-            print("  Intentando con cookies del navegador...\n")
-
-            auth_token = input("  🔑 auth_token: ").strip()
-            ct0 = input("  🔑 ct0: ").strip()
-
-            if auth_token and ct0:
-                try:
-                    client.set_cookies({"auth_token": auth_token, "ct0": ct0}, clear_cookies=True)
-                    client.save_cookies(COOKIES_FILE)
-                    print("\n  ✅ Cookies guardadas.")
-                except Exception as e2:
-                    print(f"\n  ❌ Error: {e2}")
-                    sys.exit(1)
-            else:
-                print("  ❌ No se pudo autenticar.")
-                sys.exit(1)
-
-    export_cookies()
-
-
-def export_cookies():
-    """Muestra el base64 de las cookies para GitHub Secrets."""
-    if not os.path.exists(COOKIES_FILE):
-        print("  ❌ No se encontró twitter_cookies.json")
+    username = input("  👤 Usuario de Twitter (sin @): ").strip()
+    if not username:
+        print("  ❌ Usuario requerido.")
         return
 
-    with open(COOKIES_FILE, "r", encoding="utf-8") as f:
-        cookies_json = f.read()
+    # Verificar si ya existe
+    existing = [a for a in data["accounts"] if a["username"] == username]
+    if existing:
+        replace = input(f"  ⚠️  @{username} ya existe. ¿Reemplazar? (s/n): ").strip().lower()
+        if replace not in ("s", "si", "sí", "y", "yes"):
+            return
+        data["accounts"] = [a for a in data["accounts"] if a["username"] != username]
 
-    cookies_b64 = base64.b64encode(cookies_json.encode("utf-8")).decode("utf-8")
+    auth_token = input("  🔑 auth_token: ").strip()
+    ct0 = input("  🔑 ct0: ").strip()
+
+    if not auth_token or not ct0:
+        print("  ❌ Ambos valores (auth_token y ct0) son obligatorios.")
+        return
+
+    # Crear un Client temporal para guardar cookies en el formato de twikit
+    client = create_client()
+    try:
+        client.set_cookies({"auth_token": auth_token, "ct0": ct0}, clear_cookies=True)
+
+        # Guardar cookies a archivo temporal y leer el contenido
+        tmp_file = f"_tmp_cookies_{username}.json"
+        client.save_cookies(tmp_file)
+        with open(tmp_file, "r", encoding="utf-8") as f:
+            cookies_content = json.load(f)
+        os.remove(tmp_file)
+
+        data["accounts"].append({
+            "username": username,
+            "cookies": cookies_content
+        })
+        save_multi(data)
+        print(f"\n  ✅ @{username} agregado.")
+    except Exception as e:
+        print(f"\n  ❌ Error: {e}")
+
+
+async def verify_accounts(data):
+    """Verifica cada cuenta con una búsqueda de prueba."""
+    if not data["accounts"]:
+        print("  No hay cuentas para verificar.")
+        return
+
+    print()
+    for acc in data["accounts"]:
+        print(f"  🔍 Verificando @{acc['username']}...", end="", flush=True)
+        client = create_client()
+        try:
+            # Cargar cookies directamente con set_cookies
+            client.set_cookies(acc["cookies"], clear_cookies=True)
+
+            # Hacer una búsqueda de prueba
+            tweets = await client.search_tweet("test lang:es", "Latest")
+            count = len(tweets) if tweets else 0
+            print(f" ✅ OK ({count} tweets)")
+        except Exception as e:
+            err = str(e)[:60]
+            print(f" ❌ {err}")
+            if "401" in err:
+                print(f"       → Cookies expiradas. Agregá cookies nuevas para @{acc['username']}.")
+
+
+def remove_account(data):
+    """Elimina una cuenta."""
+    if not data["accounts"]:
+        print("  No hay cuentas para eliminar.")
+        return
+
+    show_accounts(data)
+    try:
+        idx = int(input("\n  Número de cuenta a eliminar: ").strip()) - 1
+        if 0 <= idx < len(data["accounts"]):
+            removed = data["accounts"].pop(idx)
+            save_multi(data)
+            print(f"  🗑️  @{removed['username']} eliminado.")
+        else:
+            print("  ❌ Número inválido.")
+    except ValueError:
+        print("  ❌ Ingresá un número.")
+
+
+def export_for_github(data):
+    """Exporta todas las cookies como base64 para GitHub Secret."""
+    if not data["accounts"]:
+        print("  ❌ No hay cuentas. Agregá al menos una antes de exportar.")
+        return False
+
+    multi_json = json.dumps(data, ensure_ascii=False)
+    multi_b64 = base64.b64encode(multi_json.encode("utf-8")).decode("utf-8")
 
     print("\n" + "═" * 60)
-    print("  ✅ COOKIES LISTAS PARA GITHUB")
+    print("  ✅ COOKIES MULTI-CUENTA LISTAS PARA GITHUB")
     print("═" * 60)
+    print()
+    print(f"  📊 {len(data['accounts'])} cuenta(s) configuradas:")
+    for acc in data["accounts"]:
+        print(f"     • @{acc['username']}")
     print()
     print("  Seguí estos pasos:")
     print()
     print("  1. Andá a tu repositorio en GitHub")
     print("  2. Settings → Secrets and variables → Actions")
-    print("  3. Clic en 'New repository secret'")
+    print("  3. Clic en 'New repository secret' (o editá el existente)")
     print("  4. Name: TWITTER_COOKIES")
-    print("  5. Value: pegá TODO el texto de abajo")
-    print()
-    print("  ┌─ COPIAR DESDE ACÁ ──────────────────────────────┐")
-    print()
-    print(cookies_b64)
-    print()
-    print("  └─ HASTA ACÁ ─────────────────────────────────────┘")
+    print("  5. Value: pegá TODO el contenido de cookies_secret.txt")
     print()
 
-    # También guardar en un archivo por comodidad
     b64_file = "cookies_secret.txt"
     with open(b64_file, "w") as f:
-        f.write(cookies_b64)
-    print(f"  💾 También guardado en: {b64_file}")
-    print(f"     (podés copiar su contenido directamente)")
+        f.write(multi_b64)
+
+    print(f"  💾 Secret guardado en: {b64_file}")
+    print(f"     ({len(multi_b64)} caracteres)")
     print()
-    print("  ⚠️  IMPORTANTE: no compartas este texto con nadie.")
-    print("     Contiene tu sesión de Twitter/X.")
+    print("  ⚠️  IMPORTANTE:")
+    print("     - No compartas este archivo con nadie.")
+    print("     - Las 7 keywords se van a distribuir entre las cuentas:")
+
+    keywords = ["comarb", "sifere", "sircar", "sirpei", "sircreb", "sircupa", "sirtac"]
+    n = len(data["accounts"])
+    for i, kw in enumerate(keywords):
+        acc = data["accounts"][i % n]
+        print(f"       {kw.upper()} → @{acc['username']}")
+
     print()
-    print("  📌 Las cookies expiran periódicamente.")
-    print("     Si el Action falla, ejecutá este script de nuevo")
-    print("     y actualizá el secret en GitHub.")
+    print("     - El workflow auto-actualiza las cookies después de cada run.")
     print("═" * 60 + "\n")
+    return True
+
+
+async def main():
+    print("\n" + "═" * 60)
+    print("  🔧 CONFIGURACIÓN MULTI-CUENTA — Twitter/X")
+    print("═" * 60)
+    print()
+    print("  Configurá 2-3 cuentas de Twitter/X para distribuir")
+    print("  las 7 palabras clave entre ellas y reducir rate limits.")
+    print("  Cada cuenta buscará ~2-3 keywords.")
+    print()
+
+    data = load_existing()
+
+    while True:
+        print("\n" + "─" * 40)
+        print("  CUENTAS CONFIGURADAS:")
+        show_accounts(data)
+        print("─" * 40)
+        print()
+        print("  [1] Agregar cuenta (con cookies del navegador)")
+        print("  [2] Verificar cuentas (búsqueda de prueba)")
+        print("  [3] Eliminar cuenta")
+        print("  [4] Exportar para GitHub Actions y salir")
+        print("  [5] Salir sin exportar")
+        print()
+
+        choice = input("  Opción: ").strip()
+
+        if choice == "1":
+            await add_account(data)
+        elif choice == "2":
+            await verify_accounts(data)
+        elif choice == "3":
+            remove_account(data)
+        elif choice == "4":
+            if export_for_github(data):
+                break
+        elif choice == "5":
+            print("\n  👋 Saliendo.\n")
+            break
+        else:
+            print("  ❌ Opción no válida.")
 
 
 if __name__ == "__main__":
