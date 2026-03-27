@@ -60,6 +60,11 @@ install_dependencies()
 from twikit import Client
 from textblob import TextBlob
 from report_generator import generate_html_report
+from sentiment_lexicon import (
+    NEGATIVE_WORDS, POSITIVE_WORDS,
+    NEGATIVE_PHRASES, POSITIVE_PHRASES,
+    NEGATIONS, INTENSIFIERS, SARCASM_MARKERS,
+)
 
 # ── Parche para twikit: corrige regex de X.com (formato webpack actual) ──
 def _patch_twikit_transaction():
@@ -192,44 +197,102 @@ def count_emojis(text):
 #  ANÁLISIS DE SENTIMIENTO (con emojis)
 # ═══════════════════════════════════════════════════════════════
 
+def _score_phrases(text_lower, phrase_dict):
+    """Busca frases multi-palabra en el texto y suma sus pesos."""
+    score = 0.0
+    matched = []
+    for phrase, weight in phrase_dict.items():
+        if phrase in text_lower:
+            score += weight
+            matched.append(phrase)
+    return score, matched
+
+
+def _score_words_with_context(text_lower, tokens):
+    """
+    Puntúa tokens individuales considerando negaciones e intensificadores.
+    Retorna (pos_score, neg_score).
+    """
+    pos_score = 0.0
+    neg_score = 0.0
+    negate_remaining = 0        # tokens restantes bajo efecto de negación
+    intensifier_mult = 1.0      # multiplicador del intensificador activo
+
+    for token in tokens:
+        # Actualizar negación
+        if token in NEGATIONS:
+            negate_remaining = 2  # afecta las próximas 2 palabras
+            continue
+
+        # Actualizar intensificador
+        if token in INTENSIFIERS:
+            intensifier_mult = INTENSIFIERS[token]
+            continue
+
+        # Evaluar palabra en diccionarios
+        is_neg = token in NEGATIVE_WORDS
+        is_pos = token in POSITIVE_WORDS
+
+        if is_neg or is_pos:
+            weight = NEGATIVE_WORDS.get(token, 0) or POSITIVE_WORDS.get(token, 0)
+            weight *= intensifier_mult
+
+            if negate_remaining > 0:
+                # Negación invierte polaridad al 70%
+                if is_neg:
+                    pos_score += weight * 0.7
+                else:
+                    neg_score += weight * 0.7
+            else:
+                if is_neg:
+                    neg_score += weight
+                else:
+                    pos_score += weight
+
+        # Resetear modificadores
+        if token not in NEGATIONS:
+            if negate_remaining > 0:
+                negate_remaining -= 1
+        if token not in INTENSIFIERS:
+            intensifier_mult = 1.0
+
+    return pos_score, neg_score
+
+
 def analyze_sentiment(text):
     """
     Analiza el sentimiento de un texto combinando:
-    1. Diccionario de palabras en español
-    2. Diccionario de emojis con pesos
-    3. TextBlob (polarity en inglés como complemento)
+    1. Diccionario de frases argentinas (multi-palabra)
+    2. Diccionario de palabras con negaciones e intensificadores
+    3. Diccionario de emojis con pesos
+    4. TextBlob (polarity en inglés como complemento menor)
+    5. Heurística de sarcasmo argentino
 
     Retorna: (sentimiento, score, detalles_emojis)
     """
-    negative_words = [
-        "error", "problema", "falla", "no funciona", "caída", "lento",
-        "imposible", "frustración", "queja", "demora", "bug", "reclamo",
-        "horrible", "pésimo", "desastre", "inútil", "vergüenza", "mal",
-        "peor", "molesta", "odio", "bronca", "cansado", "harto",
-        "no puedo", "no anda", "se cayó", "no carga", "no sirve",
-        "traba", "cuelga", "actualización", "incompatible", "rechazado",
-        "vencido", "multa", "intimación", "deuda", "apremio", "eliminar",
-        "lastre", "lentisimo", "LPQLP", "carreta", "no funcione",
-        "no cambia", "elimine", "feroces", "no tienen bolas", "dinosaurios",
-        "robo", "roba", "enano", "privilegios", "mierda", "renegando",
-        "Faltan huevos", "Demencial"
-    ]
-    positive_words = [
-        "excelente", "genial", "muy bien", "rápido", "fácil",
-        "perfecto", "útil", "práctico", "mejoró", "mejor",
-        "bueno", "correcto", "ok"
-    ]
-
     text_lower = text.lower()
+    tokens = text_lower.split()
 
-    # ── 1. Palabras clave ──
-    neg_word_count = sum(1 for w in negative_words if w.lower() in text_lower)
-    pos_word_count = sum(1 for w in positive_words if w.lower() in text_lower)
+    # ── 1. Frases multi-palabra ──
+    neg_phrase_score, neg_phrases = _score_phrases(text_lower, NEGATIVE_PHRASES)
+    pos_phrase_score, pos_phrases = _score_phrases(text_lower, POSITIVE_PHRASES)
 
-    # ── 2. Emojis ──
+    # ── 2. Palabras individuales con contexto ──
+    pos_word_score, neg_word_score = _score_words_with_context(text_lower, tokens)
+
+    # ── 3. Sarcasmo: si hay marcadores positivos junto con señales negativas, neutralizar ──
+    has_negative_signal = neg_phrase_score > 0 or neg_word_score > 0
+    if has_negative_signal:
+        for marker in SARCASM_MARKERS:
+            if marker in text_lower:
+                # Descontar el aporte positivo del marcador
+                if marker in POSITIVE_WORDS:
+                    pos_word_score = max(0, pos_word_score - POSITIVE_WORDS[marker])
+
+    # ── 4. Emojis ──
     emoji_pos, emoji_neg, emoji_details = count_emojis(text)
 
-    # ── 3. TextBlob ──
+    # ── 5. TextBlob ──
     try:
         blob = TextBlob(text)
         tb_polarity = blob.sentiment.polarity
@@ -237,22 +300,16 @@ def analyze_sentiment(text):
         tb_polarity = 0
 
     # ── Score combinado (ponderado) ──
-    # Palabras:  peso 0.30 por match
-    # Emojis:    peso 0.25 por unidad de score
-    # TextBlob:  peso 0.20 del polarity
-    word_score = (pos_word_count - neg_word_count) * 0.30
-    emoji_score = (emoji_pos - emoji_neg) * 0.25
-    tb_score = tb_polarity * 0.20
+    word_component = (pos_word_score - neg_word_score) * 0.40
+    phrase_component = (pos_phrase_score - neg_phrase_score) * 0.25
+    emoji_component = (emoji_pos - emoji_neg) * 0.25
+    tb_component = tb_polarity * 0.10
 
-    combined_score = word_score + emoji_score + tb_score
+    combined_score = word_component + phrase_component + emoji_component + tb_component
 
-    # Totales para comparación
-    total_pos = pos_word_count + emoji_pos
-    total_neg = neg_word_count + emoji_neg
-
-    if combined_score > 0.05 or total_pos > total_neg:
+    if combined_score > 0.10:
         sentiment = "positivo"
-    elif combined_score < -0.05 or total_neg > total_pos:
+    elif combined_score < -0.10:
         sentiment = "negativo"
     else:
         sentiment = "neutro"
