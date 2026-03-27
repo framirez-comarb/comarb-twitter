@@ -820,15 +820,46 @@ async def scrape_tweets():
     print("═" * 60)
 
     seen_ids = set()  # IDs de tweets ya procesados (evita duplicados entre keywords)
+    failed_accounts = set()  # Cuentas que dieron error (404, suspendidas, etc.)
 
     for i, keyword in enumerate(KEYWORDS):
-        info = clients_info[i % n_clients]
+        # Elegir cuenta, saltando las que fallaron
+        info = None
+        if n_clients > 1:
+            original_idx = i % n_clients
+            for offset in range(n_clients):
+                candidate = clients_info[(original_idx + offset) % n_clients]
+                if candidate["username"] not in failed_accounts:
+                    info = candidate
+                    break
+            if info is None:
+                print(f"\n  ⚠️ Todas las cuentas fallaron, no se puede buscar #{keyword.upper()}")
+                continue
+        else:
+            info = clients_info[0]
+
         client = info["client"]
         label = f"@{info['username']}" if info["username"] != "default" else ""
 
         print(f"\n  [{i+1}/{len(KEYWORDS)}] Buscando: #{keyword.upper()}{' (' + label + ')' if label else ''}", end="", flush=True)
 
         keyword_data = await search_keyword_with_client(client, keyword, since_date, until_date, seen_ids)
+
+        # Si dio error 404 o de auth, marcar la cuenta como fallida y reintentar con otra
+        error_msg = keyword_data.get("error", "")
+        if error_msg and ("404" in error_msg or "401" in error_msg or "403" in error_msg):
+            print(f"\n  ⚠️ Cuenta @{info['username']} falló ({error_msg}), reintentando con otra cuenta...")
+            failed_accounts.add(info["username"])
+            # Buscar otra cuenta disponible
+            retry_info = None
+            for ci in clients_info:
+                if ci["username"] not in failed_accounts:
+                    retry_info = ci
+                    break
+            if retry_info:
+                print(f"  🔄 Reintentando #{keyword.upper()} con @{retry_info['username']}", end="", flush=True)
+                keyword_data = await search_keyword_with_client(retry_info["client"], keyword, since_date, until_date, seen_ids)
+
         all_data["keywords"].append(keyword_data)
 
         if i < len(KEYWORDS) - 1:
