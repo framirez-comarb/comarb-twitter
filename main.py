@@ -116,7 +116,7 @@ MULTI_COOKIES_FILE = "twitter_multi_cookies.json"
 DATA_FILE = "tweets_data.json"
 REPORT_FILE = os.path.join(OUTPUT_DIR, "index.html")
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
-PAUSE_BETWEEN_KEYWORDS = 30
+PAUSE_BETWEEN_KEYWORDS = 60
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -669,10 +669,26 @@ async def search_keyword_with_client(client, keyword, since_date, until_date, se
     try:
         tweet_list = []
         all_emoji_counter = {}
+        query = f"{keyword} lang:es since:{since_date} until:{until_date}"
 
-        tweets = await client.search_tweet(
-            f"{keyword} lang:es since:{since_date} until:{until_date}", "Latest"
-        )
+        # ── Búsqueda inicial con retry ante 429 ──
+        tweets = None
+        for attempt in range(3):
+            try:
+                tweets = await client.search_tweet(query, "Latest")
+                break
+            except Exception as init_err:
+                if "429" in str(init_err):
+                    wait = 90 * (attempt + 1)
+                    print(f" (429, esperando {wait}s...)", end="", flush=True)
+                    await asyncio.sleep(wait)
+                else:
+                    raise
+
+        if not tweets:
+            print(f" → No se pudo iniciar búsqueda (rate limit)")
+            keyword_data["error"] = "Rate limit en búsqueda inicial"
+            return keyword_data
 
         while tweets:
             for tweet in tweets:
@@ -716,21 +732,25 @@ async def search_keyword_with_client(client, keyword, since_date, until_date, se
             if len(tweet_list) >= MAX_TWEETS_PER_KEYWORD:
                 break
 
-            try:
-                tweets = await tweets.next()
-            except Exception as page_err:
-                err_str = str(page_err)
-                if "429" in err_str:
-                    print(" (429, esperando 60s...)", end="", flush=True)
-                    await asyncio.sleep(60)
-                    try:
-                        tweets = await tweets.next()
-                    except Exception:
-                        break
-                else:
+            # ── Paginación con retry ante 429 (hasta 3 intentos con backoff) ──
+            next_page = None
+            for attempt in range(3):
+                try:
+                    next_page = await tweets.next()
                     break
+                except Exception as page_err:
+                    if "429" in str(page_err):
+                        wait = 90 * (attempt + 1)
+                        print(f" (429, esperando {wait}s...)", end="", flush=True)
+                        await asyncio.sleep(wait)
+                    else:
+                        break
 
-            await asyncio.sleep(3)
+            if next_page is None:
+                break
+            tweets = next_page
+
+            await asyncio.sleep(5)
 
         tweet_list.sort(key=lambda x: x["date"], reverse=True)
         keyword_data["posts"] = tweet_list
@@ -812,7 +832,11 @@ async def scrape_tweets():
         all_data["keywords"].append(keyword_data)
 
         if i < len(KEYWORDS) - 1:
-            await asyncio.sleep(PAUSE_BETWEEN_KEYWORDS)
+            # Si hubo error de rate limit, esperar más antes del siguiente keyword
+            hit_rate_limit = keyword_data.get("error", "") and "429" in keyword_data.get("error", "")
+            pause = PAUSE_BETWEEN_KEYWORDS * 2 if hit_rate_limit else PAUSE_BETWEEN_KEYWORDS
+            print(f"  ⏳ Pausa de {pause}s antes del siguiente keyword...")
+            await asyncio.sleep(pause)
 
     # ── Re-guardar cookies al final ──
     if n_clients > 0:
