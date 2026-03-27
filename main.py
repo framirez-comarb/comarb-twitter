@@ -596,8 +596,11 @@ def save_multi_cookies(clients_info):
 #  SCRAPING
 # ═══════════════════════════════════════════════════════════════
 
-async def search_keyword_with_client(client, keyword, since_date, until_date):
-    """Busca un keyword con un client específico. Retorna keyword_data."""
+async def search_keyword_with_client(client, keyword, since_date, until_date, seen_ids=None):
+    """Busca un keyword con un client específico. Retorna keyword_data.
+    seen_ids: set compartido entre búsquedas para evitar tweets duplicados."""
+    if seen_ids is None:
+        seen_ids = set()
     keyword_data = {
         "keyword": keyword,
         "posts": [],
@@ -618,6 +621,11 @@ async def search_keyword_with_client(client, keyword, since_date, until_date):
             for tweet in tweets:
                 if len(tweet_list) >= MAX_TWEETS_PER_KEYWORD:
                     break
+
+                # Saltar tweets ya vistos (duplicados dentro o entre búsquedas)
+                if tweet.id in seen_ids:
+                    continue
+                seen_ids.add(tweet.id)
 
                 sentiment, score, emoji_details = analyze_sentiment(tweet.text)
 
@@ -734,6 +742,8 @@ async def scrape_tweets():
             print(f"     {kw.upper()} → @{acc['username']}")
     print("═" * 60)
 
+    seen_ids = set()  # IDs de tweets ya procesados (evita duplicados entre keywords)
+
     for i, keyword in enumerate(KEYWORDS):
         info = clients_info[i % n_clients]
         client = info["client"]
@@ -741,7 +751,7 @@ async def scrape_tweets():
 
         print(f"\n  [{i+1}/{len(KEYWORDS)}] Buscando: #{keyword.upper()}{' (' + label + ')' if label else ''}", end="", flush=True)
 
-        keyword_data = await search_keyword_with_client(client, keyword, since_date, until_date)
+        keyword_data = await search_keyword_with_client(client, keyword, since_date, until_date, seen_ids)
         all_data["keywords"].append(keyword_data)
 
         if i < len(KEYWORDS) - 1:
