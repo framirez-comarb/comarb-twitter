@@ -673,7 +673,7 @@ async def search_keyword_with_client(client, keyword, since_date, until_date, se
 
         # ── Búsqueda inicial con retry ante 429 ──
         tweets = None
-        for attempt in range(3):
+        for attempt in range(2):
             try:
                 tweets = await client.search_tweet(query, "Latest")
                 break
@@ -734,7 +734,7 @@ async def search_keyword_with_client(client, keyword, since_date, until_date, se
 
             # ── Paginación con retry ante 429 (hasta 3 intentos con backoff) ──
             next_page = None
-            for attempt in range(3):
+            for attempt in range(2):
                 try:
                     next_page = await tweets.next()
                     break
