@@ -116,7 +116,7 @@ MULTI_COOKIES_FILE = "twitter_multi_cookies.json"
 DATA_FILE = "tweets_data.json"
 REPORT_FILE = os.path.join(OUTPUT_DIR, "index.html")
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
-PAUSE_BETWEEN_KEYWORDS = 60
+PAUSE_BETWEEN_KEYWORDS = 0
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -862,12 +862,8 @@ async def scrape_tweets():
 
         all_data["keywords"].append(keyword_data)
 
-        if i < len(KEYWORDS) - 1:
-            # Si hubo error de rate limit, esperar más antes del siguiente keyword
-            hit_rate_limit = keyword_data.get("error", "") and "429" in keyword_data.get("error", "")
-            pause = PAUSE_BETWEEN_KEYWORDS * 2 if hit_rate_limit else PAUSE_BETWEEN_KEYWORDS
-            print(f"  ⏳ Pausa de {pause}s antes del siguiente keyword...")
-            await asyncio.sleep(pause)
+        if i < len(KEYWORDS) - 1 and PAUSE_BETWEEN_KEYWORDS > 0:
+            await asyncio.sleep(PAUSE_BETWEEN_KEYWORDS)
 
     # ── Re-guardar cookies al final ──
     if n_clients > 0:
