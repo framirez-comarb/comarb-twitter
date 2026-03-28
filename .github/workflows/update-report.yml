@@ -4,12 +4,6 @@ on:
   schedule:
     - cron: '0 11 * * 1,3,5'
   workflow_dispatch:
-  push:
-    branches: [ main ]
-    paths:
-      - 'main.py'
-      - 'report_generator.py'
-      - '.github/workflows/update-report.yml'
 
 permissions:
   contents: write
