@@ -679,7 +679,7 @@ async def search_keyword_with_client(client, keyword, since_date, until_date, se
                 break
             except Exception as init_err:
                 if "429" in str(init_err):
-                    wait = 90 * (attempt + 1)
+                    wait = 60 * (attempt + 1)
                     print(f" (429, esperando {wait}s...)", end="", flush=True)
                     await asyncio.sleep(wait)
                 else:
@@ -690,7 +690,11 @@ async def search_keyword_with_client(client, keyword, since_date, until_date, se
             keyword_data["error"] = "Rate limit en búsqueda inicial"
             return keyword_data
 
+        empty_pages = 0  # Páginas consecutivas sin tweets nuevos
+
         while tweets:
+            count_before = len(tweet_list)
+
             for tweet in tweets:
                 if len(tweet_list) >= MAX_TWEETS_PER_KEYWORD:
                     break
@@ -727,12 +731,22 @@ async def search_keyword_with_client(client, keyword, since_date, until_date, se
                 tweet_list.append(tweet_info)
                 keyword_data["sentiment_summary"][sentiment] += 1
 
+            new_tweets = len(tweet_list) - count_before
             print(f" → {len(tweet_list)}...", end="", flush=True)
 
             if len(tweet_list) >= MAX_TWEETS_PER_KEYWORD:
                 break
 
-            # ── Paginación con retry ante 429 (hasta 3 intentos con backoff) ──
+            # Cortar si no hay tweets nuevos en 3 páginas consecutivas
+            if new_tweets == 0:
+                empty_pages += 1
+                if empty_pages >= 3:
+                    print(" (sin tweets nuevos, cortando)", end="", flush=True)
+                    break
+            else:
+                empty_pages = 0
+
+            # ── Paginación con retry ante 429 ──
             next_page = None
             for attempt in range(2):
                 try:
@@ -740,7 +754,7 @@ async def search_keyword_with_client(client, keyword, since_date, until_date, se
                     break
                 except Exception as page_err:
                     if "429" in str(page_err):
-                        wait = 90 * (attempt + 1)
+                        wait = 60 * (attempt + 1)
                         print(f" (429, esperando {wait}s...)", end="", flush=True)
                         await asyncio.sleep(wait)
                     else:
@@ -750,7 +764,7 @@ async def search_keyword_with_client(client, keyword, since_date, until_date, se
                 break
             tweets = next_page
 
-            await asyncio.sleep(5)
+            await asyncio.sleep(3)
 
         tweet_list.sort(key=lambda x: x["date"], reverse=True)
         keyword_data["posts"] = tweet_list
