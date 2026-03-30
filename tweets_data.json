@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-30T05:00:40.354959",
+  "generated_at": "2026-03-30T11:50:41.881262",
   "period": {
     "from": "2026-01-01",
     "to": "2026-03-30"
@@ -937,7 +937,7 @@
           "sentiment": "neutro",
           "sentiment_score": 0.0,
           "emojis_found": [],
-          "likes": 0,
+          "likes": 2,
           "retweets": 0,
           "replies": 0,
           "url": "https://x.com/LucasMantaras/status/2038397816192536837"
