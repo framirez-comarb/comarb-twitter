@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-03-30T11:50:41.881262",
+  "generated_at": "2026-04-01T11:44:36.533519",
   "period": {
     "from": "2026-01-01",
-    "to": "2026-03-30"
+    "to": "2026-04-01"
   },
   "keywords": [
     {
@@ -327,6 +327,34 @@
       "keyword": "sifere",
       "posts": [
         {
+          "id": "2039032940995223687",
+          "text": "IVA Federal con distribución por convenio multilateral. Nacional con coeficiente único y provincias por CM05 ídem a lo actual. \nSin coparticipación. \nPresentación y Pago por Sifere. \nVerdadero Federalismo con correspondencia fiscal y sin sometimientos #impuestos",
+          "user": "Roberto Gil",
+          "username": "Robertogil65",
+          "date": "2026-03-31 17:31:51+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.005,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/Robertogil65/status/2039032940995223687"
+        },
+        {
+          "id": "2038953913995460693",
+          "text": "📌 𝗥𝗲𝘂𝗻𝗶𝗼́𝗻 𝗠𝗲𝘀𝗮 𝗱𝗲 𝗘𝗻𝗹𝗮𝗰𝗲\nSe realizó un encuentro entre la Dirección Provincial de Rentas y el Consejo Profesional de Ciencias Económicas.\nSe abordaron temas vinculados al funcionamiento de sistemas, SIFERE Web, vencimientos y mejoras en procesos digitales. https://t.co/FiAyGiQCtD",
+          "user": "Dirección Provincial de Rentas Neuquén",
+          "username": "DireccionRentas",
+          "date": "2026-03-31 12:17:49+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 2,
+          "retweets": 1,
+          "replies": 0,
+          "url": "https://x.com/DireccionRentas/status/2038953913995460693"
+        },
+        {
           "id": "2034957445458448582",
           "text": "La Comisión Arbitral validó como en término las DDJJ y pagos del anticipo 1/2026 del Convenio Multilateral realizados hasta el 20 de febrero por problemas técnicos en SIFERE.\n\n https://t.co/a4F47dTHc7 https://t.co/oHx7A1BG0A",
           "user": "BDC - Blog del Contador",
@@ -540,18 +568,52 @@
       "sentiment_summary": {
         "positivo": 3,
         "negativo": 3,
-        "neutro": 9
+        "neutro": 11
       },
       "emoji_stats": {
         "total_positive_emojis": 0,
         "total_negative_emojis": 0,
         "top_emojis": {}
       },
-      "total_found": 15
+      "total_found": 17
     },
     {
       "keyword": "sircar",
       "posts": [
+        {
+          "id": "2038734965546828162",
+          "text": "#ARCA implementó el #SIRCIP, un nuevo esquema que busca simplificar y centralizar la presentación de determinadas obligaciones informativas que hasta ahora se gestionaban en sistemas como ARBA, ARCIBA y SIRCAR. https://t.co/48PEYQMNmm",
+          "user": "Jebsen & Co.",
+          "username": "jebsenco",
+          "date": "2026-03-30 21:47:48+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 1,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/jebsenco/status/2038734965546828162"
+        },
+        {
+          "id": "2036440564070228314",
+          "text": "@TMCNaboJowar E to toder karsaaji...😱😱😱",
+          "user": "Subho",
+          "username": "sircar_16",
+          "date": "2026-03-24 13:50:40+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -1.125,
+          "emojis_found": [
+            {
+              "emoji": "😱",
+              "type": "negativo",
+              "count": 3
+            }
+          ],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/sircar_16/status/2036440564070228314"
+        },
         {
           "id": "2028463167098048822",
           "text": "👉VENCIMIENTOS MARZO\n🔹Inmobiliario Rural – cuota 2\n🔹Ingresos brutos – Anticipo 2 y cuota 2\n🔹Ingresos Brutos CM – Anticipo 2\n🔹Ag. Retención\n🔹SIRCAR\n🔹SIRCREB\n@MinEconomiaSF https://t.co/4lUJfXpAgj",
@@ -823,35 +885,22 @@
           "retweets": 2,
           "replies": 0,
           "url": "https://x.com/TgcqAsoc/status/2014639445140516930"
-        },
-        {
-          "id": "2014081670287143003",
-          "text": "OpenAI rompe su promesa y suma anuncios a ChatGPT: ¿por qué la IA no puede escapar del modelo publicitario?\n\nPor Anisha Sircar\n#Innovación \nhttps://t.co/9DKT1LDKXN",
-          "user": "Forbes Uruguay 🇺🇾",
-          "username": "forbesuruguay",
-          "date": "2026-01-21 21:04:24+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/forbesuruguay/status/2014081670287143003"
         }
       ],
       "sentiment_summary": {
         "positivo": 1,
-        "negativo": 0,
+        "negativo": 1,
         "neutro": 19
       },
       "emoji_stats": {
         "total_positive_emojis": 4,
-        "total_negative_emojis": 0,
+        "total_negative_emojis": 3,
         "top_emojis": {
-          "🥳": 4
+          "🥳": 4,
+          "😱": 3
         }
       },
-      "total_found": 20
+      "total_found": 21
     },
     {
       "keyword": "sirpei",
@@ -929,6 +978,222 @@
       "keyword": "sircreb",
       "posts": [
         {
+          "id": "2039031620800336328",
+          "text": "@juanif17 El SIRCREB?",
+          "user": "CONDOR🆗",
+          "username": "condorlois",
+          "date": "2026-03-31 17:26:36+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/condorlois/status/2039031620800336328"
+        },
+        {
+          "id": "2039022673825521741",
+          "text": "@LuisCaputoAR @PALavigne83 Hora de eliminar IIBB y Sircreb!",
+          "user": "Soporte del 55%",
+          "username": "yosoporte",
+          "date": "2026-03-31 16:51:03+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/yosoporte/status/2039022673825521741"
+        },
+        {
+          "id": "2039020803912515750",
+          "text": "@LuisCaputoAR @JMilei @PALavigne83 asistí a una reunión en el banco para ver mi estado bancario con el oficial dé cuenta y al ver el extracto vi lo que me sacaron los 2 estados (nacional y provincial ) me encantaría reunirme con vos para que me expliques por qué pago para ponerla y sacarla (?) #sircreb",
+          "user": "CONDOR🆗",
+          "username": "condorlois",
+          "date": "2026-03-31 16:43:37+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/condorlois/status/2039020803912515750"
+        },
+        {
+          "id": "2039010684554359197",
+          "text": "@LuisCaputoAR @PALavigne83 Por qué no eliminan SIRCREB o meten directamente amparo judicial? Increíble como te voltean en la justicia una reforma laboral aprobada en las 2 cámaras y el ejecutivo pero el Ejecutivo no pueda voltear una resolución ilegal de un municipio…",
+          "user": "Uriel",
+          "username": "UrielCascu",
+          "date": "2026-03-31 16:03:24+00:00",
+          "sentiment": "positivo",
+          "sentiment_score": 0.6,
+          "emojis_found": [],
+          "likes": 35,
+          "retweets": 4,
+          "replies": 1,
+          "url": "https://x.com/UrielCascu/status/2039010684554359197"
+        },
+        {
+          "id": "2039005829873930724",
+          "text": "@LuisCaputoAR @HomegrownApe @PALavigne83 Sircreb es el cáncer , además de las tasas municipales",
+          "user": "PUNTANO2023 🇦🇷🇮🇹",
+          "username": "puntano2023",
+          "date": "2026-03-31 15:44:07+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 2,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/puntano2023/status/2039005829873930724"
+        },
+        {
+          "id": "2039005440550342985",
+          "text": "@LuisCaputoAR @pabloquirno @PALavigne83 Porque no prueban bajando más impuestos ustedes? Eliminar SIRCREB?",
+          "user": "Martin Gergolet",
+          "username": "GergoletMartin",
+          "date": "2026-03-31 15:42:34+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/GergoletMartin/status/2039005440550342985"
+        },
+        {
+          "id": "2039005222811365423",
+          "text": "@LuisCaputoAR @PALavigne83 Yo le agrego, doble imposición de Ingresos Brutos en ventas con tarjetas de crédito. Te retiene la Liquidadora (payway o firsdata) y cuando ingresa el pago al banco, te retiene el SIRCREB la provincia. Así se generan los saldos a favor de provincias",
+          "user": "Gustavo Bergia",
+          "username": "GBergia1",
+          "date": "2026-03-31 15:41:42+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/GBergia1/status/2039005222811365423"
+        },
+        {
+          "id": "2038999165611499529",
+          "text": "@LuisCaputoAR @PALavigne83 Toto, eliminen Sircreb y demás regímenes o por lo menos topeenlos.\nNación no debe cooperar ni con gobernas ni munipas en su degeneración fiscal...",
+          "user": "Nico9",
+          "username": "Nic_Olass_",
+          "date": "2026-03-31 15:17:38+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 59,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/Nic_Olass_/status/2038999165611499529"
+        },
+        {
+          "id": "2038991797137912172",
+          "text": "@vivibar7 Hay muy pocos pistachos que sean 100% sellados.\nCon la minima hendija ya es abrible.\nAquellos que no lo sean, no los plantes porque ya fueron tostados😂\nMartillazo terapéutico pensando en algún ex, sircreb o cualquier otra fuente de inspiración.",
+          "user": "PistachoSoy",
+          "username": "PistachoSoy",
+          "date": "2026-03-31 14:48:21+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [
+            {
+              "emoji": "😂",
+              "type": "positivo",
+              "count": 1
+            }
+          ],
+          "likes": 1,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/PistachoSoy/status/2038991797137912172"
+        },
+        {
+          "id": "2038818209286037757",
+          "text": "@DollarBillDame @ladymarketok @Farodelibertad_ Esa RG es de ARCA!!! \nEllos la tienen que actualizar!!!\nLee los reclamos de los contadores.\nPara que respondés de lo que no sabés!! \nLas provincias roban con el Sircreb",
+          "user": "Marce",
+          "username": "marce_711",
+          "date": "2026-03-31 03:18:35+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.6,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/marce_711/status/2038818209286037757"
+        },
+        {
+          "id": "2038766944686375408",
+          "text": "@funk_kaz @Agusava @JuancitoWalker @alevigilmalbec No digas boludeces IIBB y SIRCREB son los dos más importantes, y sin el apoyo de las provincias es imposible.",
+          "user": "Julián",
+          "username": "egjuli",
+          "date": "2026-03-30 23:54:52+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 1,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/egjuli/status/2038766944686375408"
+        },
+        {
+          "id": "2038765794864079149",
+          "text": "@arielsignetti @fedesturze @JMilei @Kicillofok y después de que abran, no ahogarlos con los impuestos y sobre todo con las retenciones de SIRCREB, IVA e IIBB",
+          "user": "laura pollola",
+          "username": "laupollola",
+          "date": "2026-03-30 23:50:18+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 1,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/laupollola/status/2038765794864079149"
+        },
+        {
+          "id": "2038706895876161761",
+          "text": "@alevigilmalbec Exacto y para eso se necesita una reforma impositiva. Bajar IVA y eliminar IIBB, SIRCREB, etc.",
+          "user": "Julián",
+          "username": "egjuli",
+          "date": "2026-03-30 19:56:15+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/egjuli/status/2038706895876161761"
+        },
+        {
+          "id": "2038689221666386372",
+          "text": "@claudiosavoia Podes agregar DGR La Pampa? Son depredadores en SIRCREB, la nueva CABI y todas sus resoluciones que inventan. Alguien que nos lea y nos ayude! Porque lamentablemente la justicia no está del lado del contribuyente respetando derechos del contribuyente.",
+          "user": "Lucrecia",
+          "username": "lufraire",
+          "date": "2026-03-30 18:46:02+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/lufraire/status/2038689221666386372"
+        },
+        {
+          "id": "2038442179970883865",
+          "text": "@IsocaGarcia @Clon_47 @LuisCaputoAR @fedesturze @madorni @JMilei es hora de eliminar el maldito impuesto al cheque y meter presión para que las provincias quiten el sircreb, sellos... etc. Tengo fe.",
+          "user": "The Dog",
+          "username": "gesdog",
+          "date": "2026-03-30 02:24:22+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/gesdog/status/2038442179970883865"
+        },
+        {
           "id": "2038397816192536837",
           "text": "@claudiosavoia Lo único que no entendió Claude es  el SIRCREB y las Retenciones de IIBB de la república de Misiones",
           "user": "Lucas Mantaras ®",
@@ -937,7 +1202,7 @@
           "sentiment": "neutro",
           "sentiment_score": 0.0,
           "emojis_found": [],
-          "likes": 2,
+          "likes": 3,
           "retweets": 0,
           "replies": 0,
           "url": "https://x.com/LucasMantaras/status/2038397816192536837"
@@ -951,7 +1216,7 @@
           "sentiment": "neutro",
           "sentiment_score": 0.0,
           "emojis_found": [],
-          "likes": 8,
+          "likes": 9,
           "retweets": 5,
           "replies": 0,
           "url": "https://x.com/cpncarloscorrea/status/2038003555970207836"
@@ -959,7 +1224,7 @@
         {
           "id": "2037904521016271161",
           "text": "@martin_rc14 Cortar el SIRCREB que si puede pero todavía no le crecen los huevos",
-          "user": "Benito Camela",
+          "user": "Benito Mordekaiser",
           "username": "camela_ben16544",
           "date": "2026-03-28 14:47:54+00:00",
           "sentiment": "neutro",
@@ -1081,48 +1346,6 @@
           "retweets": 0,
           "replies": 0,
           "url": "https://x.com/martoesposito/status/2037138468296384584"
-        },
-        {
-          "id": "2036880001652420963",
-          "text": "@JMilei ELIMINA EL SIRCREB JAVIER.",
-          "user": "Vigna, Juan Manuel",
-          "username": "VIGNAJUANMANUE1",
-          "date": "2026-03-25 18:56:50+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/VIGNAJUANMANUE1/status/2036880001652420963"
-        },
-        {
-          "id": "2036794953754460361",
-          "text": "@BlogDelContador SIRCREB es nacional.",
-          "user": "Nombre Falso",
-          "username": "Ffwjbbs51781",
-          "date": "2026-03-25 13:18:53+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/Ffwjbbs51781/status/2036794953754460361"
-        },
-        {
-          "id": "2036793979249832114",
-          "text": "@Santiago_Oria El SIRCREB en puro funcionamiento.",
-          "user": "Vigna, Juan Manuel",
-          "username": "VIGNAJUANMANUE1",
-          "date": "2026-03-25 13:15:01+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/VIGNAJUANMANUE1/status/2036793979249832114"
         },
         {
           "id": "2036615159641223170",
@@ -1375,131 +1598,21 @@
           "retweets": 0,
           "replies": 1,
           "url": "https://x.com/felipesantoto/status/2034236851150545194"
-        },
-        {
-          "id": "2034122237159076036",
-          "text": "@MisterPlanero @BullvsBearTrade Coincido. Desde IIBB hasta el SIRCREB.\nNefasto. Bien de Congourbano todo.",
-          "user": "🇦🇷🚀📈📊",
-          "username": "PsicoInversor_",
-          "date": "2026-03-18 04:18:28+00:00",
-          "sentiment": "positivo",
-          "sentiment_score": 0.28,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/PsicoInversor_/status/2034122237159076036"
-        },
-        {
-          "id": "2034001083396235658",
-          "text": "@madorni Y el sircreb cuando se da de baja??\nAlguna idea @fedesturze",
-          "user": "Andres S.",
-          "username": "borrachinfino",
-          "date": "2026-03-17 20:17:02+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/borrachinfino/status/2034001083396235658"
-        },
-        {
-          "id": "2033698771343659325",
-          "text": "@Ilovmerval Ni bien me empezaron a cobrar SIRCREB la volé a la mierda",
-          "user": "SEBASTIAN GABRIEL",
-          "username": "sebag_nOK",
-          "date": "2026-03-17 00:15:46+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.996,
-          "emojis_found": [],
-          "likes": 1,
-          "retweets": 0,
-          "replies": 1,
-          "url": "https://x.com/sebag_nOK/status/2033698771343659325"
-        },
-        {
-          "id": "2033639538870890497",
-          "text": "@MinDeLaPolenta @maxipullaro @mhtuiter y de los de CABA, sircreb no perdona.....",
-          "user": "Andres S.",
-          "username": "borrachinfino",
-          "date": "2026-03-16 20:20:23+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/borrachinfino/status/2033639538870890497"
-        },
-        {
-          "id": "2033618213464916368",
-          "text": "@martin_rc14 Obligarlos no podés pero si sacales la recaudación automática que tienen con el SIRCREB. Que salgan a buscar evasores solitos. Y las importaciones si totalmente habilitadas",
-          "user": "Benito Camela",
-          "username": "camela_ben16544",
-          "date": "2026-03-16 18:55:39+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 1,
-          "url": "https://x.com/camela_ben16544/status/2033618213464916368"
-        },
-        {
-          "id": "2033615567458816147",
-          "text": "@martin_rc14 Está peluda la cosa y el circo del asperger no ayuda. Adorni debería haber volado por los aires hace días. \nOtra cosa. Ya sacó las leyes pedorras que quería, es hora de cortar el SIRCREB y hambrear a los gobernadores",
-          "user": "Benito Camela",
-          "username": "camela_ben16544",
-          "date": "2026-03-16 18:45:08+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 1,
-          "retweets": 0,
-          "replies": 1,
-          "url": "https://x.com/camela_ben16544/status/2033615567458816147"
-        },
-        {
-          "id": "2033611971413647844",
-          "text": "@IsidoroFranco @elchamaco_1 Sisi por eso también posteo sobre ingresos brutos y sellos y sircreb",
-          "user": "SusterraAgro",
-          "username": "SusterraAgro",
-          "date": "2026-03-16 18:30:51+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/SusterraAgro/status/2033611971413647844"
-        },
-        {
-          "id": "2033597714466775254",
-          "text": "@Ojo_Kritico Que bueno - ahora les falta:\nDevolver el Saldo de IIBB\nSircreb Arbitrario de 0.5 a 3% pq sí\nPatente carísima\nMulta recaudatoria\nPercepciones de IIBB CABA\nSacarse de encima los Chocolates Rigau de GCBA\nAchicar Planta\nLimpiar\nDejar de hacer obra al pedo \n(etc)",
-          "user": "NerdSupport",
-          "username": "nerdsupport",
-          "date": "2026-03-16 17:34:12+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.12,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/nerdsupport/status/2033597714466775254"
         }
       ],
       "sentiment_summary": {
         "positivo": 1,
-        "negativo": 5,
-        "neutro": 34
+        "negativo": 4,
+        "neutro": 39
       },
       "emoji_stats": {
-        "total_positive_emojis": 0,
+        "total_positive_emojis": 1,
         "total_negative_emojis": 0,
-        "top_emojis": {}
+        "top_emojis": {
+          "😂": 1
+        }
       },
-      "total_found": 40
+      "total_found": 44
     },
     {
       "keyword": "sircupa",
@@ -1803,7 +1916,7 @@
           "sentiment": "neutro",
           "sentiment_score": 0.0,
           "emojis_found": [],
-          "likes": 35,
+          "likes": 39,
           "retweets": 17,
           "replies": 0,
           "url": "https://x.com/passalacquaok/status/2037647815430607047"
