@@ -4,8 +4,135 @@ Crea un dashboard interactivo con los datos scrapados.
 """
 
 import json as _json
+import re
 from collections import Counter, defaultdict
 from datetime import datetime
+
+
+# Stopwords castellano + ruido típico de Twitter (lista compacta, no exhaustiva)
+_STOPWORDS = set("""
+a al algo algun alguna algunas alguno algunos ante antes aquel aquella aquellas aquello aquellos aqui
+asi aun aunque cada como con contra cual cuales cuando cuanto cuantos da de del desde donde dos
+el ella ellas ello ellos en entre era eran eras eres es esa esas ese eso esos esta estaba estaban
+estado estamos estan estar estas este esto estos estoy fue fuera fueron ha habia haber habia
+habian han has hasta hay he hizo igual la las le les lo los mas me mi mis mucho muchos muy nada
+ni no nos nosotros nuestra nuestras nuestro nuestros o os otra otras otro otros para pero poco
+por porque que quien quienes se sea sean ser si sido siendo sin sobre solo son soy su sus tambien
+tanto te tener tengo ti tiene tienen toda todas todo todos tras tu tus un una unas uno unos usted
+ustedes va vamos van varios ver vos vosotros y ya yo eso ese esa esos esas mismo misma esta este
+estos estas hacer hace haces hago hizo hicieron lo la le les nos nuestro nuestra ya solo bien mal
+ahora aqui alli ahi cuando como porque cual quien donde mientras pues entonces tambien tampoco
+todavia siempre nunca jamas mientras quiza quizas tal vez asi luego despues antes hoy mañana ayer
+soy son fui fuiste fueron sere seras sera seremos seran sea seas seamos sean siendo sido le lo
+http https www com co rt via vi
+""".split())
+
+
+def _tokenize(text):
+    """Limpia y tokeniza para extracción de n-gramas."""
+    if not text:
+        return []
+    t = text.lower()
+    t = re.sub(r"http\S+|www\.\S+", " ", t)        # urls
+    t = re.sub(r"@\w+", " ", t)                    # menciones
+    t = re.sub(r"#(\w+)", r"\1", t)                # hashtags → palabra
+    t = re.sub(r"[^\wáéíóúüñ\s]", " ", t)         # quitar puntuación
+    tokens = [w for w in t.split() if len(w) > 2 and not w.isdigit() and w not in _STOPWORDS]
+    return tokens
+
+
+_MAX_MERGED_TOKENS = 6
+
+
+def _merge_overlapping(selected):
+    """Combina n-gramas que se solapan en ≥2 tokens consecutivos, hasta MAX tokens.
+    Ej: 'activa menem scioli' + 'menem scioli pareja' → 'activa menem scioli pareja'."""
+    changed = True
+    while changed:
+        changed = False
+        for i in range(len(selected)):
+            for j in range(len(selected)):
+                if i == j:
+                    continue
+                a = selected[i]["phrase"].split()
+                b = selected[j]["phrase"].split()
+                max_ov = min(len(a), len(b)) - 1
+                for k in range(max_ov, 1, -1):
+                    if a[-k:] == b[:k]:
+                        merged_tokens = a + b[k:]
+                        if len(merged_tokens) > _MAX_MERGED_TOKENS:
+                            continue
+                        if len(set(merged_tokens)) != len(merged_tokens):
+                            continue  # rechazar merges con tokens duplicados
+                        merged_phrase = " ".join(merged_tokens)
+                        merged_count = max(selected[i]["count"], selected[j]["count"])
+                        merged_sent = selected[i]["sentiment"] if selected[i]["count"] >= selected[j]["count"] else selected[j]["sentiment"]
+                        new_item = {"phrase": merged_phrase, "count": merged_count, "sentiment": merged_sent}
+                        for idx in sorted([i, j], reverse=True):
+                            selected.pop(idx)
+                        selected.append(new_item)
+                        changed = True
+                        break
+                if changed:
+                    break
+            if changed:
+                break
+    # Dedupe final por substring (eliminar n-gramas contenidos en otro de igual o mayor count)
+    selected.sort(key=lambda s: (-s["count"], -len(s["phrase"])))
+    final = []
+    for s in selected:
+        if any(s["phrase"] in f["phrase"] and f["count"] >= s["count"] for f in final):
+            continue
+        final.append(s)
+    return final
+
+
+def _extract_top_ngrams(posts, keyword, top_n=5, min_count=2):
+    """Extrae top n-gramas (bi/tri/4-gramas) por frecuencia, mergeando solapamientos.
+    Devuelve lista de dicts {phrase, count, sentiment}."""
+    kw_low = (keyword or "").lower()
+    counts = Counter()
+    sent_acc = defaultdict(lambda: Counter())  # phrase -> Counter(sentiment)
+    for p in posts:
+        toks = [w for w in _tokenize(p.get("text", "")) if w != kw_low]
+        sent = p.get("sentiment", "neutro")
+        for n in (2, 3, 4):
+            for i in range(len(toks) - n + 1):
+                gram = tuple(toks[i:i + n])
+                if kw_low in gram:
+                    continue
+                phrase = " ".join(gram)
+                counts[phrase] += 1
+                sent_acc[phrase][sent] += 1
+    # Orden: por frecuencia desc, longitud desc (más informativo gana empates).
+    items = [(p, c) for p, c in counts.items() if c >= min_count]
+    items.sort(key=lambda x: (-x[1], -len(x[0]), x[0]))
+    selected = []
+    # Sobreasignar para tener margen antes del merge final
+    pool_target = top_n * 3
+    for phrase, count in items:
+        # ¿Hay un n-grama seleccionado que contiene a este con count ≥?
+        if any(phrase in s["phrase"] and s["count"] >= count for s in selected):
+            continue
+        # ¿Este contiene a uno seleccionado con mismo count? Reemplazarlo.
+        replaced = False
+        for i, s in enumerate(selected):
+            if s["phrase"] in phrase and s["count"] == count:
+                dom_sent = sent_acc[phrase].most_common(1)[0][0]
+                selected[i] = {"phrase": phrase, "count": count, "sentiment": dom_sent}
+                replaced = True
+                break
+        if replaced:
+            continue
+        dom_sent = sent_acc[phrase].most_common(1)[0][0]
+        selected.append({"phrase": phrase, "count": count, "sentiment": dom_sent})
+        if len(selected) >= pool_target:
+            break
+    # Merge de n-gramas solapados (suffix de uno == prefix del otro, ≥2 tokens)
+    selected = _merge_overlapping(selected)
+    # Reordenar y truncar
+    selected.sort(key=lambda s: (-s["count"], -len(s["phrase"])))
+    return selected[:top_n]
 
 
 # Metadatos visuales para emociones (modelo pysentimiento ES)
@@ -61,7 +188,41 @@ def generate_html_report(data, output_file):
         for p in kw["posts"]:
             all_posts.append({**p, "keyword": kw["keyword"]})
     all_posts.sort(key=lambda x: x.get("date", ""), reverse=True)
-    recent_posts = all_posts[:10]
+    recent_posts = all_posts[:12]
+    top_liked_posts = sorted(all_posts, key=lambda x: x.get("likes", 0) or 0, reverse=True)[:12]
+
+    # ── N-gramas asociados por keyword ──
+    ngrams_html = ""
+    ngrams_empty_kws = []
+    for kw in data["keywords"]:
+        grams = _extract_top_ngrams(kw.get("posts", []), kw["keyword"], top_n=5, min_count=2)
+        if not grams:
+            ngrams_empty_kws.append(kw["keyword"].upper())
+            continue
+        max_c = max(g["count"] for g in grams)
+        min_c = min(g["count"] for g in grams)
+        pills = ""
+        for g in grams:
+            # Tamaño proporcional: 11px (min) → 18px (max)
+            if max_c == min_c:
+                size = 14
+            else:
+                size = 11 + round(7 * (g["count"] - min_c) / (max_c - min_c))
+            pills += (
+                f'<span class="ngram-pill {g["sentiment"]}" '
+                f'style="font-size:{size}px" title="{g["count"]} menciones">'
+                f'{g["phrase"]} <em>{g["count"]}</em></span>'
+            )
+        ngrams_html += f"""
+        <div class="ngram-card">
+            <div class="ngram-kw">#{kw['keyword'].upper()}</div>
+            <div class="ngram-pills">{pills}</div>
+        </div>
+        """
+    ngrams_empty_html = (
+        f'<span class="ngrams-empty-note">— sin frases frecuentes: {", ".join(ngrams_empty_kws)}</span>'
+        if ngrams_empty_kws else ""
+    )
 
     # ── Generar tarjetas de keywords ──
     keyword_sections = ""
@@ -183,7 +344,25 @@ def generate_html_report(data, output_file):
                     <span class="timeline-user">@{p.get('username', 'unknown')}</span>
                     <span class="timeline-date">{p.get('date', '')[:10]}</span>
                 </div>
-                <p class="timeline-text">{p['text'][:180]}{'...' if len(p.get('text','')) > 180 else ''}</p>
+                <p class="timeline-text">{p['text'][:280]}{'...' if len(p.get('text','')) > 280 else ''}</p>
+            </div>
+        </div>
+        """
+
+    # ── Top 10 con más likes ──
+    top_liked_html = ""
+    for i, p in enumerate(top_liked_posts):
+        top_liked_html += f"""
+        <div class="timeline-item" style="animation-delay: {i * 0.03}s">
+            <div class="timeline-dot {p['sentiment']}"></div>
+            <div class="timeline-content">
+                <div class="timeline-top">
+                    <span class="timeline-kw">#{p['keyword'].upper()}</span>
+                    <span class="timeline-user">@{p.get('username', 'unknown')}</span>
+                    <span class="timeline-date">{p.get('date', '')[:10]}</span>
+                    <span class="timeline-likes">❤️ {p.get('likes', 0)}</span>
+                </div>
+                <p class="timeline-text">{p['text'][:280]}{'...' if len(p.get('text','')) > 280 else ''}</p>
             </div>
         </div>
         """
@@ -207,17 +386,26 @@ def generate_html_report(data, output_file):
     stacked_pos = []
     stacked_neu = []
     stacked_neg = []
+    stacked_pos_n = []
+    stacked_neu_n = []
+    stacked_neg_n = []
     for kw in sorted_kws:
         s = kw["sentiment_summary"]
         total = s["positivo"] + s["negativo"] + s["neutro"]
-        stacked_labels.append(kw["keyword"].upper())
+        stacked_labels.append(f"{kw['keyword'].upper()} ({total})")
         stacked_pos.append(round((s["positivo"] / total * 100), 1) if total > 0 else 0)
         stacked_neu.append(round((s["neutro"] / total * 100), 1) if total > 0 else 0)
         stacked_neg.append(round((s["negativo"] / total * 100), 1) if total > 0 else 0)
+        stacked_pos_n.append(s["positivo"])
+        stacked_neu_n.append(s["neutro"])
+        stacked_neg_n.append(s["negativo"])
     stacked_labels_json = _json.dumps(stacked_labels)
     stacked_pos_json = _json.dumps(stacked_pos)
     stacked_neu_json = _json.dumps(stacked_neu)
     stacked_neg_json = _json.dumps(stacked_neg)
+    stacked_pos_n_json = _json.dumps(stacked_pos_n)
+    stacked_neu_n_json = _json.dumps(stacked_neu_n)
+    stacked_neg_n_json = _json.dumps(stacked_neg_n)
 
     # ── HTML completo ──
     generated_at = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
@@ -364,10 +552,66 @@ def generate_html_report(data, output_file):
             font-size: 10px; color: #475569; margin-left: auto;
             font-family: 'JetBrains Mono', monospace;
         }}
+        .timeline-likes {{
+            font-size: 10px; color: #f87171;
+            font-family: 'JetBrains Mono', monospace; font-weight: 700;
+        }}
+        .timeline-grid {{
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+        }}
+        @media (max-width: 900px) {{
+            .timeline-grid {{ grid-template-columns: 1fr; }}
+        }}
+
+        /* ── N-gramas asociados ── */
+        .ngrams-section {{ margin-bottom: 32px; }}
+        .ngrams-grid {{
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+        }}
+        .ngram-card {{
+            background: rgba(15,23,42,0.55); border: 1px solid rgba(148,163,184,0.08);
+            border-radius: 12px; padding: 12px 14px;
+        }}
+        .ngram-kw {{
+            font-size: 11px; font-weight: 800; color: #38bdf8;
+            font-family: 'JetBrains Mono', monospace; margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }}
+        .ngram-pills {{ display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }}
+        .ngram-pill {{
+            display: inline-flex; align-items: center; gap: 5px;
+            padding: 3px 9px; border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.15);
+            background: rgba(148,163,184,0.08);
+            color: #cbd5e1; line-height: 1.4;
+            font-family: 'DM Sans', sans-serif;
+        }}
+        .ngram-pill em {{
+            font-style: normal; font-size: 0.75em; opacity: 0.65;
+            font-family: 'JetBrains Mono', monospace;
+        }}
+        .ngram-pill.positivo {{
+            color: #86efac; border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.08);
+        }}
+        .ngram-pill.negativo {{
+            color: #fca5a5; border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.08);
+        }}
+        .ngram-pill.neutro {{
+            color: #cbd5e1; border-color: rgba(148,163,184,0.2); background: rgba(148,163,184,0.08);
+        }}
+        .ngram-empty {{
+            font-size: 11px; color: #64748b; font-style: italic;
+        }}
+        .ngrams-empty-note {{
+            font-size: 11px; color: #64748b; font-style: italic;
+            font-weight: 400; margin-left: 6px;
+            font-family: 'JetBrains Mono', monospace;
+        }}
         .timeline-text {{
             font-size: 12px; color: #b0b8c8; line-height: 1.5;
             overflow: hidden; display: -webkit-box;
-            -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5; -webkit-box-orient: vertical;
         }}
 
         /* ── Keyword sections ── */
@@ -607,6 +851,14 @@ def generate_html_report(data, output_file):
             </div>
         </div>
 
+        <!-- N-gramas asociados por keyword -->
+        <div class="ngrams-section">
+            <div class="section-title">🏷 Frases asociadas por palabra clave (top 5) {ngrams_empty_html}</div>
+            <div class="ngrams-grid">
+                {ngrams_html}
+            </div>
+        </div>
+
         <!-- Daily evolution chart -->
         <div style="margin-bottom: 32px;">
             <div class="section-title">📈 Evolución diaria de sentimiento (todas las palabras)</div>
@@ -615,10 +867,18 @@ def generate_html_report(data, output_file):
             </div>
         </div>
 
-        <!-- Recent timeline -->
+        <!-- Recent timeline + Top liked -->
         <div class="timeline-section">
-            <div class="section-title">⏱ Publicaciones más recientes (todas las palabras)</div>
-            {timeline_html}
+            <div class="timeline-grid">
+                <div>
+                    <div class="section-title">⏱ Publicaciones más recientes (todas las palabras)</div>
+                    {timeline_html}
+                </div>
+                <div>
+                    <div class="section-title">❤️ Top 12 con más likes</div>
+                    {top_liked_html}
+                </div>
+            </div>
         </div>
 
         <!-- Keyword detail sections -->
@@ -652,18 +912,21 @@ def generate_html_report(data, output_file):
                     {{
                         label: 'Positivo',
                         data: {stacked_pos_json},
+                        counts: {stacked_pos_n_json},
                         backgroundColor: '#22c55e',
                         borderRadius: 4
                     }},
                     {{
                         label: 'Neutro',
                         data: {stacked_neu_json},
+                        counts: {stacked_neu_n_json},
                         backgroundColor: '#94a3b8',
                         borderRadius: 0
                     }},
                     {{
                         label: 'Negativo',
                         data: {stacked_neg_json},
+                        counts: {stacked_neg_n_json},
                         backgroundColor: '#ef4444',
                         borderRadius: 4
                     }}
@@ -672,13 +935,21 @@ def generate_html_report(data, output_file):
             options: {{
                 indexAxis: 'y',
                 responsive: true,
+                layout: {{ padding: {{ left: 20 }} }},
                 plugins: {{
                     legend: {{
                         labels: {{ color: '#94a3b8', font: {{ family: "'DM Sans', sans-serif", size: 12 }} }}
                     }},
                     tooltip: {{
                         callbacks: {{
-                            label: function(ctx) {{ return ctx.dataset.label + ': ' + ctx.raw + '%'; }}
+                            title: function(items) {{
+                                return (items[0].label || '').replace(/\\s*\\(\\d+\\)\\s*$/, '');
+                            }},
+                            label: function(ctx) {{
+                                const n = ctx.dataset.counts ? ctx.dataset.counts[ctx.dataIndex] : null;
+                                const pct = ctx.raw + '%';
+                                return ctx.dataset.label + ': ' + (n !== null ? n + ' tweets (' + pct + ')' : pct);
+                            }}
                         }}
                     }}
                 }},
@@ -691,7 +962,8 @@ def generate_html_report(data, output_file):
                     }},
                     y: {{
                         stacked: true,
-                        ticks: {{ color: '#cbd5e1', font: {{ family: "'JetBrains Mono', monospace", size: 12, weight: 'bold' }} }},
+                        ticks: {{ color: '#cbd5e1', padding: 8, font: {{ family: "'JetBrains Mono', monospace", size: 12, weight: 'bold' }} }},
+                        afterFit: function(scale) {{ scale.width = Math.max(scale.width, 120); }},
                         grid: {{ display: false }}
                     }}
                 }},

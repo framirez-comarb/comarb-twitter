@@ -138,10 +138,66 @@
             font-size: 10px; color: #475569; margin-left: auto;
             font-family: 'JetBrains Mono', monospace;
         }
+        .timeline-likes {
+            font-size: 10px; color: #f87171;
+            font-family: 'JetBrains Mono', monospace; font-weight: 700;
+        }
+        .timeline-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+        }
+        @media (max-width: 900px) {
+            .timeline-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── N-gramas asociados ── */
+        .ngrams-section { margin-bottom: 32px; }
+        .ngrams-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+        }
+        .ngram-card {
+            background: rgba(15,23,42,0.55); border: 1px solid rgba(148,163,184,0.08);
+            border-radius: 12px; padding: 12px 14px;
+        }
+        .ngram-kw {
+            font-size: 11px; font-weight: 800; color: #38bdf8;
+            font-family: 'JetBrains Mono', monospace; margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        .ngram-pills { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+        .ngram-pill {
+            display: inline-flex; align-items: center; gap: 5px;
+            padding: 3px 9px; border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.15);
+            background: rgba(148,163,184,0.08);
+            color: #cbd5e1; line-height: 1.4;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .ngram-pill em {
+            font-style: normal; font-size: 0.75em; opacity: 0.65;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .ngram-pill.positivo {
+            color: #86efac; border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.08);
+        }
+        .ngram-pill.negativo {
+            color: #fca5a5; border-color: rgba(239,68,68,0.3); background: rgba(239,68,68,0.08);
+        }
+        .ngram-pill.neutro {
+            color: #cbd5e1; border-color: rgba(148,163,184,0.2); background: rgba(148,163,184,0.08);
+        }
+        .ngram-empty {
+            font-size: 11px; color: #64748b; font-style: italic;
+        }
+        .ngrams-empty-note {
+            font-size: 11px; color: #64748b; font-style: italic;
+            font-weight: 400; margin-left: 6px;
+            font-family: 'JetBrains Mono', monospace;
+        }
         .timeline-text {
             font-size: 12px; color: #b0b8c8; line-height: 1.5;
             overflow: hidden; display: -webkit-box;
-            -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5; -webkit-box-orient: vertical;
         }
 
         /* ── Keyword sections ── */
@@ -337,7 +393,7 @@
             <div class="subtitle">Sistemas Tributarios COMARB · Tweets por palabra clave</div>
             <div class="meta-line">
                 <span>📅 2026-01-01 — 2026-04-07</span>
-                <span>🔄 07/04/2026 15:24:35</span>
+                <span>🔄 07/04/2026 16:20:21</span>
             </div>
         </div>
 
@@ -381,6 +437,44 @@
             </div>
         </div>
 
+        <!-- N-gramas asociados por keyword -->
+        <div class="ngrams-section">
+            <div class="section-title">🏷 Frases asociadas por palabra clave (top 5) <span class="ngrams-empty-note">— sin frases frecuentes: SIRPEI</span></div>
+            <div class="ngrams-grid">
+                
+        <div class="ngram-card">
+            <div class="ngram-kw">#COMARB</div>
+            <div class="ngram-pills"><span class="ngram-pill neutro" style="font-size:18px" title="8 menciones">entra vigencia domicilio fiscal electrónico federal <em>8</em></span><span class="ngram-pill neutro" style="font-size:16px" title="6 menciones">convenio multilateral <em>6</em></span><span class="ngram-pill neutro" style="font-size:11px" title="2 menciones">presentadas pagadas término ddjj <em>2</em></span><span class="ngram-pill neutro" style="font-size:11px" title="2 menciones">partir entra vigencia domicilio <em>2</em></span><span class="ngram-pill neutro" style="font-size:11px" title="2 menciones">ordenamiento jurídico <em>2</em></span></div>
+        </div>
+        
+        <div class="ngram-card">
+            <div class="ngram-kw">#SIFERE</div>
+            <div class="ngram-pills"><span class="ngram-pill neutro" style="font-size:18px" title="5 menciones">convenio multilateral <em>5</em></span><span class="ngram-pill neutro" style="font-size:11px" title="2 menciones">anticipo enero <em>2</em></span><span class="ngram-pill neutro" style="font-size:11px" title="2 menciones">pagos anticipo <em>2</em></span></div>
+        </div>
+        
+        <div class="ngram-card">
+            <div class="ngram-kw">#SIRCAR</div>
+            <div class="ngram-pills"><span class="ngram-pill neutro" style="font-size:18px" title="8 menciones">ingresos brutos <em>8</em></span><span class="ngram-pill neutro" style="font-size:13px" title="5 menciones">cuota ingresos brutos anticipo <em>5</em></span><span class="ngram-pill neutro" style="font-size:13px" title="5 menciones">comisión arbitral <em>5</em></span><span class="ngram-pill neutro" style="font-size:11px" title="4 menciones">convenio multilateral <em>4</em></span><span class="ngram-pill neutro" style="font-size:11px" title="4 menciones">agentes retención <em>4</em></span></div>
+        </div>
+        
+        <div class="ngram-card">
+            <div class="ngram-kw">#SIRCREB</div>
+            <div class="ngram-pills"><span class="ngram-pill negativo" style="font-size:18px" title="4 menciones">operaciones exentas <em>4</em></span><span class="ngram-pill negativo" style="font-size:11px" title="3 menciones">revientan impuestos bancos servicios expensas etc <em>3</em></span><span class="ngram-pill negativo" style="font-size:11px" title="3 menciones">casta está activa menem scioli pareja <em>3</em></span><span class="ngram-pill negativo" style="font-size:11px" title="3 menciones">cualquier hijo <em>3</em></span><span class="ngram-pill negativo" style="font-size:11px" title="3 menciones">milei adorni <em>3</em></span></div>
+        </div>
+        
+        <div class="ngram-card">
+            <div class="ngram-kw">#SIRCUPA</div>
+            <div class="ngram-pills"><span class="ngram-pill negativo" style="font-size:18px" title="3 menciones">impuesto cheque <em>3</em></span><span class="ngram-pill negativo" style="font-size:11px" title="2 menciones">volviendo loca demuestre inconsistencias bancarias así <em>2</em></span><span class="ngram-pill negativo" style="font-size:11px" title="2 menciones">inconsistencias bancarias así aceptar baja definitiva <em>2</em></span><span class="ngram-pill negativo" style="font-size:11px" title="2 menciones">pagar iibb jubilada minima siguen rompiendo <em>2</em></span><span class="ngram-pill negativo" style="font-size:11px" title="2 menciones">aceptar baja definitiva arba dejar pagar <em>2</em></span></div>
+        </div>
+        
+        <div class="ngram-card">
+            <div class="ngram-kw">#SIRTAC</div>
+            <div class="ngram-pills"><span class="ngram-pill neutro" style="font-size:14px" title="2 menciones">imp créditos débitos <em>2</em></span><span class="ngram-pill neutro" style="font-size:14px" title="2 menciones">regímenes generales <em>2</em></span><span class="ngram-pill negativo" style="font-size:14px" title="2 menciones">ingresos brutos <em>2</em></span><span class="ngram-pill neutro" style="font-size:14px" title="2 menciones">débito crédito <em>2</em></span></div>
+        </div>
+        
+            </div>
+        </div>
+
         <!-- Daily evolution chart -->
         <div style="margin-bottom: 32px;">
             <div class="section-title">📈 Evolución diaria de sentimiento (todas las palabras)</div>
@@ -389,10 +483,12 @@
             </div>
         </div>
 
-        <!-- Recent timeline -->
+        <!-- Recent timeline + Top liked -->
         <div class="timeline-section">
-            <div class="section-title">⏱ Publicaciones más recientes (todas las palabras)</div>
-            
+            <div class="timeline-grid">
+                <div>
+                    <div class="section-title">⏱ Publicaciones más recientes (todas las palabras)</div>
+                    
         <div class="timeline-item" style="animation-delay: 0.0s">
             <div class="timeline-dot neutro"></div>
             <div class="timeline-content">
@@ -404,7 +500,9 @@
                 <p class="timeline-text">🧾 Domicilio Fiscal Electrónico Federal
 
 Ya está operativo el servicio en COMARB que permite acceder y responder notificaciones de distintas jurisdicciones.
-Conocé cómo utilizarlo 👉...</p>
+Conocé cómo utilizarlo 👉🏽 https://t.co/hyOVSorLaV 
+
+✅ ¿Todavía no te suscribiste a Trivia? Registrate de forma gratuita y</p>
             </div>
         </div>
         
@@ -419,7 +517,7 @@ Conocé cómo utilizarlo 👉...</p>
                 <p class="timeline-text">🚨 #FLASHREPORT
 ▶️ La ComArb habilita a partir del 01/04/2026 el Domicilio Fiscal Electrónico Federal.
 
-#GrupoGNP #Impuestos #PlanificaciónTributaria #DerechoTributario #domiciliofi...</p>
+#GrupoGNP #Impuestos #PlanificaciónTributaria #DerechoTributario #domiciliofiscalelectrónico https://t.co/XsivdF94tQ</p>
             </div>
         </div>
         
@@ -467,7 +565,7 @@ Conocé cómo utilizarlo 👉...</p>
                     <span class="timeline-user">@gusmarbevacqua</span>
                     <span class="timeline-date">2026-04-06</span>
                 </div>
-                <p class="timeline-text">@MinEconomia_Ar @majulluis Cuando me devuelvan parte de lo que me robaron con el corralito, eliminen el sircreb, ya que manda dinero mi hijo o el estado por la inundación de bahía ...</p>
+                <p class="timeline-text">@MinEconomia_Ar @majulluis Cuando me devuelvan parte de lo que me robaron con el corralito, eliminen el sircreb, ya que manda dinero mi hijo o el estado por la inundación de bahía (me retuvieron en NQN 3,5%, 70k) y todos se hacen los boludos, tal vez pueda confiar. Ah pero hay qu...</p>
             </div>
         </div>
         
@@ -490,7 +588,7 @@ Sicore
 F931
 Multas en la extratosfera
 Ahh y no actualizan la Rg 830
-El resto todo normal ...</p>
+El resto todo normal lpm vale la pena ser Cr🛌</p>
             </div>
         </div>
         
@@ -502,7 +600,7 @@ El resto todo normal ...</p>
                     <span class="timeline-user">@deFibra_</span>
                     <span class="timeline-date">2026-04-05</span>
                 </div>
-                <p class="timeline-text">@NauBernues Sifere, Sircip, Sircreb, Sirpei, Sircar, Sirtac, Sircupa son todos los sistemas de recaudación ya sea por retención, percepción o recaudación del COMARB, convenio multi...</p>
+                <p class="timeline-text">@NauBernues Sifere, Sircip, Sircreb, Sirpei, Sircar, Sirtac, Sircupa son todos los sistemas de recaudación ya sea por retención, percepción o recaudación del COMARB, convenio multilateral de Ingresos Brutos.. Hermosas instituciones que tienen ISO 9001:2015 e ISO/IEC 27001:2022.Mu...</p>
             </div>
         </div>
         
@@ -517,7 +615,8 @@ El resto todo normal ...</p>
                 <p class="timeline-text">@JMilei Javo … que onda el SIRCREB? 
 Vamos a tener un iva decente menor al 15 ?
 Ganância , siga siga ? 
-Dale flaco te Vote para hacer estas realidades pero parece que ahora el esta...</p>
+Dale flaco te Vote para hacer estas realidades pero parece que ahora el estado argentino pesca en una pelopincho? 
+Me chupa un huevo la política pero me importa demasiado la ec...</p>
             </div>
         </div>
         
@@ -533,6 +632,220 @@ Dale flaco te Vote para hacer estas realidades pero parece que ahora el esta...<
             </div>
         </div>
         
+        <div class="timeline-item" style="animation-delay: 0.3s">
+            <div class="timeline-dot negativo"></div>
+            <div class="timeline-content">
+                <div class="timeline-top">
+                    <span class="timeline-kw">#SIRCREB</span>
+                    <span class="timeline-user">@gteresitasv</span>
+                    <span class="timeline-date">2026-04-04</span>
+                </div>
+                <p class="timeline-text">@Lililaumas @Jackes_is_back @Marcelo_Allan_ @nancymiriam1961 @Carmen23902561 Y encima la #Casta recibe multimillonarios créditos en larguísimas cuotas! La gente común reventándose con impuestos, sircreb, bancos, expensas, servicios carísimos sin poder llegar a fin de mes lpm!! 🤯😢...</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item" style="animation-delay: 0.32999999999999996s">
+            <div class="timeline-dot negativo"></div>
+            <div class="timeline-content">
+                <div class="timeline-top">
+                    <span class="timeline-kw">#SIRCREB</span>
+                    <span class="timeline-user">@gteresitasv</span>
+                    <span class="timeline-date">2026-04-04</span>
+                </div>
+                <p class="timeline-text">@millerdecaba @charlescaissa B Nación es dl Estado?Xq joraca estos tienen #privilegio recibir elevado monto,largas cuotas y cualquier hijo dvecino NADA!Es +,nos revientan con imp,SirCreb,bancos,servicios,expensas etc,no hay reactivación #Casta está re activa #Menem #Scioli #parej...</p>
+            </div>
+        </div>
+        
+                </div>
+                <div>
+                    <div class="section-title">❤️ Top 12 con más likes</div>
+                    
+        <div class="timeline-item" style="animation-delay: 0.0s">
+            <div class="timeline-dot negativo"></div>
+            <div class="timeline-content">
+                <div class="timeline-top">
+                    <span class="timeline-kw">#SIRCREB</span>
+                    <span class="timeline-user">@nanitini</span>
+                    <span class="timeline-date">2026-04-01</span>
+                    <span class="timeline-likes">❤️ 71</span>
+                </div>
+                <p class="timeline-text">@fedesturze @BancoNacion SIRCREB se saca un 2% de las operaciones exentas ...entonces la pregunta es ¿quieren ampliar el mercado de capitales? Resuelvan que las Alyc te transfieran desde una cuenta del titular de la comitente como hace bull o cocos, y q sircreb deje de robar @CNV...</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item" style="animation-delay: 0.03s">
+            <div class="timeline-dot negativo"></div>
+            <div class="timeline-content">
+                <div class="timeline-top">
+                    <span class="timeline-kw">#SIRCREB</span>
+                    <span class="timeline-user">@Nic_Olass_</span>
+                    <span class="timeline-date">2026-03-31</span>
+                    <span class="timeline-likes">❤️ 60</span>
+                </div>
+                <p class="timeline-text">@LuisCaputoAR @PALavigne83 Toto, eliminen Sircreb y demás regímenes o por lo menos topeenlos.
+Nación no debe cooperar ni con gobernas ni munipas en su degeneración fiscal...</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item" style="animation-delay: 0.06s">
+            <div class="timeline-dot negativo"></div>
+            <div class="timeline-content">
+                <div class="timeline-top">
+                    <span class="timeline-kw">#SIRCAR</span>
+                    <span class="timeline-user">@GabiC2020</span>
+                    <span class="timeline-date">2026-04-06</span>
+                    <span class="timeline-likes">❤️ 53</span>
+                </div>
+                <p class="timeline-text">Naaa en serio 
+Fiscas interminables
+RT 54
+Reforma laboral suspendida
+Sircar
+Sirtac
+Sircreb
+Sicore
+F931
+Multas en la extratosfera
+Ahh y no actualizan la Rg 830
+El resto todo normal lpm vale la pena ser Cr🛌</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item" style="animation-delay: 0.09s">
+            <div class="timeline-dot neutro"></div>
+            <div class="timeline-content">
+                <div class="timeline-top">
+                    <span class="timeline-kw">#COMARB</span>
+                    <span class="timeline-user">@Contadoresenred</span>
+                    <span class="timeline-date">2026-03-17</span>
+                    <span class="timeline-likes">❤️ 47</span>
+                </div>
+                <p class="timeline-text">📩 El Domicilio Fiscal Electrónico Federal entra en vigencia a partir de abril 2026.
+
+🔹 Plataforma de acceso: Se opera a través del Portal Federal Tributario (https://t.co/LYhccHNtuK)
+🔹 Identificación: El ingreso se realiza con CUIT y Clave Fiscal (ya sea la otorgada por ARCA o ht...</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item" style="animation-delay: 0.12s">
+            <div class="timeline-dot neutro"></div>
+            <div class="timeline-content">
+                <div class="timeline-top">
+                    <span class="timeline-kw">#SIRTAC</span>
+                    <span class="timeline-user">@passalacquaok</span>
+                    <span class="timeline-date">2026-03-27</span>
+                    <span class="timeline-likes">❤️ 40</span>
+                </div>
+                <p class="timeline-text">Esta decisión implica:
+
+• Eliminar la doble imposición en compras con tarjeta, dejando sin efecto la RG 91/90 y unificando el sistema con SIRTAC.
+
+• Reducir la carga administrativa, eliminando registros que ya no aportaban valor, como los de transporte, parque móvil y gas</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item" style="animation-delay: 0.15s">
+            <div class="timeline-dot neutro"></div>
+            <div class="timeline-content">
+                <div class="timeline-top">
+                    <span class="timeline-kw">#SIRCUPA</span>
+                    <span class="timeline-user">@diegotefraga</span>
+                    <span class="timeline-date">2026-02-27</span>
+                    <span class="timeline-likes">❤️ 40</span>
+                </div>
+                <p class="timeline-text">Las cuentas de uso personal y no comercial deberían ser INTOCABLES para ARCA, Pcias, sircreb, sircupa, impuesto al cheque, etc. 
+Podrían elaborarse normas en este sentido aprovechando esta movida, en conjunto con las billeteras virtuales y bancos .
+Y si alguno la usa para fines</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item" style="animation-delay: 0.18s">
+            <div class="timeline-dot negativo"></div>
+            <div class="timeline-content">
+                <div class="timeline-top">
+                    <span class="timeline-kw">#SIFERE</span>
+                    <span class="timeline-user">@iccz02</span>
+                    <span class="timeline-date">2026-03-11</span>
+                    <span class="timeline-likes">❤️ 35</span>
+                </div>
+                <p class="timeline-text">no anda sifere, se cuelga en las percepciones y retenciones, todos los meses lo mismo, y los soretes con las multas altisimas, que dibujados que estan los consejos</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item" style="animation-delay: 0.21s">
+            <div class="timeline-dot neutro"></div>
+            <div class="timeline-content">
+                <div class="timeline-top">
+                    <span class="timeline-kw">#SIRTAC</span>
+                    <span class="timeline-user">@Contadoresenred</span>
+                    <span class="timeline-date">2026-01-06</span>
+                    <span class="timeline-likes">❤️ 29</span>
+                </div>
+                <p class="timeline-text">🔵 ARBA actualiza el procedimiento de cálculo y asignación de alícuotas de recaudación de IIBB.
+
+🔹 Procedimiento único para regímenes generales y especiales, incluyendo SIRTAC y SIRCUPA. 
+🔹Consideración de los últimos 4 anticipos vencidos para el cálculo de la alícuota.
+🔹</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item" style="animation-delay: 0.24s">
+            <div class="timeline-dot neutro"></div>
+            <div class="timeline-content">
+                <div class="timeline-top">
+                    <span class="timeline-kw">#COMARB</span>
+                    <span class="timeline-user">@BlogDelContador</span>
+                    <span class="timeline-date">2026-03-02</span>
+                    <span class="timeline-likes">❤️ 28</span>
+                </div>
+                <p class="timeline-text">COMARB aprobó un nuevo “Ordenamiento Jurídico” digital con todas las normas del Convenio Multilateral
+
+ https://t.co/Tym9Hs565u https://t.co/wv7bHGu8hO</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item" style="animation-delay: 0.27s">
+            <div class="timeline-dot neutro"></div>
+            <div class="timeline-content">
+                <div class="timeline-top">
+                    <span class="timeline-kw">#SIFERE</span>
+                    <span class="timeline-user">@Toti_YY</span>
+                    <span class="timeline-date">2026-03-11</span>
+                    <span class="timeline-likes">❤️ 26</span>
+                </div>
+                <p class="timeline-text">@nodefecarperros @PotusAmarillo En la inscripción al CM del IIBB hay costos ocultos como los honorarios de un contador si el monotributista se complica con SIFERE las declaraciones juradas mensuales y la anual. Además algunas provincias exigen un "impuesto mínimo" mensual aunque ...</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item" style="animation-delay: 0.3s">
+            <div class="timeline-dot neutro"></div>
+            <div class="timeline-content">
+                <div class="timeline-top">
+                    <span class="timeline-kw">#SIRTAC</span>
+                    <span class="timeline-user">@rolon_nico</span>
+                    <span class="timeline-date">2026-03-13</span>
+                    <span class="timeline-likes">❤️ 22</span>
+                </div>
+                <p class="timeline-text">@esteban_a_secas Pasa que facturar ya tenes 3% ingresos brutos 1% Muni 1% Sicreb si te pagan con transferencia 1.2 imp a los créditos y débitos. Si es tarjeta arancel del 4% y 1% de sirtac</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item" style="animation-delay: 0.32999999999999996s">
+            <div class="timeline-dot negativo"></div>
+            <div class="timeline-content">
+                <div class="timeline-top">
+                    <span class="timeline-kw">#SIRCREB</span>
+                    <span class="timeline-user">@danipala33</span>
+                    <span class="timeline-date">2026-04-01</span>
+                    <span class="timeline-likes">❤️ 21</span>
+                </div>
+                <p class="timeline-text">@fedesturze @BancoNacion Espero que cuando depositen en la cuenta los intereses no le apliquen impuesto al ch, retenciones nacionales ni sircreb, etc.
+Anda poniendo que no se puede aplicar eso xq ya estoy viendo como se chupan la renta nacion, provincia y municipio.</p>
+            </div>
+        </div>
+        
+                </div>
+            </div>
         </div>
 
         <!-- Keyword detail sections -->
@@ -4795,7 +5108,7 @@ Pero claro en vez de pagar en efectivo te puede subir los precios.  Vos elegis �
         <div class="footer">
             <p>
                 Análisis generado con Twikit + TextBlob · Datos reales de Twitter/X<br>
-                Período: 2026-01-01 — 2026-04-07 · Generado: 07/04/2026 15:24:35
+                Período: 2026-01-01 — 2026-04-07 · Generado: 07/04/2026 16:20:21
             </p>
         </div>
     </div>
@@ -4813,23 +5126,26 @@ Pero claro en vez de pagar en efectivo te puede subir los precios.  Vos elegis �
         new Chart(ctxStacked, {
             type: 'bar',
             data: {
-                labels: ["SIRCREB", "COMARB", "SIRCAR", "SIRCUPA", "SIFERE", "SIRTAC", "SIRPEI"],
+                labels: ["SIRCREB (41)", "COMARB (26)", "SIRCAR (25)", "SIRCUPA (21)", "SIFERE (16)", "SIRTAC (15)", "SIRPEI (4)"],
                 datasets: [
                     {
                         label: 'Positivo',
                         data: [0.0, 11.5, 0.0, 0.0, 0.0, 0.0, 0.0],
+                        counts: [0, 3, 0, 0, 0, 0, 0],
                         backgroundColor: '#22c55e',
                         borderRadius: 4
                     },
                     {
                         label: 'Neutro',
                         data: [36.6, 69.2, 92.0, 28.6, 56.2, 46.7, 75.0],
+                        counts: [15, 18, 23, 6, 9, 7, 3],
                         backgroundColor: '#94a3b8',
                         borderRadius: 0
                     },
                     {
                         label: 'Negativo',
                         data: [63.4, 19.2, 8.0, 71.4, 43.8, 53.3, 25.0],
+                        counts: [26, 5, 2, 15, 7, 8, 1],
                         backgroundColor: '#ef4444',
                         borderRadius: 4
                     }
@@ -4838,13 +5154,21 @@ Pero claro en vez de pagar en efectivo te puede subir los precios.  Vos elegis �
             options: {
                 indexAxis: 'y',
                 responsive: true,
+                layout: { padding: { left: 20 } },
                 plugins: {
                     legend: {
                         labels: { color: '#94a3b8', font: { family: "'DM Sans', sans-serif", size: 12 } }
                     },
                     tooltip: {
                         callbacks: {
-                            label: function(ctx) { return ctx.dataset.label + ': ' + ctx.raw + '%'; }
+                            title: function(items) {
+                                return (items[0].label || '').replace(/\s*\(\d+\)\s*$/, '');
+                            },
+                            label: function(ctx) {
+                                const n = ctx.dataset.counts ? ctx.dataset.counts[ctx.dataIndex] : null;
+                                const pct = ctx.raw + '%';
+                                return ctx.dataset.label + ': ' + (n !== null ? n + ' tweets (' + pct + ')' : pct);
+                            }
                         }
                     }
                 },
@@ -4857,7 +5181,8 @@ Pero claro en vez de pagar en efectivo te puede subir los precios.  Vos elegis �
                     },
                     y: {
                         stacked: true,
-                        ticks: { color: '#cbd5e1', font: { family: "'JetBrains Mono', monospace", size: 12, weight: 'bold' } },
+                        ticks: { color: '#cbd5e1', padding: 8, font: { family: "'JetBrains Mono', monospace", size: 12, weight: 'bold' } },
+                        afterFit: function(scale) { scale.width = Math.max(scale.width, 120); },
                         grid: { display: false }
                     }
                 },
