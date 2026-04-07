@@ -1,26 +1,90 @@
 {
-  "generated_at": "2026-04-06T11:42:07.418817",
+  "generated_at": "2026-04-07T15:21:49.581225",
   "period": {
     "from": "2026-01-01",
-    "to": "2026-04-06"
+    "to": "2026-04-07"
   },
   "keywords": [
     {
       "keyword": "comarb",
       "posts": [
         {
+          "id": "2041176606278881338",
+          "text": "🧾 Domicilio Fiscal Electrónico Federal\n\nYa está operativo el servicio en COMARB que permite acceder y responder notificaciones de distintas jurisdicciones.\nConocé cómo utilizarlo 👉🏽 https://t.co/hyOVSorLaV \n\n✅ ¿Todavía no te suscribiste a Trivia? Registrate de forma gratuita y",
+          "user": "Consejo CABA",
+          "username": "ConsejoCABA",
+          "date": "2026-04-06 15:30:00+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [
+            {
+              "emoji": "✅",
+              "type": "positivo",
+              "count": 1
+            }
+          ],
+          "likes": 19,
+          "retweets": 2,
+          "replies": 0,
+          "url": "https://x.com/ConsejoCABA/status/2041176606278881338",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.993,
+            "joy": 0.002,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
+        },
+        {
+          "id": "2041168790377857185",
+          "text": "🚨 #FLASHREPORT\n▶️ La ComArb habilita a partir del 01/04/2026 el Domicilio Fiscal Electrónico Federal.\n\n#GrupoGNP #Impuestos #PlanificaciónTributaria #DerechoTributario #domiciliofiscalelectrónico https://t.co/XsivdF94tQ",
+          "user": "GRUPO GNP",
+          "username": "GrupoGNPOk",
+          "date": "2026-04-06 14:58:57+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": -0.078,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/GrupoGNPOk/status/2041168790377857185",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.995,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
+        },
+        {
           "id": "2040744038018564272",
           "text": "@NauBernues Sifere, Sircip, Sircreb, Sirpei, Sircar, Sirtac, Sircupa son todos los sistemas de recaudación ya sea por retención, percepción o recaudación del COMARB, convenio multilateral de Ingresos Brutos.. Hermosas instituciones que tienen ISO 9001:2015 e ISO/IEC 27001:2022.Muy eficientes",
           "user": "C0co",
           "username": "deFibra_",
           "date": "2026-04-05 10:51:08+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.01,
+          "sentiment": "positivo",
+          "sentiment_score": 0.533,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/deFibra_/status/2040744038018564272"
+          "url": "https://x.com/deFibra_/status/2040744038018564272",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.749,
+            "joy": 0.215,
+            "sadness": 0.008,
+            "anger": 0.019,
+            "surprise": 0.005,
+            "disgust": 0.004,
+            "fear": 0.002
+          }
         },
         {
           "id": "2039803292876787997",
@@ -29,12 +93,22 @@
           "username": "urbano_gaucho",
           "date": "2026-04-02 20:32:57+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.174,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/urbano_gaucho/status/2039803292876787997"
+          "url": "https://x.com/urbano_gaucho/status/2039803292876787997",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.969,
+            "joy": 0.001,
+            "sadness": 0.006,
+            "anger": 0.013,
+            "surprise": 0.004,
+            "disgust": 0.004,
+            "fear": 0.002
+          }
         },
         {
           "id": "2039445305691660627",
@@ -43,12 +117,22 @@
           "username": "TgcqAsoc",
           "date": "2026-04-01 20:50:26+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.01,
+          "sentiment_score": 0.076,
           "emojis_found": [],
           "likes": 4,
           "retweets": 2,
           "replies": 0,
-          "url": "https://x.com/TgcqAsoc/status/2039445305691660627"
+          "url": "https://x.com/TgcqAsoc/status/2039445305691660627",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.995,
+            "joy": 0.002,
+            "sadness": 0.001,
+            "anger": 0.0,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2039375442944119096",
@@ -56,13 +140,23 @@
           "user": "Willcosla",
           "username": "WillCosLa",
           "date": "2026-04-01 16:12:50+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.478,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/WillCosLa/status/2039375442944119096"
+          "url": "https://x.com/WillCosLa/status/2039375442944119096",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.986,
+            "joy": 0.0,
+            "sadness": 0.004,
+            "anger": 0.004,
+            "surprise": 0.003,
+            "disgust": 0.001,
+            "fear": 0.002
+          }
         },
         {
           "id": "2034355736545779833",
@@ -71,12 +165,22 @@
           "username": "te_gomez",
           "date": "2026-03-18 19:46:18+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.005,
+          "sentiment_score": 0.014,
           "emojis_found": [],
           "likes": 9,
           "retweets": 1,
           "replies": 0,
-          "url": "https://x.com/te_gomez/status/2034355736545779833"
+          "url": "https://x.com/te_gomez/status/2034355736545779833",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.996,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2033903441475407900",
@@ -84,8 +188,8 @@
           "user": "Consejo CABA",
           "username": "ConsejoCABA",
           "date": "2026-03-17 13:49:03+00:00",
-          "sentiment": "positivo",
-          "sentiment_score": 0.25,
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
           "emojis_found": [
             {
               "emoji": "✅",
@@ -96,7 +200,17 @@
           "likes": 5,
           "retweets": 1,
           "replies": 0,
-          "url": "https://x.com/ConsejoCABA/status/2033903441475407900"
+          "url": "https://x.com/ConsejoCABA/status/2033903441475407900",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.995,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2033868116229284327",
@@ -110,7 +224,17 @@
           "likes": 47,
           "retweets": 11,
           "replies": 2,
-          "url": "https://x.com/Contadoresenred/status/2033868116229284327"
+          "url": "https://x.com/Contadoresenred/status/2033868116229284327",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.992,
+            "joy": 0.003,
+            "sadness": 0.001,
+            "anger": 0.002,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2033867267352535516",
@@ -119,12 +243,22 @@
           "username": "errepar",
           "date": "2026-03-17 11:25:18+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.01,
+          "sentiment_score": 0.0,
           "emojis_found": [],
           "likes": 3,
           "retweets": 1,
           "replies": 0,
-          "url": "https://x.com/errepar/status/2033867267352535516"
+          "url": "https://x.com/errepar/status/2033867267352535516",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.996,
+            "joy": 0.002,
+            "sadness": 0.001,
+            "anger": 0.0,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2033561516042072305",
@@ -132,13 +266,23 @@
           "user": "AR Estudio Contable",
           "username": "AR_Contable",
           "date": "2026-03-16 15:10:21+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "positivo",
+          "sentiment_score": 0.929,
           "emojis_found": [],
           "likes": 2,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/AR_Contable/status/2033561516042072305"
+          "url": "https://x.com/AR_Contable/status/2033561516042072305",
+          "emotion": "joy",
+          "emotion_probas": {
+            "others": 0.004,
+            "joy": 0.991,
+            "sadness": 0.0,
+            "anger": 0.0,
+            "surprise": 0.004,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2033561005834277190",
@@ -147,7 +291,7 @@
           "username": "AlfonsoYamina",
           "date": "2026-03-16 15:08:20+00:00",
           "sentiment": "positivo",
-          "sentiment_score": 0.65,
+          "sentiment_score": 0.469,
           "emojis_found": [
             {
               "emoji": "✨",
@@ -158,7 +302,17 @@
           "likes": 2,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/AlfonsoYamina/status/2033561005834277190"
+          "url": "https://x.com/AlfonsoYamina/status/2033561005834277190",
+          "emotion": "joy",
+          "emotion_probas": {
+            "others": 0.069,
+            "joy": 0.925,
+            "sadness": 0.001,
+            "anger": 0.0,
+            "surprise": 0.004,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2033283713983733893",
@@ -166,13 +320,23 @@
           "user": "C0co",
           "username": "deFibra_",
           "date": "2026-03-15 20:46:28+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.01,
+          "sentiment": "negativo",
+          "sentiment_score": -0.961,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/deFibra_/status/2033283713983733893"
+          "url": "https://x.com/deFibra_/status/2033283713983733893",
+          "emotion": "sadness",
+          "emotion_probas": {
+            "others": 0.085,
+            "joy": 0.003,
+            "sadness": 0.475,
+            "anger": 0.375,
+            "surprise": 0.004,
+            "disgust": 0.055,
+            "fear": 0.003
+          }
         },
         {
           "id": "2031844025095905646",
@@ -181,12 +345,22 @@
           "username": "catamarcaya",
           "date": "2026-03-11 21:25:40+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.275,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/catamarcaya/status/2031844025095905646"
+          "url": "https://x.com/catamarcaya/status/2031844025095905646",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.995,
+            "joy": 0.001,
+            "sadness": 0.0,
+            "anger": 0.0,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2031704709010952483",
@@ -194,8 +368,8 @@
           "user": "Tribuno Web",
           "username": "WebTribuno",
           "date": "2026-03-11 12:12:04+00:00",
-          "sentiment": "positivo",
-          "sentiment_score": 0.385,
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
           "emojis_found": [
             {
               "emoji": "🙌",
@@ -206,7 +380,17 @@
           "likes": 3,
           "retweets": 2,
           "replies": 0,
-          "url": "https://x.com/WebTribuno/status/2031704709010952483"
+          "url": "https://x.com/WebTribuno/status/2031704709010952483",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.972,
+            "joy": 0.024,
+            "sadness": 0.001,
+            "anger": 0.0,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2031103785381023934",
@@ -214,13 +398,23 @@
           "user": "Iván Gamera",
           "username": "Ivsper",
           "date": "2026-03-09 20:24:13+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.97,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/Ivsper/status/2031103785381023934"
+          "url": "https://x.com/Ivsper/status/2031103785381023934",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.037,
+            "joy": 0.001,
+            "sadness": 0.011,
+            "anger": 0.916,
+            "surprise": 0.002,
+            "disgust": 0.03,
+            "fear": 0.004
+          }
         },
         {
           "id": "2029220313536364927",
@@ -228,13 +422,23 @@
           "user": "Marcelo Castro",
           "username": "contadorcastro",
           "date": "2026-03-04 15:39:58+00:00",
-          "sentiment": "positivo",
-          "sentiment_score": 0.68,
+          "sentiment": "negativo",
+          "sentiment_score": -0.968,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/contadorcastro/status/2029220313536364927"
+          "url": "https://x.com/contadorcastro/status/2029220313536364927",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.007,
+            "joy": 0.0,
+            "sadness": 0.006,
+            "anger": 0.961,
+            "surprise": 0.0,
+            "disgust": 0.025,
+            "fear": 0.001
+          }
         },
         {
           "id": "2028812045018145245",
@@ -248,7 +452,17 @@
           "likes": 5,
           "retweets": 3,
           "replies": 0,
-          "url": "https://x.com/Contadoresenred/status/2028812045018145245"
+          "url": "https://x.com/Contadoresenred/status/2028812045018145245",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.996,
+            "joy": 0.001,
+            "sadness": 0.0,
+            "anger": 0.0,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2028506924329660617",
@@ -257,12 +471,22 @@
           "username": "BlogDelContador",
           "date": "2026-03-02 16:25:13+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.005,
+          "sentiment_score": 0.0,
           "emojis_found": [],
           "likes": 28,
           "retweets": 5,
           "replies": 6,
-          "url": "https://x.com/BlogDelContador/status/2028506924329660617"
+          "url": "https://x.com/BlogDelContador/status/2028506924329660617",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.996,
+            "joy": 0.002,
+            "sadness": 0.0,
+            "anger": 0.0,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2028398542478332394",
@@ -271,12 +495,22 @@
           "username": "TgcqAsoc",
           "date": "2026-03-02 09:14:33+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.005,
+          "sentiment_score": -0.107,
           "emojis_found": [],
           "likes": 2,
           "retweets": 2,
           "replies": 0,
-          "url": "https://x.com/TgcqAsoc/status/2028398542478332394"
+          "url": "https://x.com/TgcqAsoc/status/2028398542478332394",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.996,
+            "joy": 0.001,
+            "sadness": 0.0,
+            "anger": 0.0,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2028083244181123564",
@@ -285,12 +519,22 @@
           "username": "defensorserial",
           "date": "2026-03-01 12:21:40+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.098,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/defensorserial/status/2028083244181123564"
+          "url": "https://x.com/defensorserial/status/2028083244181123564",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.993,
+            "joy": 0.001,
+            "sadness": 0.002,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2025389587871240450",
@@ -299,12 +543,22 @@
           "username": "1287Pioja",
           "date": "2026-02-22 01:58:02+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -0.28,
+          "sentiment_score": -0.847,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/1287Pioja/status/2025389587871240450"
+          "url": "https://x.com/1287Pioja/status/2025389587871240450",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.66,
+            "joy": 0.002,
+            "sadness": 0.046,
+            "anger": 0.252,
+            "surprise": 0.011,
+            "disgust": 0.022,
+            "fear": 0.008
+          }
         },
         {
           "id": "2024599459003240827",
@@ -312,13 +566,23 @@
           "user": "alita.1287",
           "username": "1287Pioja",
           "date": "2026-02-19 21:38:20+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.16,
+          "sentiment": "neutro",
+          "sentiment_score": -0.378,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/1287Pioja/status/2024599459003240827"
+          "url": "https://x.com/1287Pioja/status/2024599459003240827",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.559,
+            "joy": 0.009,
+            "sadness": 0.031,
+            "anger": 0.335,
+            "surprise": 0.024,
+            "disgust": 0.032,
+            "fear": 0.01
+          }
         },
         {
           "id": "2024556659855540670",
@@ -327,12 +591,22 @@
           "username": "Adrian34957568",
           "date": "2026-02-19 18:48:16+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.225,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/Adrian34957568/status/2024556659855540670"
+          "url": "https://x.com/Adrian34957568/status/2024556659855540670",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.995,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2024457074961162670",
@@ -346,7 +620,17 @@
           "likes": 4,
           "retweets": 2,
           "replies": 2,
-          "url": "https://x.com/ConsejoCABA/status/2024457074961162670"
+          "url": "https://x.com/ConsejoCABA/status/2024457074961162670",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.993,
+            "joy": 0.0,
+            "sadness": 0.002,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2024232483059896733",
@@ -355,47 +639,50 @@
           "username": "FacpceArgentina",
           "date": "2026-02-18 21:20:07+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.196,
           "emojis_found": [],
           "likes": 5,
           "retweets": 2,
           "replies": 2,
-          "url": "https://x.com/FacpceArgentina/status/2024232483059896733"
+          "url": "https://x.com/FacpceArgentina/status/2024232483059896733",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.99,
+            "joy": 0.001,
+            "sadness": 0.003,
+            "anger": 0.002,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         }
       ],
       "sentiment_summary": {
-        "positivo": 4,
-        "negativo": 2,
+        "positivo": 3,
+        "negativo": 5,
         "neutro": 18
       },
       "emoji_stats": {
-        "total_positive_emojis": 3,
+        "total_positive_emojis": 4,
         "total_negative_emojis": 0,
         "top_emojis": {
-          "✅": 1,
+          "✅": 2,
           "✨": 1,
           "🙌": 1
         }
       },
-      "total_found": 24
+      "total_found": 26,
+      "emotion_summary": {
+        "others": 21,
+        "joy": 2,
+        "sadness": 1,
+        "anger": 2
+      },
+      "emotion_dominant": "others"
     },
     {
       "keyword": "sifere",
       "posts": [
-        {
-          "id": "2039032940995223687",
-          "text": "IVA Federal con distribución por convenio multilateral. Nacional con coeficiente único y provincias por CM05 ídem a lo actual. \nSin coparticipación. \nPresentación y Pago por Sifere. \nVerdadero Federalismo con correspondencia fiscal y sin sometimientos #impuestos",
-          "user": "Roberto Gil",
-          "username": "Robertogil65",
-          "date": "2026-03-31 17:31:51+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.005,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/Robertogil65/status/2039032940995223687"
-        },
         {
           "id": "2038953913995460693",
           "text": "📌 𝗥𝗲𝘂𝗻𝗶𝗼́𝗻 𝗠𝗲𝘀𝗮 𝗱𝗲 𝗘𝗻𝗹𝗮𝗰𝗲\nSe realizó un encuentro entre la Dirección Provincial de Rentas y el Consejo Profesional de Ciencias Económicas.\nSe abordaron temas vinculados al funcionamiento de sistemas, SIFERE Web, vencimientos y mejoras en procesos digitales. https://t.co/FiAyGiQCtD",
@@ -403,12 +690,22 @@
           "username": "DireccionRentas",
           "date": "2026-03-31 12:17:49+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.076,
           "emojis_found": [],
           "likes": 2,
           "retweets": 1,
           "replies": 0,
-          "url": "https://x.com/DireccionRentas/status/2038953913995460693"
+          "url": "https://x.com/DireccionRentas/status/2038953913995460693",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.996,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.0,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2034957445458448582",
@@ -417,12 +714,22 @@
           "username": "BlogDelContador",
           "date": "2026-03-20 11:37:17+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.01,
+          "sentiment_score": 0.0,
           "emojis_found": [],
           "likes": 3,
           "retweets": 2,
           "replies": 1,
-          "url": "https://x.com/BlogDelContador/status/2034957445458448582"
+          "url": "https://x.com/BlogDelContador/status/2034957445458448582",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.994,
+            "joy": 0.001,
+            "sadness": 0.002,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2034945420468572535",
@@ -431,12 +738,22 @@
           "username": "Contadoresenred",
           "date": "2026-03-20 10:49:30+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.01,
+          "sentiment_score": 0.0,
           "emojis_found": [],
           "likes": 2,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/Contadoresenred/status/2034945420468572535"
+          "url": "https://x.com/Contadoresenred/status/2034945420468572535",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.995,
+            "joy": 0.002,
+            "sadness": 0.0,
+            "anger": 0.0,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2033917404850311622",
@@ -444,13 +761,23 @@
           "user": "bruno ventroni",
           "username": "BrunoVentroni1",
           "date": "2026-03-17 14:44:32+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.365,
+          "sentiment": "neutro",
+          "sentiment_score": -0.314,
           "emojis_found": [],
           "likes": 2,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/BrunoVentroni1/status/2033917404850311622"
+          "url": "https://x.com/BrunoVentroni1/status/2033917404850311622",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.937,
+            "joy": 0.005,
+            "sadness": 0.016,
+            "anger": 0.025,
+            "surprise": 0.009,
+            "disgust": 0.005,
+            "fear": 0.004
+          }
         },
         {
           "id": "2033539516602970504",
@@ -458,13 +785,23 @@
           "user": "denisse",
           "username": "aryasamidala",
           "date": "2026-03-16 13:42:56+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.956,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/aryasamidala/status/2033539516602970504"
+          "url": "https://x.com/aryasamidala/status/2033539516602970504",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.935,
+            "joy": 0.006,
+            "sadness": 0.023,
+            "anger": 0.018,
+            "surprise": 0.007,
+            "disgust": 0.004,
+            "fear": 0.006
+          }
         },
         {
           "id": "2032454668090015833",
@@ -472,13 +809,23 @@
           "user": "Gonza",
           "username": "gdcordoba",
           "date": "2026-03-13 13:52:08+00:00",
-          "sentiment": "positivo",
-          "sentiment_score": 0.2,
+          "sentiment": "negativo",
+          "sentiment_score": -0.821,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/gdcordoba/status/2032454668090015833"
+          "url": "https://x.com/gdcordoba/status/2032454668090015833",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.824,
+            "joy": 0.002,
+            "sadness": 0.003,
+            "anger": 0.131,
+            "surprise": 0.024,
+            "disgust": 0.007,
+            "fear": 0.008
+          }
         },
         {
           "id": "2032452335432016023",
@@ -486,13 +833,23 @@
           "user": "𝐶𝑎𝑚𝑖𝑙𝑎.",
           "username": "CamiiAssel",
           "date": "2026-03-13 13:42:52+00:00",
-          "sentiment": "positivo",
-          "sentiment_score": 0.28,
+          "sentiment": "negativo",
+          "sentiment_score": -0.954,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/CamiiAssel/status/2032452335432016023"
+          "url": "https://x.com/CamiiAssel/status/2032452335432016023",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.006,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.968,
+            "surprise": 0.002,
+            "disgust": 0.021,
+            "fear": 0.002
+          }
         },
         {
           "id": "2032450938300948584",
@@ -500,13 +857,23 @@
           "user": "Jose Gomez",
           "username": "jose__7",
           "date": "2026-03-13 13:37:19+00:00",
-          "sentiment": "positivo",
-          "sentiment_score": 0.56,
+          "sentiment": "negativo",
+          "sentiment_score": -0.737,
           "emojis_found": [],
           "likes": 2,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/jose__7/status/2032450938300948584"
+          "url": "https://x.com/jose__7/status/2032450938300948584",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.942,
+            "joy": 0.005,
+            "sadness": 0.012,
+            "anger": 0.016,
+            "surprise": 0.019,
+            "disgust": 0.002,
+            "fear": 0.004
+          }
         },
         {
           "id": "2032424521844609481",
@@ -515,12 +882,22 @@
           "username": "EricaFaselli",
           "date": "2026-03-13 11:52:21+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.063,
           "emojis_found": [],
           "likes": 8,
           "retweets": 0,
           "replies": 4,
-          "url": "https://x.com/EricaFaselli/status/2032424521844609481"
+          "url": "https://x.com/EricaFaselli/status/2032424521844609481",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.908,
+            "joy": 0.006,
+            "sadness": 0.003,
+            "anger": 0.008,
+            "surprise": 0.065,
+            "disgust": 0.002,
+            "fear": 0.009
+          }
         },
         {
           "id": "2031821581907800256",
@@ -529,12 +906,22 @@
           "username": "iccz02",
           "date": "2026-03-11 19:56:29+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -1.346,
+          "sentiment_score": -0.973,
           "emojis_found": [],
           "likes": 35,
           "retweets": 8,
           "replies": 0,
-          "url": "https://x.com/iccz02/status/2031821581907800256"
+          "url": "https://x.com/iccz02/status/2031821581907800256",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.003,
+            "joy": 0.0,
+            "sadness": 0.002,
+            "anger": 0.949,
+            "surprise": 0.001,
+            "disgust": 0.043,
+            "fear": 0.002
+          }
         },
         {
           "id": "2031792259453370697",
@@ -543,12 +930,22 @@
           "username": "Toti_YY",
           "date": "2026-03-11 17:59:58+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.311,
           "emojis_found": [],
           "likes": 26,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/Toti_YY/status/2031792259453370697"
+          "url": "https://x.com/Toti_YY/status/2031792259453370697",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.979,
+            "joy": 0.001,
+            "sadness": 0.009,
+            "anger": 0.007,
+            "surprise": 0.002,
+            "disgust": 0.001,
+            "fear": 0.002
+          }
         },
         {
           "id": "2028644111184703824",
@@ -556,13 +953,23 @@
           "user": "Contador Champagne.",
           "username": "estudio37132404",
           "date": "2026-03-03 01:30:21+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.944,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/estudio37132404/status/2028644111184703824"
+          "url": "https://x.com/estudio37132404/status/2028644111184703824",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.643,
+            "joy": 0.015,
+            "sadness": 0.01,
+            "anger": 0.227,
+            "surprise": 0.069,
+            "disgust": 0.027,
+            "fear": 0.007
+          }
         },
         {
           "id": "2024834145470300665",
@@ -571,12 +978,22 @@
           "username": "BlogDelContador",
           "date": "2026-02-20 13:10:54+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.01,
+          "sentiment_score": 0.0,
           "emojis_found": [],
           "likes": 6,
           "retweets": 0,
           "replies": 5,
-          "url": "https://x.com/BlogDelContador/status/2024834145470300665"
+          "url": "https://x.com/BlogDelContador/status/2024834145470300665",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.995,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2024540168212898150",
@@ -585,12 +1002,22 @@
           "username": "argentobatmanok",
           "date": "2026-02-19 17:42:44+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -0.75,
+          "sentiment_score": -0.946,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/argentobatmanok/status/2024540168212898150"
+          "url": "https://x.com/argentobatmanok/status/2024540168212898150",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.027,
+            "joy": 0.001,
+            "sadness": 0.011,
+            "anger": 0.921,
+            "surprise": 0.003,
+            "disgust": 0.036,
+            "fear": 0.002
+          }
         },
         {
           "id": "2024474770687811855",
@@ -599,12 +1026,22 @@
           "username": "BlogDelContador",
           "date": "2026-02-19 13:22:52+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.01,
+          "sentiment_score": 0.0,
           "emojis_found": [],
           "likes": 3,
           "retweets": 0,
           "replies": 2,
-          "url": "https://x.com/BlogDelContador/status/2024474770687811855"
+          "url": "https://x.com/BlogDelContador/status/2024474770687811855",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.994,
+            "joy": 0.002,
+            "sadness": 0.0,
+            "anger": 0.0,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2024442109772640333",
@@ -613,29 +1050,68 @@
           "username": "NicoBoglione",
           "date": "2026-02-19 11:13:05+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.01,
+          "sentiment_score": -0.14,
           "emojis_found": [],
           "likes": 4,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/NicoBoglione/status/2024442109772640333"
+          "url": "https://x.com/NicoBoglione/status/2024442109772640333",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.992,
+            "joy": 0.001,
+            "sadness": 0.002,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         }
       ],
       "sentiment_summary": {
-        "positivo": 3,
-        "negativo": 3,
-        "neutro": 11
+        "positivo": 0,
+        "negativo": 7,
+        "neutro": 9
       },
       "emoji_stats": {
         "total_positive_emojis": 0,
         "total_negative_emojis": 0,
         "top_emojis": {}
       },
-      "total_found": 17
+      "total_found": 16,
+      "emotion_summary": {
+        "others": 13,
+        "anger": 3
+      },
+      "emotion_dominant": "anger"
     },
     {
       "keyword": "sircar",
       "posts": [
+        {
+          "id": "2040958937738965408",
+          "text": "Naaa en serio \nFiscas interminables\nRT 54\nReforma laboral suspendida\nSircar\nSirtac\nSircreb\nSicore\nF931\nMultas en la extratosfera\nAhh y no actualizan la Rg 830\nEl resto todo normal lpm vale la pena ser Cr🛌",
+          "user": "GABI C 👩🏼‍💻🦋🌟🐕💖",
+          "username": "GabiC2020",
+          "date": "2026-04-06 01:05:04+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.943,
+          "emojis_found": [],
+          "likes": 53,
+          "retweets": 8,
+          "replies": 5,
+          "url": "https://x.com/GabiC2020/status/2040958937738965408",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.09,
+            "joy": 0.001,
+            "sadness": 0.014,
+            "anger": 0.763,
+            "surprise": 0.059,
+            "disgust": 0.069,
+            "fear": 0.004
+          }
+        },
         {
           "id": "2039749746114400723",
           "text": "Photo credits: Ronojoy Sircar | (he/him) ronfoshizzle | ronojoy.sircar on Instagram.",
@@ -643,12 +1119,22 @@
           "username": "AWID",
           "date": "2026-04-02 17:00:10+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.087,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/AWID/status/2039749746114400723"
+          "url": "https://x.com/AWID/status/2039749746114400723",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.969,
+            "joy": 0.023,
+            "sadness": 0.004,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2039387320642875616",
@@ -656,13 +1142,23 @@
           "user": "Forbes Uruguay 🇺🇾",
           "username": "forbesuruguay",
           "date": "2026-04-01 17:00:01+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.752,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/forbesuruguay/status/2039387320642875616"
+          "url": "https://x.com/forbesuruguay/status/2039387320642875616",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.938,
+            "joy": 0.001,
+            "sadness": 0.003,
+            "anger": 0.007,
+            "surprise": 0.028,
+            "disgust": 0.004,
+            "fear": 0.02
+          }
         },
         {
           "id": "2039380770725531885",
@@ -671,12 +1167,22 @@
           "username": "APISantaFe",
           "date": "2026-04-01 16:34:00+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.05,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/APISantaFe/status/2039380770725531885"
+          "url": "https://x.com/APISantaFe/status/2039380770725531885",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.993,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2039299418571088161",
@@ -685,12 +1191,46 @@
           "username": "GermanLaRioja",
           "date": "2026-04-01 11:10:44+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.006,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/GermanLaRioja/status/2039299418571088161"
+          "url": "https://x.com/GermanLaRioja/status/2039299418571088161",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.995,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
+        },
+        {
+          "id": "2038734965546828162",
+          "text": "#ARCA implementó el #SIRCIP, un nuevo esquema que busca simplificar y centralizar la presentación de determinadas obligaciones informativas que hasta ahora se gestionaban en sistemas como ARBA, ARCIBA y SIRCAR. https://t.co/48PEYQMNmm",
+          "user": "Jebsen & Co.",
+          "username": "jebsenco",
+          "date": "2026-03-30 21:47:48+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.004,
+          "emojis_found": [],
+          "likes": 1,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/jebsenco/status/2038734965546828162",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.997,
+            "joy": 0.001,
+            "sadness": 0.0,
+            "anger": 0.0,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2036440564070228314",
@@ -698,8 +1238,8 @@
           "user": "Subho",
           "username": "sircar_16",
           "date": "2026-03-24 13:50:40+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -1.125,
+          "sentiment": "neutro",
+          "sentiment_score": -0.298,
           "emojis_found": [
             {
               "emoji": "😱",
@@ -710,7 +1250,17 @@
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/sircar_16/status/2036440564070228314"
+          "url": "https://x.com/sircar_16/status/2036440564070228314",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.986,
+            "joy": 0.003,
+            "sadness": 0.003,
+            "anger": 0.001,
+            "surprise": 0.006,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2028463167098048822",
@@ -719,12 +1269,22 @@
           "username": "APISantaFe",
           "date": "2026-03-02 13:31:20+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.152,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/APISantaFe/status/2028463167098048822"
+          "url": "https://x.com/APISantaFe/status/2028463167098048822",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.992,
+            "joy": 0.001,
+            "sadness": 0.002,
+            "anger": 0.002,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2027337454156718277",
@@ -733,12 +1293,22 @@
           "username": "resurrecteqk",
           "date": "2026-02-27 10:58:09+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.083,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/resurrecteqk/status/2027337454156718277"
+          "url": "https://x.com/resurrecteqk/status/2027337454156718277",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.98,
+            "joy": 0.012,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.005,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2026030857199186071",
@@ -747,12 +1317,22 @@
           "username": "GabiC2020",
           "date": "2026-02-23 20:26:12+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.086,
           "emojis_found": [],
           "likes": 4,
           "retweets": 1,
           "replies": 0,
-          "url": "https://x.com/GabiC2020/status/2026030857199186071"
+          "url": "https://x.com/GabiC2020/status/2026030857199186071",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.988,
+            "joy": 0.009,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2025556177208103256",
@@ -761,12 +1341,22 @@
           "username": "errepar",
           "date": "2026-02-22 13:00:00+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.01,
+          "sentiment_score": 0.0,
           "emojis_found": [],
           "likes": 3,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/errepar/status/2025556177208103256"
+          "url": "https://x.com/errepar/status/2025556177208103256",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.995,
+            "joy": 0.002,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2024508669837398143",
@@ -775,12 +1365,22 @@
           "username": "Charles08561184",
           "date": "2026-02-19 15:37:35+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.167,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/Charles08561184/status/2024508669837398143"
+          "url": "https://x.com/Charles08561184/status/2024508669837398143",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.981,
+            "joy": 0.009,
+            "sadness": 0.004,
+            "anger": 0.001,
+            "surprise": 0.004,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2024134530966102399",
@@ -789,12 +1389,22 @@
           "username": "te_gomez",
           "date": "2026-02-18 14:50:53+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.055,
           "emojis_found": [],
           "likes": 13,
           "retweets": 3,
           "replies": 0,
-          "url": "https://x.com/te_gomez/status/2024134530966102399"
+          "url": "https://x.com/te_gomez/status/2024134530966102399",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.995,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2024081252614123938",
@@ -808,7 +1418,17 @@
           "likes": 2,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/errepar/status/2024081252614123938"
+          "url": "https://x.com/errepar/status/2024081252614123938",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.994,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2024066068809982328",
@@ -817,12 +1437,22 @@
           "username": "TgcqAsoc",
           "date": "2026-02-18 10:18:50+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.179,
           "emojis_found": [],
           "likes": 1,
           "retweets": 1,
           "replies": 0,
-          "url": "https://x.com/TgcqAsoc/status/2024066068809982328"
+          "url": "https://x.com/TgcqAsoc/status/2024066068809982328",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.993,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.003,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2023971992123171139",
@@ -831,12 +1461,22 @@
           "username": "BOAresumenes",
           "date": "2026-02-18 04:05:01+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.008,
+          "sentiment_score": -0.035,
           "emojis_found": [],
           "likes": 4,
           "retweets": 1,
           "replies": 0,
-          "url": "https://x.com/BOAresumenes/status/2023971992123171139"
+          "url": "https://x.com/BOAresumenes/status/2023971992123171139",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.992,
+            "joy": 0.002,
+            "sadness": 0.001,
+            "anger": 0.002,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2022122079790018625",
@@ -845,12 +1485,22 @@
           "username": "Charles08561184",
           "date": "2026-02-13 01:34:07+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.167,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/Charles08561184/status/2022122079790018625"
+          "url": "https://x.com/Charles08561184/status/2022122079790018625",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.981,
+            "joy": 0.009,
+            "sadness": 0.004,
+            "anger": 0.001,
+            "surprise": 0.004,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2021616387849093224",
@@ -858,8 +1508,8 @@
           "user": "Subho",
           "username": "sircar_16",
           "date": "2026-02-11 16:04:41+00:00",
-          "sentiment": "positivo",
-          "sentiment_score": 1.5,
+          "sentiment": "neutro",
+          "sentiment_score": 0.054,
           "emojis_found": [
             {
               "emoji": "🥳",
@@ -870,7 +1520,17 @@
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/sircar_16/status/2021616387849093224"
+          "url": "https://x.com/sircar_16/status/2021616387849093224",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.955,
+            "joy": 0.037,
+            "sadness": 0.002,
+            "anger": 0.001,
+            "surprise": 0.005,
+            "disgust": 0.001,
+            "fear": 0.001
+          }
         },
         {
           "id": "2021547391288320165",
@@ -879,12 +1539,22 @@
           "username": "soymoti98",
           "date": "2026-02-11 11:30:31+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.097,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/soymoti98/status/2021547391288320165"
+          "url": "https://x.com/soymoti98/status/2021547391288320165",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.957,
+            "joy": 0.001,
+            "sadness": 0.012,
+            "anger": 0.018,
+            "surprise": 0.004,
+            "disgust": 0.004,
+            "fear": 0.003
+          }
         },
         {
           "id": "2018336605237600401",
@@ -893,12 +1563,22 @@
           "username": "APISantaFe",
           "date": "2026-02-02 14:52:00+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.08,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/APISantaFe/status/2018336605237600401"
+          "url": "https://x.com/APISantaFe/status/2018336605237600401",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.994,
+            "joy": 0.002,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2017598747107000339",
@@ -912,7 +1592,17 @@
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/errepar/status/2017598747107000339"
+          "url": "https://x.com/errepar/status/2017598747107000339",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.994,
+            "joy": 0.002,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2015953398864949559",
@@ -921,12 +1611,22 @@
           "username": "prodefainuc",
           "date": "2026-01-27 01:01:59+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.051,
           "emojis_found": [],
           "likes": 0,
           "retweets": 1,
           "replies": 0,
-          "url": "https://x.com/prodefainuc/status/2015953398864949559"
+          "url": "https://x.com/prodefainuc/status/2015953398864949559",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.991,
+            "joy": 0.005,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2015454621695942928",
@@ -935,12 +1635,22 @@
           "username": "errepar",
           "date": "2026-01-25 16:00:01+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.01,
+          "sentiment_score": 0.0,
           "emojis_found": [],
           "likes": 5,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/errepar/status/2015454621695942928"
+          "url": "https://x.com/errepar/status/2015454621695942928",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.995,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2014691957813964858",
@@ -954,7 +1664,17 @@
           "likes": 2,
           "retweets": 1,
           "replies": 0,
-          "url": "https://x.com/ConsejoCABA/status/2014691957813964858"
+          "url": "https://x.com/ConsejoCABA/status/2014691957813964858",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.994,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2014662983092236326",
@@ -968,27 +1688,23 @@
           "likes": 5,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/BlogDelContador/status/2014662983092236326"
-        },
-        {
-          "id": "2014639445140516930",
-          "text": "La Comisión Arbitral reprograma vencimientos del SIRCAR para 2026\n\nhttps://t.co/MM4LN8LhaP",
-          "user": "Estudio TGCQ & Asoc.",
-          "username": "TgcqAsoc",
-          "date": "2026-01-23 10:00:48+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 3,
-          "retweets": 2,
-          "replies": 0,
-          "url": "https://x.com/TgcqAsoc/status/2014639445140516930"
+          "url": "https://x.com/BlogDelContador/status/2014662983092236326",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.995,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         }
       ],
       "sentiment_summary": {
-        "positivo": 1,
-        "negativo": 1,
-        "neutro": 22
+        "positivo": 0,
+        "negativo": 2,
+        "neutro": 23
       },
       "emoji_stats": {
         "total_positive_emojis": 4,
@@ -998,7 +1714,12 @@
           "😱": 3
         }
       },
-      "total_found": 24
+      "total_found": 25,
+      "emotion_summary": {
+        "anger": 1,
+        "others": 24
+      },
+      "emotion_dominant": "others"
     },
     {
       "keyword": "sirpei",
@@ -1010,12 +1731,22 @@
           "username": "manuelmrial",
           "date": "2026-03-01 12:26:22+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.197,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/manuelmrial/status/2028084430863057166"
+          "url": "https://x.com/manuelmrial/status/2028084430863057166",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.17,
+            "joy": 0.004,
+            "sadness": 0.007,
+            "anger": 0.788,
+            "surprise": 0.005,
+            "disgust": 0.023,
+            "fear": 0.002
+          }
         },
         {
           "id": "2021979342344224793",
@@ -1023,13 +1754,23 @@
           "user": "Sebas",
           "username": "sebaszerba",
           "date": "2026-02-12 16:06:56+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.25,
+          "sentiment": "neutro",
+          "sentiment_score": -0.32,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/sebaszerba/status/2021979342344224793"
+          "url": "https://x.com/sebaszerba/status/2021979342344224793",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.973,
+            "joy": 0.001,
+            "sadness": 0.008,
+            "anger": 0.01,
+            "surprise": 0.004,
+            "disgust": 0.002,
+            "fear": 0.002
+          }
         },
         {
           "id": "2021978998268711190",
@@ -1038,12 +1779,22 @@
           "username": "sebaszerba",
           "date": "2026-02-12 16:05:34+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -0.32,
+          "sentiment_score": -0.918,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/sebaszerba/status/2021978998268711190"
+          "url": "https://x.com/sebaszerba/status/2021978998268711190",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.228,
+            "joy": 0.001,
+            "sadness": 0.051,
+            "anger": 0.604,
+            "surprise": 0.012,
+            "disgust": 0.091,
+            "fear": 0.012
+          }
         },
         {
           "id": "2009724618651599228",
@@ -1052,42 +1803,145 @@
           "username": "ScarsoJuan",
           "date": "2026-01-09 20:31:02+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.002,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/ScarsoJuan/status/2009724618651599228"
+          "url": "https://x.com/ScarsoJuan/status/2009724618651599228",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.971,
+            "joy": 0.003,
+            "sadness": 0.014,
+            "anger": 0.004,
+            "surprise": 0.005,
+            "disgust": 0.002,
+            "fear": 0.002
+          }
         }
       ],
       "sentiment_summary": {
         "positivo": 0,
-        "negativo": 2,
-        "neutro": 2
+        "negativo": 1,
+        "neutro": 3
       },
       "emoji_stats": {
         "total_positive_emojis": 0,
         "total_negative_emojis": 0,
         "top_emojis": {}
       },
-      "total_found": 4
+      "total_found": 4,
+      "emotion_summary": {
+        "anger": 2,
+        "others": 2
+      },
+      "emotion_dominant": "anger"
     },
     {
       "keyword": "sircreb",
       "posts": [
+        {
+          "id": "2041137732978647229",
+          "text": "@dievalen @UIPBA La jurisdicción aplica IIBB sobre operaciones exentas. Ni empecemos a hablar de SIRCREB tomando tajada de ganancias por compra venta de bonos soberanos.😡",
+          "user": "nanitini",
+          "username": "nanitini",
+          "date": "2026-04-06 12:55:32+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.931,
+          "emojis_found": [
+            {
+              "emoji": "😡",
+              "type": "negativo",
+              "count": 1
+            }
+          ],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/nanitini/status/2041137732978647229",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.011,
+            "joy": 0.0,
+            "sadness": 0.003,
+            "anger": 0.959,
+            "surprise": 0.001,
+            "disgust": 0.025,
+            "fear": 0.001
+          }
+        },
+        {
+          "id": "2041132111545979165",
+          "text": "@jorgemacri Deja de chorear con el sircreb, degenerado fiscal!",
+          "user": "Gordo Cacho",
+          "username": "Cacho_Miller",
+          "date": "2026-04-06 12:33:12+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.878,
+          "emojis_found": [],
+          "likes": 3,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/Cacho_Miller/status/2041132111545979165",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.003,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.888,
+            "surprise": 0.001,
+            "disgust": 0.105,
+            "fear": 0.002
+          }
+        },
+        {
+          "id": "2041117975017656410",
+          "text": "@MinEconomia_Ar @majulluis Cuando me devuelvan parte de lo que me robaron con el corralito, eliminen el sircreb, ya que manda dinero mi hijo o el estado por la inundación de bahía (me retuvieron en NQN 3,5%, 70k) y todos se hacen los boludos, tal vez pueda confiar. Ah pero hay que aportar dicen los ñoquis!",
+          "user": "Gustavo Marcelo Bevacqua",
+          "username": "gusmarbevacqua",
+          "date": "2026-04-06 11:37:02+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.847,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/gusmarbevacqua/status/2041117975017656410",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.004,
+            "joy": 0.001,
+            "sadness": 0.01,
+            "anger": 0.909,
+            "surprise": 0.001,
+            "disgust": 0.074,
+            "fear": 0.001
+          }
+        },
         {
           "id": "2040577640759750807",
           "text": "@JMilei Javo … que onda el SIRCREB? \nVamos a tener un iva decente menor al 15 ?\nGanância , siga siga ? \nDale flaco te Vote para hacer estas realidades pero parece que ahora el estado argentino pesca en una pelopincho? \nMe chupa un huevo la política pero me importa demasiado la economía",
           "user": "CONDOR🆗",
           "username": "condorlois",
           "date": "2026-04-04 23:49:56+00:00",
-          "sentiment": "positivo",
-          "sentiment_score": 0.48,
+          "sentiment": "negativo",
+          "sentiment_score": -0.823,
           "emojis_found": [],
           "likes": 2,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/condorlois/status/2040577640759750807"
+          "url": "https://x.com/condorlois/status/2040577640759750807",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.106,
+            "joy": 0.004,
+            "sadness": 0.035,
+            "anger": 0.762,
+            "surprise": 0.003,
+            "disgust": 0.088,
+            "fear": 0.002
+          }
         },
         {
           "id": "2040564625431744831",
@@ -1096,12 +1950,22 @@
           "username": "topo1988",
           "date": "2026-04-04 22:58:13+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.224,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/topo1988/status/2040564625431744831"
+          "url": "https://x.com/topo1988/status/2040564625431744831",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.845,
+            "joy": 0.114,
+            "sadness": 0.006,
+            "anger": 0.013,
+            "surprise": 0.016,
+            "disgust": 0.004,
+            "fear": 0.002
+          }
         },
         {
           "id": "2040257290175959056",
@@ -1110,7 +1974,7 @@
           "username": "gteresitasv",
           "date": "2026-04-04 02:36:58+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -1.0,
+          "sentiment_score": -0.951,
           "emojis_found": [
             {
               "emoji": "😢",
@@ -1126,7 +1990,17 @@
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/gteresitasv/status/2040257290175959056"
+          "url": "https://x.com/gteresitasv/status/2040257290175959056",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.002,
+            "joy": 0.001,
+            "sadness": 0.014,
+            "anger": 0.928,
+            "surprise": 0.001,
+            "disgust": 0.052,
+            "fear": 0.001
+          }
         },
         {
           "id": "2040255673863172138",
@@ -1135,7 +2009,7 @@
           "username": "gteresitasv",
           "date": "2026-04-04 02:30:33+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -0.25,
+          "sentiment_score": -0.87,
           "emojis_found": [
             {
               "emoji": "😢",
@@ -1146,7 +2020,17 @@
           "likes": 0,
           "retweets": 1,
           "replies": 1,
-          "url": "https://x.com/gteresitasv/status/2040255673863172138"
+          "url": "https://x.com/gteresitasv/status/2040255673863172138",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.022,
+            "joy": 0.002,
+            "sadness": 0.106,
+            "anger": 0.763,
+            "surprise": 0.004,
+            "disgust": 0.101,
+            "fear": 0.003
+          }
         },
         {
           "id": "2040252633089274300",
@@ -1155,7 +2039,7 @@
           "username": "gteresitasv",
           "date": "2026-04-04 02:18:28+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -1.5,
+          "sentiment_score": -0.92,
           "emojis_found": [
             {
               "emoji": "😢",
@@ -1176,7 +2060,17 @@
           "likes": 1,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/gteresitasv/status/2040252633089274300"
+          "url": "https://x.com/gteresitasv/status/2040252633089274300",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.012,
+            "joy": 0.001,
+            "sadness": 0.018,
+            "anger": 0.915,
+            "surprise": 0.001,
+            "disgust": 0.051,
+            "fear": 0.001
+          }
         },
         {
           "id": "2040250817668620541",
@@ -1185,7 +2079,7 @@
           "username": "gteresitasv",
           "date": "2026-04-04 02:11:15+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -1.5,
+          "sentiment_score": -0.922,
           "emojis_found": [
             {
               "emoji": "😢",
@@ -1206,7 +2100,17 @@
           "likes": 3,
           "retweets": 2,
           "replies": 2,
-          "url": "https://x.com/gteresitasv/status/2040250817668620541"
+          "url": "https://x.com/gteresitasv/status/2040250817668620541",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.012,
+            "joy": 0.001,
+            "sadness": 0.017,
+            "anger": 0.919,
+            "surprise": 0.001,
+            "disgust": 0.049,
+            "fear": 0.001
+          }
         },
         {
           "id": "2039816506234507713",
@@ -1215,12 +2119,22 @@
           "username": "aleportasdalmau",
           "date": "2026-04-02 21:25:27+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.299,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/aleportasdalmau/status/2039816506234507713"
+          "url": "https://x.com/aleportasdalmau/status/2039816506234507713",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.952,
+            "joy": 0.005,
+            "sadness": 0.013,
+            "anger": 0.011,
+            "surprise": 0.004,
+            "disgust": 0.012,
+            "fear": 0.003
+          }
         },
         {
           "id": "2039504997998583965",
@@ -1229,12 +2143,22 @@
           "username": "raulgho",
           "date": "2026-04-02 00:47:38+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.396,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/raulgho/status/2039504997998583965"
+          "url": "https://x.com/raulgho/status/2039504997998583965",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.979,
+            "joy": 0.003,
+            "sadness": 0.006,
+            "anger": 0.002,
+            "surprise": 0.004,
+            "disgust": 0.002,
+            "fear": 0.003
+          }
         },
         {
           "id": "2039470838332739824",
@@ -1243,12 +2167,22 @@
           "username": "SoyEmaR",
           "date": "2026-04-01 22:31:54+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -1.2,
+          "sentiment_score": -0.927,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/SoyEmaR/status/2039470838332739824"
+          "url": "https://x.com/SoyEmaR/status/2039470838332739824",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.008,
+            "joy": 0.001,
+            "sadness": 0.009,
+            "anger": 0.906,
+            "surprise": 0.001,
+            "disgust": 0.074,
+            "fear": 0.002
+          }
         },
         {
           "id": "2039402296346300837",
@@ -1256,13 +2190,23 @@
           "user": "Jordi",
           "username": "ayjblog",
           "date": "2026-04-01 17:59:32+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.61,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/ayjblog/status/2039402296346300837"
+          "url": "https://x.com/ayjblog/status/2039402296346300837",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.144,
+            "joy": 0.006,
+            "sadness": 0.034,
+            "anger": 0.707,
+            "surprise": 0.002,
+            "disgust": 0.104,
+            "fear": 0.002
+          }
         },
         {
           "id": "2039387543947374950",
@@ -1270,13 +2214,23 @@
           "user": "dani33",
           "username": "danipala33",
           "date": "2026-04-01 17:00:55+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.03,
+          "sentiment": "negativo",
+          "sentiment_score": -0.881,
           "emojis_found": [],
           "likes": 21,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/danipala33/status/2039387543947374950"
+          "url": "https://x.com/danipala33/status/2039387543947374950",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.088,
+            "joy": 0.002,
+            "sadness": 0.026,
+            "anger": 0.786,
+            "surprise": 0.001,
+            "disgust": 0.094,
+            "fear": 0.003
+          }
         },
         {
           "id": "2039375819265425615",
@@ -1284,13 +2238,23 @@
           "user": "nanitini",
           "username": "nanitini",
           "date": "2026-04-01 16:14:19+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.01,
+          "sentiment": "negativo",
+          "sentiment_score": -0.645,
           "emojis_found": [],
-          "likes": 72,
-          "retweets": 6,
+          "likes": 71,
+          "retweets": 5,
           "replies": 0,
-          "url": "https://x.com/nanitini/status/2039375819265425615"
+          "url": "https://x.com/nanitini/status/2039375819265425615",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.174,
+            "joy": 0.001,
+            "sadness": 0.017,
+            "anger": 0.741,
+            "surprise": 0.007,
+            "disgust": 0.056,
+            "fear": 0.005
+          }
         },
         {
           "id": "2039374129174863976",
@@ -1298,13 +2262,23 @@
           "user": "Osesno",
           "username": "LordOsesno",
           "date": "2026-04-01 16:07:36+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.4,
+          "sentiment": "neutro",
+          "sentiment_score": -0.384,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/LordOsesno/status/2039374129174863976"
+          "url": "https://x.com/LordOsesno/status/2039374129174863976",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.939,
+            "joy": 0.002,
+            "sadness": 0.004,
+            "anger": 0.01,
+            "surprise": 0.035,
+            "disgust": 0.006,
+            "fear": 0.003
+          }
         },
         {
           "id": "2039373482404811075",
@@ -1312,13 +2286,23 @@
           "user": "nanitini",
           "username": "nanitini",
           "date": "2026-04-01 16:05:02+00:00",
-          "sentiment": "positivo",
-          "sentiment_score": 0.25,
+          "sentiment": "negativo",
+          "sentiment_score": -0.954,
           "emojis_found": [],
           "likes": 2,
           "retweets": 1,
           "replies": 0,
-          "url": "https://x.com/nanitini/status/2039373482404811075"
+          "url": "https://x.com/nanitini/status/2039373482404811075",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.008,
+            "joy": 0.0,
+            "sadness": 0.008,
+            "anger": 0.904,
+            "surprise": 0.008,
+            "disgust": 0.068,
+            "fear": 0.002
+          }
         },
         {
           "id": "2039372839690596673",
@@ -1326,13 +2310,23 @@
           "user": "nanitini",
           "username": "nanitini",
           "date": "2026-04-01 16:02:29+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.787,
           "emojis_found": [],
           "likes": 4,
           "retweets": 1,
           "replies": 0,
-          "url": "https://x.com/nanitini/status/2039372839690596673"
+          "url": "https://x.com/nanitini/status/2039372839690596673",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.471,
+            "joy": 0.003,
+            "sadness": 0.032,
+            "anger": 0.452,
+            "surprise": 0.002,
+            "disgust": 0.035,
+            "fear": 0.005
+          }
         },
         {
           "id": "2039273952774689045",
@@ -1341,12 +2335,22 @@
           "username": "feedec1",
           "date": "2026-04-01 09:29:32+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.14,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/feedec1/status/2039273952774689045"
+          "url": "https://x.com/feedec1/status/2039273952774689045",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.993,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.0,
+            "surprise": 0.003,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2039191602363605110",
@@ -1355,12 +2359,22 @@
           "username": "dorottos94",
           "date": "2026-04-01 04:02:19+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -0.4,
+          "sentiment_score": -0.812,
           "emojis_found": [],
           "likes": 3,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/dorottos94/status/2039191602363605110"
+          "url": "https://x.com/dorottos94/status/2039191602363605110",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.251,
+            "joy": 0.001,
+            "sadness": 0.027,
+            "anger": 0.644,
+            "surprise": 0.006,
+            "disgust": 0.067,
+            "fear": 0.005
+          }
         },
         {
           "id": "2039179203510194477",
@@ -1368,111 +2382,23 @@
           "user": "Uriel",
           "username": "UrielCascu",
           "date": "2026-04-01 03:13:02+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.01,
+          "sentiment": "negativo",
+          "sentiment_score": -0.656,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/UrielCascu/status/2039179203510194477"
-        },
-        {
-          "id": "2039031620800336328",
-          "text": "@juanif17 El SIRCREB?",
-          "user": "CONDOR🆗",
-          "username": "condorlois",
-          "date": "2026-03-31 17:26:36+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/condorlois/status/2039031620800336328"
-        },
-        {
-          "id": "2039022673825521741",
-          "text": "@LuisCaputoAR @PALavigne83 Hora de eliminar IIBB y Sircreb!",
-          "user": "Soporte del 55%",
-          "username": "yosoporte",
-          "date": "2026-03-31 16:51:03+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/yosoporte/status/2039022673825521741"
-        },
-        {
-          "id": "2039020803912515750",
-          "text": "@LuisCaputoAR @JMilei @PALavigne83 asistí a una reunión en el banco para ver mi estado bancario con el oficial dé cuenta y al ver el extracto vi lo que me sacaron los 2 estados (nacional y provincial ) me encantaría reunirme con vos para que me expliques por qué pago para ponerla y sacarla (?) #sircreb",
-          "user": "CONDOR🆗",
-          "username": "condorlois",
-          "date": "2026-03-31 16:43:37+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/condorlois/status/2039020803912515750"
-        },
-        {
-          "id": "2039010684554359197",
-          "text": "@LuisCaputoAR @PALavigne83 Por qué no eliminan SIRCREB o meten directamente amparo judicial? Increíble como te voltean en la justicia una reforma laboral aprobada en las 2 cámaras y el ejecutivo pero el Ejecutivo no pueda voltear una resolución ilegal de un municipio…",
-          "user": "Uriel",
-          "username": "UrielCascu",
-          "date": "2026-03-31 16:03:24+00:00",
-          "sentiment": "positivo",
-          "sentiment_score": 0.6,
-          "emojis_found": [],
-          "likes": 38,
-          "retweets": 5,
-          "replies": 1,
-          "url": "https://x.com/UrielCascu/status/2039010684554359197"
-        },
-        {
-          "id": "2039005829873930724",
-          "text": "@LuisCaputoAR @HomegrownApe @PALavigne83 Sircreb es el cáncer , además de las tasas municipales",
-          "user": "PUNTANO2023 🇦🇷🇮🇹",
-          "username": "puntano2023",
-          "date": "2026-03-31 15:44:07+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 2,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/puntano2023/status/2039005829873930724"
-        },
-        {
-          "id": "2039005440550342985",
-          "text": "@LuisCaputoAR @pabloquirno @PALavigne83 Porque no prueban bajando más impuestos ustedes? Eliminar SIRCREB?",
-          "user": "Martín Gergolet",
-          "username": "GergoletMartin",
-          "date": "2026-03-31 15:42:34+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/GergoletMartin/status/2039005440550342985"
-        },
-        {
-          "id": "2039005222811365423",
-          "text": "@LuisCaputoAR @PALavigne83 Yo le agrego, doble imposición de Ingresos Brutos en ventas con tarjetas de crédito. Te retiene la Liquidadora (payway o firsdata) y cuando ingresa el pago al banco, te retiene el SIRCREB la provincia. Así se generan los saldos a favor de provincias",
-          "user": "Gustavo Bergia",
-          "username": "GBergia1",
-          "date": "2026-03-31 15:41:42+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/GBergia1/status/2039005222811365423"
+          "url": "https://x.com/UrielCascu/status/2039179203510194477",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.958,
+            "joy": 0.002,
+            "sadness": 0.012,
+            "anger": 0.022,
+            "surprise": 0.002,
+            "disgust": 0.003,
+            "fear": 0.001
+          }
         },
         {
           "id": "2038999165611499529",
@@ -1480,13 +2406,23 @@
           "user": "Nico9",
           "username": "Nic_Olass_",
           "date": "2026-03-31 15:17:38+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.885,
           "emojis_found": [],
           "likes": 60,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/Nic_Olass_/status/2038999165611499529"
+          "url": "https://x.com/Nic_Olass_/status/2038999165611499529",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.032,
+            "joy": 0.001,
+            "sadness": 0.018,
+            "anger": 0.838,
+            "surprise": 0.001,
+            "disgust": 0.109,
+            "fear": 0.002
+          }
         },
         {
           "id": "2038991797137912172",
@@ -1495,7 +2431,7 @@
           "username": "PistachoSoy",
           "date": "2026-03-31 14:48:21+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.018,
           "emojis_found": [
             {
               "emoji": "😂",
@@ -1506,7 +2442,17 @@
           "likes": 2,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/PistachoSoy/status/2038991797137912172"
+          "url": "https://x.com/PistachoSoy/status/2038991797137912172",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.983,
+            "joy": 0.004,
+            "sadness": 0.009,
+            "anger": 0.003,
+            "surprise": 0.001,
+            "disgust": 0.001,
+            "fear": 0.0
+          }
         },
         {
           "id": "2038818209286037757",
@@ -1515,12 +2461,70 @@
           "username": "marce_711",
           "date": "2026-03-31 03:18:35+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -0.6,
+          "sentiment_score": -0.886,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/marce_711/status/2038818209286037757"
+          "url": "https://x.com/marce_711/status/2038818209286037757",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.02,
+            "joy": 0.001,
+            "sadness": 0.003,
+            "anger": 0.944,
+            "surprise": 0.002,
+            "disgust": 0.029,
+            "fear": 0.001
+          }
+        },
+        {
+          "id": "2038765794864079149",
+          "text": "@arielsignetti @fedesturze @JMilei @Kicillofok y después de que abran, no ahogarlos con los impuestos y sobre todo con las retenciones de SIRCREB, IVA e IIBB",
+          "user": "laura pollola",
+          "username": "laupollola",
+          "date": "2026-03-30 23:50:18+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": -0.368,
+          "emojis_found": [],
+          "likes": 1,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/laupollola/status/2038765794864079149",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.296,
+            "joy": 0.005,
+            "sadness": 0.068,
+            "anger": 0.582,
+            "surprise": 0.004,
+            "disgust": 0.04,
+            "fear": 0.005
+          }
+        },
+        {
+          "id": "2038689221666386372",
+          "text": "@claudiosavoia Podes agregar DGR La Pampa? Son depredadores en SIRCREB, la nueva CABI y todas sus resoluciones que inventan. Alguien que nos lea y nos ayude! Porque lamentablemente la justicia no está del lado del contribuyente respetando derechos del contribuyente.",
+          "user": "Lucrecia",
+          "username": "lufraire",
+          "date": "2026-03-30 18:46:02+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.95,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/lufraire/status/2038689221666386372",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.047,
+            "joy": 0.001,
+            "sadness": 0.129,
+            "anger": 0.734,
+            "surprise": 0.002,
+            "disgust": 0.084,
+            "fear": 0.003
+          }
         },
         {
           "id": "2038442179970883865",
@@ -1529,12 +2533,22 @@
           "username": "gesdog",
           "date": "2026-03-30 02:24:22+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.204,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/gesdog/status/2038442179970883865"
+          "url": "https://x.com/gesdog/status/2038442179970883865",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.006,
+            "joy": 0.0,
+            "sadness": 0.004,
+            "anger": 0.951,
+            "surprise": 0.002,
+            "disgust": 0.035,
+            "fear": 0.003
+          }
         },
         {
           "id": "2038397816192536837",
@@ -1542,13 +2556,23 @@
           "user": "Lucas Mantaras ®",
           "username": "LucasMantaras",
           "date": "2026-03-29 23:28:05+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.694,
           "emojis_found": [],
           "likes": 3,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/LucasMantaras/status/2038397816192536837"
+          "url": "https://x.com/LucasMantaras/status/2038397816192536837",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.995,
+            "joy": 0.0,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2038003555970207836",
@@ -1556,13 +2580,23 @@
           "user": "Charly",
           "username": "cpncarloscorrea",
           "date": "2026-03-28 21:21:26+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.976,
           "emojis_found": [],
           "likes": 9,
           "retweets": 5,
           "replies": 0,
-          "url": "https://x.com/cpncarloscorrea/status/2038003555970207836"
+          "url": "https://x.com/cpncarloscorrea/status/2038003555970207836",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.001,
+            "joy": 0.0,
+            "sadness": 0.009,
+            "anger": 0.928,
+            "surprise": 0.001,
+            "disgust": 0.06,
+            "fear": 0.001
+          }
         },
         {
           "id": "2037904521016271161",
@@ -1571,12 +2605,22 @@
           "username": "camela_ben16544",
           "date": "2026-03-28 14:47:54+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.396,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/camela_ben16544/status/2037904521016271161"
+          "url": "https://x.com/camela_ben16544/status/2037904521016271161",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.971,
+            "joy": 0.005,
+            "sadness": 0.002,
+            "anger": 0.003,
+            "surprise": 0.016,
+            "disgust": 0.001,
+            "fear": 0.002
+          }
         },
         {
           "id": "2037891034760290333",
@@ -1585,12 +2629,22 @@
           "username": "pmav1985",
           "date": "2026-03-28 13:54:19+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.057,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/pmav1985/status/2037891034760290333"
+          "url": "https://x.com/pmav1985/status/2037891034760290333",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.992,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.003,
+            "disgust": 0.001,
+            "fear": 0.001
+          }
         },
         {
           "id": "2037627519709397495",
@@ -1598,13 +2652,23 @@
           "user": "El Oligarca 🇦🇷",
           "username": "oligarca_el",
           "date": "2026-03-27 20:27:12+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.931,
           "emojis_found": [],
           "likes": 2,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/oligarca_el/status/2037627519709397495"
+          "url": "https://x.com/oligarca_el/status/2037627519709397495",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.008,
+            "joy": 0.0,
+            "sadness": 0.007,
+            "anger": 0.935,
+            "surprise": 0.002,
+            "disgust": 0.046,
+            "fear": 0.001
+          }
         },
         {
           "id": "2037513655340704052",
@@ -1613,12 +2677,22 @@
           "username": "ArielBruschini",
           "date": "2026-03-27 12:54:45+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.238,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/ArielBruschini/status/2037513655340704052"
+          "url": "https://x.com/ArielBruschini/status/2037513655340704052",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.996,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.0,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2037348821835923592",
@@ -1627,12 +2701,22 @@
           "username": "rodolfo_ju32862",
           "date": "2026-03-27 01:59:45+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -0.4,
+          "sentiment_score": -0.829,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/rodolfo_ju32862/status/2037348821835923592"
+          "url": "https://x.com/rodolfo_ju32862/status/2037348821835923592",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.027,
+            "joy": 0.002,
+            "sadness": 0.023,
+            "anger": 0.794,
+            "surprise": 0.01,
+            "disgust": 0.14,
+            "fear": 0.005
+          }
         },
         {
           "id": "2037348252891136382",
@@ -1641,12 +2725,22 @@
           "username": "flatteryARG",
           "date": "2026-03-27 01:57:30+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.27,
           "emojis_found": [],
           "likes": 19,
           "retweets": 1,
           "replies": 0,
-          "url": "https://x.com/flatteryARG/status/2037348252891136382"
+          "url": "https://x.com/flatteryARG/status/2037348252891136382",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.88,
+            "joy": 0.072,
+            "sadness": 0.003,
+            "anger": 0.002,
+            "surprise": 0.037,
+            "disgust": 0.002,
+            "fear": 0.004
+          }
         },
         {
           "id": "2037268840980132118",
@@ -1654,13 +2748,23 @@
           "user": "CONDOR🆗",
           "username": "condorlois",
           "date": "2026-03-26 20:41:56+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.975,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/condorlois/status/2037268840980132118"
+          "url": "https://x.com/condorlois/status/2037268840980132118",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.002,
+            "joy": 0.0,
+            "sadness": 0.002,
+            "anger": 0.913,
+            "surprise": 0.002,
+            "disgust": 0.081,
+            "fear": 0.001
+          }
         },
         {
           "id": "2037196325075218724",
@@ -1668,13 +2772,23 @@
           "user": "Suzuki",
           "username": "SusukiOpina",
           "date": "2026-03-26 15:53:47+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.541,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/SusukiOpina/status/2037196325075218724"
+          "url": "https://x.com/SusukiOpina/status/2037196325075218724",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.955,
+            "joy": 0.002,
+            "sadness": 0.01,
+            "anger": 0.018,
+            "surprise": 0.005,
+            "disgust": 0.005,
+            "fear": 0.005
+          }
         },
         {
           "id": "2037138468296384584",
@@ -1682,13 +2796,23 @@
           "user": "martoesposito",
           "username": "martoesposito",
           "date": "2026-03-26 12:03:53+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.936,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/martoesposito/status/2037138468296384584"
+          "url": "https://x.com/martoesposito/status/2037138468296384584",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.004,
+            "joy": 0.0,
+            "sadness": 0.005,
+            "anger": 0.885,
+            "surprise": 0.001,
+            "disgust": 0.103,
+            "fear": 0.002
+          }
         },
         {
           "id": "2036880001652420963",
@@ -1697,12 +2821,22 @@
           "username": "VIGNAJUANMANUE1",
           "date": "2026-03-25 18:56:50+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.378,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/VIGNAJUANMANUE1/status/2036880001652420963"
+          "url": "https://x.com/VIGNAJUANMANUE1/status/2036880001652420963",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.996,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.0,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2036794953754460361",
@@ -1711,12 +2845,22 @@
           "username": "Ffwjbbs51781",
           "date": "2026-03-25 13:18:53+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.159,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/Ffwjbbs51781/status/2036794953754460361"
+          "url": "https://x.com/Ffwjbbs51781/status/2036794953754460361",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.989,
+            "joy": 0.008,
+            "sadness": 0.0,
+            "anger": 0.0,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         },
         {
           "id": "2036793979249832114",
@@ -1725,117 +2869,97 @@
           "username": "VIGNAJUANMANUE1",
           "date": "2026-03-25 13:15:01+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.138,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/VIGNAJUANMANUE1/status/2036793979249832114"
-        },
-        {
-          "id": "2036615159641223170",
-          "text": "@ElEconomista_ @juanbmahiques ¿Y el SIRCREB no entra como delito?",
-          "user": "BDC - Blog del Contador",
-          "username": "BlogDelContador",
-          "date": "2026-03-25 01:24:27+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.25,
-          "emojis_found": [],
-          "likes": 106,
-          "retweets": 1,
-          "replies": 3,
-          "url": "https://x.com/BlogDelContador/status/2036615159641223170"
-        },
-        {
-          "id": "2036599378849227031",
-          "text": "@FedericoFuriase @agustin_pistone Fede bajen o eliminen impuesto al CH y lo mismo con sircreb a los pagos en dólares y le pegan un martillazo a la inflación y remonetizan con dólares la economía.",
-          "user": "dani33",
-          "username": "danipala33",
-          "date": "2026-03-25 00:21:44+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 1,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/danipala33/status/2036599378849227031"
-        },
-        {
-          "id": "2036580825005686915",
-          "text": "@BlogDelContador Si tuviera huevos volaría el Sircreb.",
-          "user": "Lúnicotemaquetené",
-          "username": "paramisinsoda_",
-          "date": "2026-03-24 23:08:01+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/paramisinsoda_/status/2036580825005686915"
-        },
-        {
-          "id": "2036550923246284935",
-          "text": "@MauricioChiava1 @BlogDelContador Si, mezcle todo jajaja. El central podria prohibir a los bancos el sircreb.",
-          "user": "Juan Pablo",
-          "username": "Nza_Warcry",
-          "date": "2026-03-24 21:09:12+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 1,
-          "url": "https://x.com/Nza_Warcry/status/2036550923246284935"
-        },
-        {
-          "id": "2036550553077948533",
-          "text": "@Nza_Warcry @BlogDelContador Pero el sircreb te lo enchufan en movimientos bancarios… que tiene que ver los datos de facturación?",
-          "user": "M.A.C.",
-          "username": "MauricioChiava1",
-          "date": "2026-03-24 21:07:43+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 2,
-          "url": "https://x.com/MauricioChiava1/status/2036550553077948533"
+          "url": "https://x.com/VIGNAJUANMANUE1/status/2036793979249832114",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.994,
+            "joy": 0.003,
+            "sadness": 0.0,
+            "anger": 0.0,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         }
       ],
       "sentiment_summary": {
-        "positivo": 3,
-        "negativo": 10,
-        "neutro": 35
+        "positivo": 0,
+        "negativo": 26,
+        "neutro": 15
       },
       "emoji_stats": {
         "total_positive_emojis": 1,
-        "total_negative_emojis": 14,
+        "total_negative_emojis": 15,
         "top_emojis": {
           "💔": 8,
           "😢": 4,
           "😪": 2,
+          "😡": 1,
           "😂": 1
         }
       },
-      "total_found": 48
+      "total_found": 41,
+      "emotion_summary": {
+        "anger": 24,
+        "others": 17
+      },
+      "emotion_dominant": "anger"
     },
     {
       "keyword": "sircupa",
       "posts": [
+        {
+          "id": "2041155703251878083",
+          "text": "@arielsbdar hola, Ariel me hicieron una retención de SIRCUPA, que no corresponde por que es cuenta propia, y no hay forma de me atienda un humano en la app, cuenta n°352380",
+          "user": "sebastian diaz",
+          "username": "RSebasz",
+          "date": "2026-04-06 14:06:57+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.911,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/RSebasz/status/2041155703251878083",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.636,
+            "joy": 0.004,
+            "sadness": 0.078,
+            "anger": 0.2,
+            "surprise": 0.027,
+            "disgust": 0.03,
+            "fear": 0.025
+          }
+        },
         {
           "id": "2037511443705143749",
           "text": "@nxptunzzz Ojo con usar MercadoLibre, NaranjaX, etc. porque si no te anotaste en IIBB te van a robar el 5% de las transferencias que te hacen los clientes por Sircupa.",
           "user": "Néstor Giovaninni",
           "username": "NestorGiov",
           "date": "2026-03-27 12:45:57+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.739,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/NestorGiov/status/2037511443705143749"
+          "url": "https://x.com/NestorGiov/status/2037511443705143749",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.608,
+            "joy": 0.003,
+            "sadness": 0.025,
+            "anger": 0.236,
+            "surprise": 0.022,
+            "disgust": 0.059,
+            "fear": 0.046
+          }
         },
         {
           "id": "2035926984815988959",
@@ -1843,13 +2967,23 @@
           "user": "Gustavo Marcelo Bevacqua",
           "username": "gusmarbevacqua",
           "date": "2026-03-23 03:49:53+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.895,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/gusmarbevacqua/status/2035926984815988959"
+          "url": "https://x.com/gusmarbevacqua/status/2035926984815988959",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.005,
+            "joy": 0.0,
+            "sadness": 0.014,
+            "anger": 0.921,
+            "surprise": 0.006,
+            "disgust": 0.053,
+            "fear": 0.002
+          }
         },
         {
           "id": "2034675599273271728",
@@ -1858,12 +2992,22 @@
           "username": "yamilaberro",
           "date": "2026-03-19 16:57:19+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.127,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/yamilaberro/status/2034675599273271728"
+          "url": "https://x.com/yamilaberro/status/2034675599273271728",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.986,
+            "joy": 0.003,
+            "sadness": 0.003,
+            "anger": 0.003,
+            "surprise": 0.004,
+            "disgust": 0.001,
+            "fear": 0.001
+          }
         },
         {
           "id": "2034287348020613353",
@@ -1872,12 +3016,22 @@
           "username": "BitcoinCapt",
           "date": "2026-03-18 15:14:33+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": 0.123,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/BitcoinCapt/status/2034287348020613353"
+          "url": "https://x.com/BitcoinCapt/status/2034287348020613353",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.967,
+            "joy": 0.007,
+            "sadness": 0.018,
+            "anger": 0.003,
+            "surprise": 0.001,
+            "disgust": 0.002,
+            "fear": 0.002
+          }
         },
         {
           "id": "2033972219278196927",
@@ -1885,13 +3039,23 @@
           "user": "Isa C",
           "username": "IsabelCorti",
           "date": "2026-03-17 18:22:21+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.637,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/IsabelCorti/status/2033972219278196927"
+          "url": "https://x.com/IsabelCorti/status/2033972219278196927",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.735,
+            "joy": 0.004,
+            "sadness": 0.03,
+            "anger": 0.189,
+            "surprise": 0.022,
+            "disgust": 0.015,
+            "fear": 0.005
+          }
         },
         {
           "id": "2032906994546352243",
@@ -1899,13 +3063,23 @@
           "user": "Aidil . Por un país libre Soy del 41% Orgullosa",
           "username": "crepiallupo",
           "date": "2026-03-14 19:49:31+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.937,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/crepiallupo/status/2032906994546352243"
+          "url": "https://x.com/crepiallupo/status/2032906994546352243",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.007,
+            "joy": 0.0,
+            "sadness": 0.003,
+            "anger": 0.954,
+            "surprise": 0.003,
+            "disgust": 0.03,
+            "fear": 0.002
+          }
         },
         {
           "id": "2032906627540787678",
@@ -1913,13 +3087,23 @@
           "user": "Aidil . Por un país libre Soy del 41% Orgullosa",
           "username": "crepiallupo",
           "date": "2026-03-14 19:48:04+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.942,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/crepiallupo/status/2032906627540787678"
+          "url": "https://x.com/crepiallupo/status/2032906627540787678",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.01,
+            "joy": 0.0,
+            "sadness": 0.004,
+            "anger": 0.949,
+            "surprise": 0.004,
+            "disgust": 0.031,
+            "fear": 0.002
+          }
         },
         {
           "id": "2032686601566859433",
@@ -1927,13 +3111,23 @@
           "user": "Manu Pisano",
           "username": "Manupisano",
           "date": "2026-03-14 05:13:45+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.857,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/Manupisano/status/2032686601566859433"
+          "url": "https://x.com/Manupisano/status/2032686601566859433",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.992,
+            "joy": 0.0,
+            "sadness": 0.002,
+            "anger": 0.002,
+            "surprise": 0.002,
+            "disgust": 0.001,
+            "fear": 0.002
+          }
         },
         {
           "id": "2032487511394529462",
@@ -1941,13 +3135,23 @@
           "user": "Néstor Giovaninni",
           "username": "NestorGiov",
           "date": "2026-03-13 16:02:39+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.749,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/NestorGiov/status/2032487511394529462"
+          "url": "https://x.com/NestorGiov/status/2032487511394529462",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.961,
+            "joy": 0.002,
+            "sadness": 0.013,
+            "anger": 0.009,
+            "surprise": 0.008,
+            "disgust": 0.003,
+            "fear": 0.003
+          }
         },
         {
           "id": "2032218941024612490",
@@ -1956,7 +3160,7 @@
           "username": "juanlorenzo11",
           "date": "2026-03-12 22:15:26+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -0.125,
+          "sentiment_score": -0.951,
           "emojis_found": [
             {
               "emoji": "🤷",
@@ -1967,7 +3171,17 @@
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/juanlorenzo11/status/2032218941024612490"
+          "url": "https://x.com/juanlorenzo11/status/2032218941024612490",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.002,
+            "joy": 0.0,
+            "sadness": 0.004,
+            "anger": 0.933,
+            "surprise": 0.002,
+            "disgust": 0.057,
+            "fear": 0.001
+          }
         },
         {
           "id": "2032123734488666461",
@@ -1975,13 +3189,23 @@
           "user": "Nicolas Rolon",
           "username": "rolon_nico",
           "date": "2026-03-12 15:57:07+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.756,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/rolon_nico/status/2032123734488666461"
+          "url": "https://x.com/rolon_nico/status/2032123734488666461",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.602,
+            "joy": 0.005,
+            "sadness": 0.015,
+            "anger": 0.353,
+            "surprise": 0.002,
+            "disgust": 0.022,
+            "fear": 0.001
+          }
         },
         {
           "id": "2032070256642932958",
@@ -1989,13 +3213,23 @@
           "user": "Luis Gonza",
           "username": "LuisGon98018956",
           "date": "2026-03-12 12:24:37+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.813,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/LuisGon98018956/status/2032070256642932958"
+          "url": "https://x.com/LuisGon98018956/status/2032070256642932958",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.921,
+            "joy": 0.004,
+            "sadness": 0.034,
+            "anger": 0.022,
+            "surprise": 0.011,
+            "disgust": 0.005,
+            "fear": 0.003
+          }
         },
         {
           "id": "2032062025329689041",
@@ -2003,13 +3237,23 @@
           "user": "Palit0",
           "username": "palitoxD_",
           "date": "2026-03-12 11:51:55+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.772,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/palitoxD_/status/2032062025329689041"
+          "url": "https://x.com/palitoxD_/status/2032062025329689041",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.347,
+            "joy": 0.003,
+            "sadness": 0.027,
+            "anger": 0.565,
+            "surprise": 0.002,
+            "disgust": 0.055,
+            "fear": 0.003
+          }
         },
         {
           "id": "2031402151113548002",
@@ -2017,13 +3261,23 @@
           "user": "Nora Graciela",
           "username": "noriss08",
           "date": "2026-03-10 16:09:49+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.945,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/noriss08/status/2031402151113548002"
+          "url": "https://x.com/noriss08/status/2031402151113548002",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.001,
+            "joy": 0.0,
+            "sadness": 0.002,
+            "anger": 0.919,
+            "surprise": 0.001,
+            "disgust": 0.076,
+            "fear": 0.001
+          }
         },
         {
           "id": "2027351582778552375",
@@ -2032,12 +3286,22 @@
           "username": "diegotefraga",
           "date": "2026-02-27 11:54:18+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.081,
           "emojis_found": [],
           "likes": 40,
           "retweets": 3,
           "replies": 3,
-          "url": "https://x.com/diegotefraga/status/2027351582778552375"
+          "url": "https://x.com/diegotefraga/status/2027351582778552375",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.983,
+            "joy": 0.001,
+            "sadness": 0.004,
+            "anger": 0.007,
+            "surprise": 0.003,
+            "disgust": 0.001,
+            "fear": 0.002
+          }
         },
         {
           "id": "2027177122255540464",
@@ -2046,12 +3310,22 @@
           "username": "hecdav00",
           "date": "2026-02-27 00:21:03+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.319,
           "emojis_found": [],
           "likes": 1,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/hecdav00/status/2027177122255540464"
+          "url": "https://x.com/hecdav00/status/2027177122255540464",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.804,
+            "joy": 0.003,
+            "sadness": 0.058,
+            "anger": 0.104,
+            "surprise": 0.01,
+            "disgust": 0.015,
+            "fear": 0.006
+          }
         },
         {
           "id": "2027054608275714530",
@@ -2060,12 +3334,22 @@
           "username": "origonero",
           "date": "2026-02-26 16:14:14+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.217,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/origonero/status/2027054608275714530"
+          "url": "https://x.com/origonero/status/2027054608275714530",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.493,
+            "joy": 0.01,
+            "sadness": 0.024,
+            "anger": 0.382,
+            "surprise": 0.02,
+            "disgust": 0.065,
+            "fear": 0.006
+          }
         },
         {
           "id": "2027033588428922896",
@@ -2074,12 +3358,22 @@
           "username": "AkaSoyde",
           "date": "2026-02-26 14:50:42+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.128,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/AkaSoyde/status/2027033588428922896"
+          "url": "https://x.com/AkaSoyde/status/2027033588428922896",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.974,
+            "joy": 0.001,
+            "sadness": 0.012,
+            "anger": 0.01,
+            "surprise": 0.001,
+            "disgust": 0.001,
+            "fear": 0.001
+          }
         },
         {
           "id": "2026352825114968098",
@@ -2087,13 +3381,23 @@
           "user": "Juan Lorenzo",
           "username": "juanlorenzo11",
           "date": "2026-02-24 17:45:35+00:00",
-          "sentiment": "positivo",
-          "sentiment_score": 0.56,
+          "sentiment": "negativo",
+          "sentiment_score": -0.932,
           "emojis_found": [],
           "likes": 2,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/juanlorenzo11/status/2026352825114968098"
+          "url": "https://x.com/juanlorenzo11/status/2026352825114968098",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.004,
+            "joy": 0.001,
+            "sadness": 0.004,
+            "anger": 0.821,
+            "surprise": 0.003,
+            "disgust": 0.164,
+            "fear": 0.003
+          }
         },
         {
           "id": "2026081055036363246",
@@ -2102,18 +3406,28 @@
           "username": "J3rlin19886",
           "date": "2026-02-23 23:45:40+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -0.28,
+          "sentiment_score": -0.535,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/J3rlin19886/status/2026081055036363246"
+          "url": "https://x.com/J3rlin19886/status/2026081055036363246",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.985,
+            "joy": 0.001,
+            "sadness": 0.007,
+            "anger": 0.003,
+            "surprise": 0.001,
+            "disgust": 0.001,
+            "fear": 0.001
+          }
         }
       ],
       "sentiment_summary": {
-        "positivo": 1,
-        "negativo": 2,
-        "neutro": 17
+        "positivo": 0,
+        "negativo": 15,
+        "neutro": 6
       },
       "emoji_stats": {
         "total_positive_emojis": 0,
@@ -2122,7 +3436,12 @@
           "🤷": 1
         }
       },
-      "total_found": 20
+      "total_found": 21,
+      "emotion_summary": {
+        "others": 14,
+        "anger": 7
+      },
+      "emotion_dominant": "anger"
     },
     {
       "keyword": "sirtac",
@@ -2133,13 +3452,23 @@
           "user": "Jabbaco",
           "username": "javierabbacobo",
           "date": "2026-04-02 19:30:47+00:00",
-          "sentiment": "positivo",
-          "sentiment_score": 0.2,
+          "sentiment": "negativo",
+          "sentiment_score": -0.924,
           "emojis_found": [],
           "likes": 5,
           "retweets": 1,
           "replies": 0,
-          "url": "https://x.com/javierabbacobo/status/2039787648244391972"
+          "url": "https://x.com/javierabbacobo/status/2039787648244391972",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.679,
+            "joy": 0.005,
+            "sadness": 0.039,
+            "anger": 0.224,
+            "surprise": 0.016,
+            "disgust": 0.029,
+            "fear": 0.007
+          }
         },
         {
           "id": "2037647815430607047",
@@ -2148,12 +3477,22 @@
           "username": "passalacquaok",
           "date": "2026-03-27 21:47:51+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.405,
           "emojis_found": [],
           "likes": 40,
           "retweets": 17,
           "replies": 0,
-          "url": "https://x.com/passalacquaok/status/2037647815430607047"
+          "url": "https://x.com/passalacquaok/status/2037647815430607047",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.968,
+            "joy": 0.002,
+            "sadness": 0.009,
+            "anger": 0.016,
+            "surprise": 0.002,
+            "disgust": 0.002,
+            "fear": 0.001
+          }
         },
         {
           "id": "2032459159073935543",
@@ -2162,12 +3501,22 @@
           "username": "GonzaConil",
           "date": "2026-03-13 14:09:59+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.027,
           "emojis_found": [],
           "likes": 4,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/GonzaConil/status/2032459159073935543"
+          "url": "https://x.com/GonzaConil/status/2032459159073935543",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.937,
+            "joy": 0.004,
+            "sadness": 0.015,
+            "anger": 0.027,
+            "surprise": 0.009,
+            "disgust": 0.005,
+            "fear": 0.003
+          }
         },
         {
           "id": "2032424549891928519",
@@ -2176,12 +3525,22 @@
           "username": "rolon_nico",
           "date": "2026-03-13 11:52:27+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.148,
           "emojis_found": [],
           "likes": 7,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/rolon_nico/status/2032424549891928519"
+          "url": "https://x.com/rolon_nico/status/2032424549891928519",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.981,
+            "joy": 0.003,
+            "sadness": 0.004,
+            "anger": 0.003,
+            "surprise": 0.006,
+            "disgust": 0.001,
+            "fear": 0.002
+          }
         },
         {
           "id": "2032283372722982976",
@@ -2190,12 +3549,22 @@
           "username": "rolon_nico",
           "date": "2026-03-13 02:31:28+00:00",
           "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment_score": -0.028,
           "emojis_found": [],
           "likes": 22,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/rolon_nico/status/2032283372722982976"
+          "url": "https://x.com/rolon_nico/status/2032283372722982976",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.974,
+            "joy": 0.002,
+            "sadness": 0.008,
+            "anger": 0.007,
+            "surprise": 0.005,
+            "disgust": 0.002,
+            "fear": 0.002
+          }
         },
         {
           "id": "2031113786145243455",
@@ -2203,13 +3572,23 @@
           "user": "Lule_Menen",
           "username": "MendezLule79496",
           "date": "2026-03-09 21:03:57+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.583,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/MendezLule79496/status/2031113786145243455"
+          "url": "https://x.com/MendezLule79496/status/2031113786145243455",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.552,
+            "joy": 0.025,
+            "sadness": 0.005,
+            "anger": 0.347,
+            "surprise": 0.035,
+            "disgust": 0.034,
+            "fear": 0.002
+          }
         },
         {
           "id": "2029543930446905505",
@@ -2217,13 +3596,23 @@
           "user": "Bogado Marcos",
           "username": "Marcos0593501",
           "date": "2026-03-05 13:05:54+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.008,
+          "sentiment": "negativo",
+          "sentiment_score": -0.935,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/Marcos0593501/status/2029543930446905505"
+          "url": "https://x.com/Marcos0593501/status/2029543930446905505",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.035,
+            "joy": 0.001,
+            "sadness": 0.028,
+            "anger": 0.903,
+            "surprise": 0.004,
+            "disgust": 0.026,
+            "fear": 0.004
+          }
         },
         {
           "id": "2029240537891447239",
@@ -2232,12 +3621,22 @@
           "username": "WillyCalmate",
           "date": "2026-03-04 17:00:20+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -0.6,
+          "sentiment_score": -0.918,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/WillyCalmate/status/2029240537891447239"
+          "url": "https://x.com/WillyCalmate/status/2029240537891447239",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.005,
+            "joy": 0.0,
+            "sadness": 0.006,
+            "anger": 0.91,
+            "surprise": 0.002,
+            "disgust": 0.075,
+            "fear": 0.002
+          }
         },
         {
           "id": "2027421775378731169",
@@ -2245,13 +3644,23 @@
           "user": "Chano ⭐",
           "username": "Chanoo_O",
           "date": "2026-02-27 16:33:13+00:00",
-          "sentiment": "positivo",
-          "sentiment_score": 0.56,
+          "sentiment": "neutro",
+          "sentiment_score": -0.184,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 1,
-          "url": "https://x.com/Chanoo_O/status/2027421775378731169"
+          "url": "https://x.com/Chanoo_O/status/2027421775378731169",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.973,
+            "joy": 0.003,
+            "sadness": 0.012,
+            "anger": 0.009,
+            "surprise": 0.001,
+            "disgust": 0.002,
+            "fear": 0.0
+          }
         },
         {
           "id": "2026998483463311709",
@@ -2260,12 +3669,22 @@
           "username": "LeathalWhisper",
           "date": "2026-02-26 12:31:12+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -0.6,
+          "sentiment_score": -0.951,
           "emojis_found": [],
           "likes": 3,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/LeathalWhisper/status/2026998483463311709"
+          "url": "https://x.com/LeathalWhisper/status/2026998483463311709",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.027,
+            "joy": 0.001,
+            "sadness": 0.043,
+            "anger": 0.878,
+            "surprise": 0.001,
+            "disgust": 0.048,
+            "fear": 0.002
+          }
         },
         {
           "id": "2026101475433132341",
@@ -2274,12 +3693,22 @@
           "username": "GonzaConil",
           "date": "2026-02-24 01:06:49+00:00",
           "sentiment": "negativo",
-          "sentiment_score": -0.28,
+          "sentiment_score": -0.518,
           "emojis_found": [],
           "likes": 1,
           "retweets": 1,
           "replies": 0,
-          "url": "https://x.com/GonzaConil/status/2026101475433132341"
+          "url": "https://x.com/GonzaConil/status/2026101475433132341",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.447,
+            "joy": 0.004,
+            "sadness": 0.128,
+            "anger": 0.377,
+            "surprise": 0.003,
+            "disgust": 0.036,
+            "fear": 0.004
+          }
         },
         {
           "id": "2024961794142601540",
@@ -2287,13 +3716,23 @@
           "user": "Gonza",
           "username": "GonzaConil",
           "date": "2026-02-20 21:38:08+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
+          "sentiment": "negativo",
+          "sentiment_score": -0.824,
           "emojis_found": [],
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/GonzaConil/status/2024961794142601540"
+          "url": "https://x.com/GonzaConil/status/2024961794142601540",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.69,
+            "joy": 0.002,
+            "sadness": 0.099,
+            "anger": 0.182,
+            "surprise": 0.006,
+            "disgust": 0.017,
+            "fear": 0.004
+          }
         },
         {
           "id": "2015463281293509006",
@@ -2301,8 +3740,8 @@
           "user": "Juan Lorenzo",
           "username": "juanlorenzo11",
           "date": "2026-01-25 16:34:26+00:00",
-          "sentiment": "positivo",
-          "sentiment_score": 0.355,
+          "sentiment": "negativo",
+          "sentiment_score": -0.879,
           "emojis_found": [
             {
               "emoji": "🤷",
@@ -2313,7 +3752,17 @@
           "likes": 0,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/juanlorenzo11/status/2015463281293509006"
+          "url": "https://x.com/juanlorenzo11/status/2015463281293509006",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.039,
+            "joy": 0.001,
+            "sadness": 0.032,
+            "anger": 0.858,
+            "surprise": 0.002,
+            "disgust": 0.065,
+            "fear": 0.003
+          }
         },
         {
           "id": "2009973499117645904",
@@ -2327,7 +3776,17 @@
           "likes": 2,
           "retweets": 0,
           "replies": 0,
-          "url": "https://x.com/errepar/status/2009973499117645904"
+          "url": "https://x.com/errepar/status/2009973499117645904",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.993,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.002,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         },
         {
           "id": "2008541072083829140",
@@ -2341,13 +3800,23 @@
           "likes": 29,
           "retweets": 9,
           "replies": 1,
-          "url": "https://x.com/Contadoresenred/status/2008541072083829140"
+          "url": "https://x.com/Contadoresenred/status/2008541072083829140",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.995,
+            "joy": 0.001,
+            "sadness": 0.001,
+            "anger": 0.001,
+            "surprise": 0.001,
+            "disgust": 0.0,
+            "fear": 0.0
+          }
         }
       ],
       "sentiment_summary": {
-        "positivo": 3,
-        "negativo": 3,
-        "neutro": 9
+        "positivo": 0,
+        "negativo": 8,
+        "neutro": 7
       },
       "emoji_stats": {
         "total_positive_emojis": 0,
@@ -2356,7 +3825,12 @@
           "🤷": 1
         }
       },
-      "total_found": 15
+      "total_found": 15,
+      "emotion_summary": {
+        "others": 11,
+        "anger": 4
+      },
+      "emotion_dominant": "anger"
     }
   ]
 }
