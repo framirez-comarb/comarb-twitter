@@ -4,8 +4,24 @@ Crea un dashboard interactivo con los datos scrapados.
 """
 
 import json as _json
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import datetime
+
+
+# Metadatos visuales para emociones (modelo pysentimiento ES)
+EMOTION_META = {
+    "anger":    {"emoji": "😠", "label": "Enojo",    "color": "#ef4444"},
+    "disgust":  {"emoji": "🤢", "label": "Asco",     "color": "#a855f7"},
+    "fear":     {"emoji": "😨", "label": "Miedo",    "color": "#8b5cf6"},
+    "joy":      {"emoji": "😊", "label": "Alegría",  "color": "#22c55e"},
+    "sadness":  {"emoji": "😢", "label": "Tristeza", "color": "#3b82f6"},
+    "surprise": {"emoji": "😲", "label": "Sorpresa", "color": "#f59e0b"},
+    "others":   {"emoji": "·",  "label": "Neutra",   "color": "#94a3b8"},
+}
+
+
+def _emo_meta(name):
+    return EMOTION_META.get(name or "others", EMOTION_META["others"])
 
 
 def generate_html_report(data, output_file):
@@ -21,13 +37,31 @@ def generate_html_report(data, output_file):
     kw_most_active = max(data["keywords"], key=lambda k: k["total_found"])
     kw_most_negative = max(data["keywords"], key=lambda k: k["sentiment_summary"]["negativo"])
 
+    # ── Estadísticas de emociones (si están disponibles) ──
+    emotion_total = Counter()
+    has_emotions = False
+    for kw in data["keywords"]:
+        for p in kw.get("posts", []):
+            if "emotion" in p:
+                has_emotions = True
+                emotion_total[p["emotion"]] += 1
+    # Emoción dominante global con desempate sesgado a negativas (corpus de quejas)
+    EMO_PRIORITY = ["anger", "disgust", "sadness", "fear", "surprise", "joy"]
+    _prio = {e: i for i, e in enumerate(EMO_PRIORITY)}
+    emotion_dominant_global = "others"
+    non_others = [(e, n) for e, n in emotion_total.items() if e != "others"]
+    if non_others:
+        non_others.sort(key=lambda en: (-en[1], _prio.get(en[0], 99)))
+        emotion_dominant_global = non_others[0][0]
+    emo_meta_global = _emo_meta(emotion_dominant_global)
+
     # Timeline: todos los posts ordenados por fecha
     all_posts = []
     for kw in data["keywords"]:
         for p in kw["posts"]:
             all_posts.append({**p, "keyword": kw["keyword"]})
     all_posts.sort(key=lambda x: x.get("date", ""), reverse=True)
-    recent_posts = all_posts[:50]
+    recent_posts = all_posts[:10]
 
     # ── Generar tarjetas de keywords ──
     keyword_sections = ""
@@ -51,6 +85,16 @@ def generate_html_report(data, output_file):
             if post.get("url"):
                 url_html = f'<a href="{post["url"]}" target="_blank" class="post-link">🔗 Ver en Twitter/X</a>'
 
+            # Emoción (opcional, si el JSON está enriquecido)
+            emo_pill_html = ""
+            if post.get("emotion") and post["emotion"] != "others":
+                em = _emo_meta(post["emotion"])
+                emo_pill_html = (
+                    f'<span class="emotion-pill" title="Emoción dominante: {em["label"]}" '
+                    f'style="color:{em["color"]};border-color:{em["color"]}33;background:{em["color"]}1a">'
+                    f'{em["emoji"]} {em["label"]}</span>'
+                )
+
             posts_html += f"""
             <div class="post-card {sent_class}" style="animation-delay: {i * 0.05}s">
                 <div class="post-header">
@@ -63,6 +107,7 @@ def generate_html_report(data, output_file):
                     </div>
                     <div class="post-meta">
                         <span class="sentiment-pill {sent_class}">{post['sentiment']}</span>
+                        {emo_pill_html}
                         <span class="post-date">{post.get('date', 'Sin fecha')[:10]}</span>
                     </div>
                 </div>
@@ -82,6 +127,18 @@ def generate_html_report(data, output_file):
         if kw.get("error"):
             error_html = f'<div class="error-badge">⚠️ {kw["error"][:100]}</div>'
 
+        # Emoción dominante por keyword (si los datos vienen enriquecidos)
+        kw_emo_html = ""
+        kw_emo_dom = kw.get("emotion_dominant")
+        if kw_emo_dom and kw_emo_dom != "others":
+            em = _emo_meta(kw_emo_dom)
+            n_emo = kw.get("emotion_summary", {}).get(kw_emo_dom, 0)
+            kw_emo_html = (
+                f'<span class="kw-emotion" title="Emoción dominante en {kw["keyword"].upper()}" '
+                f'style="color:{em["color"]};border-color:{em["color"]}33;background:{em["color"]}1a">'
+                f'{em["emoji"]} {em["label"]} ({n_emo})</span>'
+            )
+
         keyword_sections += f"""
         <div class="keyword-section" id="kw-{kw['keyword']}">
             <div class="kw-header" onclick="toggleSection('{kw['keyword']}')">
@@ -96,6 +153,7 @@ def generate_html_report(data, output_file):
                                 <div class="mini-neu" style="width:{pct_neu}%"></div>
                                 <div class="mini-neg" style="width:{pct_neg}%"></div>
                             </div>
+                            {kw_emo_html}
                         </div>
                     </div>
                 </div>
@@ -103,11 +161,11 @@ def generate_html_report(data, output_file):
                     <span class="stat-pos">{s['positivo']}+</span>
                     <span class="stat-neu">{s['neutro']}~</span>
                     <span class="stat-neg">{s['negativo']}−</span>
-                    <span class="toggle-arrow" id="arrow-{kw['keyword']}">▾</span>
+                    <span class="toggle-arrow collapsed" id="arrow-{kw['keyword']}">▾</span>
                 </div>
             </div>
             {error_html}
-            <div class="kw-posts" id="posts-{kw['keyword']}">
+            <div class="kw-posts hidden" id="posts-{kw['keyword']}">
                 {posts_html if posts_html else '<div class="no-posts">No se encontraron tweets para esta palabra clave.</div>'}
             </div>
         </div>
@@ -414,6 +472,17 @@ def generate_html_report(data, output_file):
         .sentiment-pill.positivo {{ color: #22c55e; background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.2); }}
         .sentiment-pill.negativo {{ color: #ef4444; background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.2); }}
         .sentiment-pill.neutro {{ color: #94a3b8; background: rgba(148,163,184,0.1); border: 1px solid rgba(148,163,184,0.15); }}
+        .emotion-pill {{
+            display: inline-block; padding: 2px 9px; border-radius: 999px;
+            font-size: 10px; font-weight: 700; letter-spacing: 0.4px;
+            border: 1px solid;
+        }}
+        .kw-emotion {{
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 2px 9px; border-radius: 999px;
+            font-size: 11px; font-weight: 700; border: 1px solid;
+            margin-left: 8px;
+        }}
         .post-date {{
             font-size: 11px; color: #64748b; font-family: 'JetBrains Mono', monospace;
         }}
@@ -491,7 +560,7 @@ def generate_html_report(data, output_file):
                 <span class="status-text">REPORTE GENERADO</span>
             </div>
             <h1>Análisis de Sentimiento — Twitter/X</h1>
-            <div class="subtitle">Sistemas Tributarios COMARB · Últimos 10 tweets por palabra clave</div>
+            <div class="subtitle">Sistemas Tributarios COMARB · Tweets por palabra clave</div>
             <div class="meta-line">
                 <span>📅 {period_from} — {period_to}</span>
                 <span>🔄 {generated_at}</span>
@@ -524,6 +593,10 @@ def generate_html_report(data, output_file):
                 <div class="stat-label">Más Criticado</div>
                 <div class="stat-value c-orange">#{kw_most_negative['keyword'].upper()}</div>
             </div>
+            {f'''<div class="stat-card" style="animation-delay:0.3s">
+                <div class="stat-label">Emoción Dominante</div>
+                <div class="stat-value" style="color:{emo_meta_global["color"]}">{emo_meta_global["emoji"]} {emo_meta_global["label"]}</div>
+            </div>''' if has_emotions else ''}
         </div>
 
         <!-- Chart -->
@@ -549,7 +622,7 @@ def generate_html_report(data, output_file):
         </div>
 
         <!-- Keyword detail sections -->
-        <div class="section-title" style="margin-top: 8px;">📋 Últimos 10 tweets por palabra clave</div>
+        <div class="section-title" style="margin-top: 8px;">📋 Tweets por palabra clave</div>
         {keyword_sections}
 
         <!-- Footer -->

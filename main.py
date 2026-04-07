@@ -65,6 +65,8 @@ from sentiment_lexicon import (
     NEGATIVE_PHRASES, POSITIVE_PHRASES,
     NEGATIONS, INTENSIFIERS, SARCASM_MARKERS,
 )
+# Clasificador v2: pysentimiento (RoBERTuito) — reemplaza al lexicon+TextBlob
+from analyze_sentiment_v2 import classify as _classify_v2
 
 # ── Parche para twikit: corrige regex de X.com (formato webpack actual) ──
 def _patch_twikit_transaction():
@@ -704,7 +706,13 @@ async def search_keyword_with_client(client, keyword, since_date, until_date, se
                     continue
                 seen_ids.add(tweet.id)
 
-                sentiment, score, emoji_details = analyze_sentiment(tweet.text)
+                # Clasificación con pysentimiento v2 (con regla de cuentas neutras)
+                _username = tweet.user.screen_name if tweet.user else None
+                _v2 = _classify_v2(tweet.text, username=_username)
+                sentiment = _v2["sentiment"]
+                score = _v2["score"]
+                # Emojis se siguen contando aparte para las estadísticas del dashboard
+                _, _, emoji_details = count_emojis(tweet.text)
 
                 for ed in emoji_details:
                     emoji = ed["emoji"]
@@ -909,6 +917,17 @@ async def main():
 
     data = await scrape_tweets()
     save_data(data)
+
+    # ── Enriquecer con análisis de emociones (pysentimiento) ──
+    print("\n" + "═" * 60)
+    print("  🎭 ANÁLISIS DE EMOCIONES")
+    print("═" * 60)
+    try:
+        from enrich_emotions import enrich_in_memory
+        enrich_in_memory(data)
+        save_data(data)  # Re-guardar con emociones incluidas
+    except Exception as e:
+        print(f"  ⚠️  No se pudieron analizar emociones: {e}")
 
     print("\n" + "═" * 60)
     print("  📄 GENERANDO REPORTE HTML")

@@ -1,5 +1,7 @@
 # ── Cookies y sesión (NUNCA subir) ──
 twitter_cookies.json
+twitter_multi_cookies.json
+twitter_*cookies*.json
 cookies_secret.txt
 
 # ── Python ──
