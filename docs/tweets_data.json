@@ -1,13 +1,37 @@
 {
-  "generated_at": "2026-04-13T12:01:00.378532",
+  "generated_at": "2026-04-15T11:52:40.359996",
   "period": {
     "from": "2026-01-01",
-    "to": "2026-04-13"
+    "to": "2026-04-15"
   },
   "keywords": [
     {
       "keyword": "comarb",
       "posts": [
+        {
+          "id": "2043866509403898124",
+          "text": "@ImpuestosyE Mientras tanto, un hijo de puta de COMARB METE a JUBILADOS con la minima AL SISTEMA de SIRCREB SIRCUPA y toda esa mierda que roba el 5% de las transferencias de MERCADO PAGO entre familiares SIN VENTAS, SIN LUCRO, SIN INGRESOS BRUTOS ...\nSOLO JUBILADOS",
+          "user": "EBPI Sports",
+          "username": "EBPISports",
+          "date": "2026-04-14 01:38:43+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.962,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/EBPISports/status/2043866509403898124",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.001,
+            "joy": 0.001,
+            "sadness": 0.002,
+            "anger": 0.897,
+            "surprise": 0.001,
+            "disgust": 0.097,
+            "fear": 0.001
+          }
+        },
         {
           "id": "2042969270376698280",
           "text": "@MGhirardotti @adolfosafran Ahhhh la Comarb, ...\n\nSe cagan de miedo jajaja https://t.co/BHE0JMUznU",
@@ -607,60 +631,12 @@
             "disgust": 0.032,
             "fear": 0.01
           }
-        },
-        {
-          "id": "2024556659855540670",
-          "text": "@ConsejoCABA COMARB que se ponga un kiosco",
-          "user": "AlaiseContador",
-          "username": "Adrian34957568",
-          "date": "2026-02-19 18:48:16+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": -0.225,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/Adrian34957568/status/2024556659855540670",
-          "emotion": "others",
-          "emotion_probas": {
-            "others": 0.995,
-            "joy": 0.001,
-            "sadness": 0.001,
-            "anger": 0.001,
-            "surprise": 0.002,
-            "disgust": 0.0,
-            "fear": 0.001
-          }
-        },
-        {
-          "id": "2024457074961162670",
-          "text": "SIFERE WEB: se postergan las presentaciones \n\nDe acuerdo a lo reportado por nuestros colegas, y en contexto de diálogo de nuestro Consejo con la COMARB; esta informa que se consideran presentadas y pagadas en término al 20/2/2026 las DDJJ del anticipo 1/2026. Esto es debido a los https://t.co/cBH7yz9m94",
-          "user": "Consejo CABA",
-          "username": "ConsejoCABA",
-          "date": "2026-02-19 12:12:33+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": 0.0,
-          "emojis_found": [],
-          "likes": 4,
-          "retweets": 2,
-          "replies": 2,
-          "url": "https://x.com/ConsejoCABA/status/2024457074961162670",
-          "emotion": "others",
-          "emotion_probas": {
-            "others": 0.993,
-            "joy": 0.0,
-            "sadness": 0.002,
-            "anger": 0.001,
-            "surprise": 0.002,
-            "disgust": 0.0,
-            "fear": 0.001
-          }
         }
       ],
       "sentiment_summary": {
         "positivo": 2,
-        "negativo": 5,
-        "neutro": 19
+        "negativo": 6,
+        "neutro": 17
       },
       "emoji_stats": {
         "total_positive_emojis": 4,
@@ -671,17 +647,41 @@
           "🙌": 1
         }
       },
-      "total_found": 26,
+      "total_found": 25,
       "emotion_summary": {
-        "others": 22,
-        "joy": 2,
-        "anger": 2
+        "anger": 3,
+        "others": 20,
+        "joy": 2
       },
-      "emotion_dominant": "others"
+      "emotion_dominant": "anger"
     },
     {
       "keyword": "sifere",
       "posts": [
+        {
+          "id": "2044033759108891008",
+          "text": "@APISantaFe mañana empieza a vencer ingresos brutos y todavía falta actualizar en el aplicativo la mitad de las retenciones. Un desastre, eh. Como todos los meses. (Y no es por demora de los agentes de retención, en SIFERE ya están informadas).",
+          "user": "Juamper",
+          "username": "Juampercito",
+          "date": "2026-04-14 12:43:19+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.925,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/Juampercito/status/2044033759108891008",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.188,
+            "joy": 0.002,
+            "sadness": 0.034,
+            "anger": 0.693,
+            "surprise": 0.032,
+            "disgust": 0.037,
+            "fear": 0.015
+          }
+        },
         {
           "id": "2043082792242737609",
           "text": "@LaUnicaBeta @microagencia @SurferRosa1203 @3l_G4T0 Estoy buscando tu tuit y no lo encuentro. Solo el del link de sifere que pusiste.\nRealmente es un misterio por qué le retienen.",
@@ -1161,22 +1161,46 @@
             "disgust": 0.0,
             "fear": 0.001
           }
+        },
+        {
+          "id": "2024457074961162670",
+          "text": "SIFERE WEB: se postergan las presentaciones \n\nDe acuerdo a lo reportado por nuestros colegas, y en contexto de diálogo de nuestro Consejo con la COMARB; esta informa que se consideran presentadas y pagadas en término al 20/2/2026 las DDJJ del anticipo 1/2026. Esto es debido a los https://t.co/cBH7yz9m94",
+          "user": "Consejo CABA",
+          "username": "ConsejoCABA",
+          "date": "2026-02-19 12:12:33+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": 0.0,
+          "emojis_found": [],
+          "likes": 4,
+          "retweets": 2,
+          "replies": 2,
+          "url": "https://x.com/ConsejoCABA/status/2024457074961162670",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.993,
+            "joy": 0.0,
+            "sadness": 0.002,
+            "anger": 0.001,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
         }
       ],
       "sentiment_summary": {
         "positivo": 0,
-        "negativo": 8,
-        "neutro": 12
+        "negativo": 9,
+        "neutro": 13
       },
       "emoji_stats": {
         "total_positive_emojis": 0,
         "total_negative_emojis": 0,
         "top_emojis": {}
       },
-      "total_found": 20,
+      "total_found": 22,
       "emotion_summary": {
-        "others": 17,
-        "anger": 3
+        "anger": 4,
+        "others": 18
       },
       "emotion_dominant": "anger"
     },
@@ -1698,124 +1722,319 @@
     },
     {
       "keyword": "sirpei",
-      "posts": [
-        {
-          "id": "2028084430863057166",
-          "text": "@defensorserial Con mi vieja demandamos y logramos cautelar a favor 15842/2024 en el contencioso administrativo federal (no soy abogado), pero nos dejaron de joder con sircreb y sirpei",
-          "user": "Manuel Martínez Rial",
-          "username": "manuelmrial",
-          "date": "2026-03-01 12:26:22+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": -0.197,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 1,
-          "url": "https://x.com/manuelmrial/status/2028084430863057166",
-          "emotion": "anger",
-          "emotion_probas": {
-            "others": 0.17,
-            "joy": 0.004,
-            "sadness": 0.007,
-            "anger": 0.788,
-            "surprise": 0.005,
-            "disgust": 0.023,
-            "fear": 0.002
-          }
-        },
-        {
-          "id": "2021979342344224793",
-          "text": "@BlogDelContador Y ahi no figura el sirpei (importadores). Te meten directo la alícuota de la actividad por coeficiente. Es decir que el resto de regimenes tienen que cubrirte el margen de venta, sino entras en el loop del saldo a favor.",
-          "user": "Sebas",
-          "username": "sebaszerba",
-          "date": "2026-02-12 16:06:56+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": -0.32,
-          "emojis_found": [],
-          "likes": 1,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/sebaszerba/status/2021979342344224793",
-          "emotion": "others",
-          "emotion_probas": {
-            "others": 0.973,
-            "joy": 0.001,
-            "sadness": 0.008,
-            "anger": 0.01,
-            "surprise": 0.004,
-            "disgust": 0.002,
-            "fear": 0.002
-          }
-        },
-        {
-          "id": "2021978998268711190",
-          "text": "@DarioEnTuiter @DATATRIBUTARIA @PrensaARBA Es mas comun de lo que crees. Este año recien actualizaron montos para no ser agente, hasta el año pasado cualquier empresa medio pelo alcanzaba los requisitos para ser agente de per y ret. Y peor aun cuando sos importador, ahi te detona el sirpei.",
-          "user": "Sebas",
-          "username": "sebaszerba",
-          "date": "2026-02-12 16:05:34+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.918,
-          "emojis_found": [],
-          "likes": 1,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/sebaszerba/status/2021978998268711190",
-          "emotion": "anger",
-          "emotion_probas": {
-            "others": 0.228,
-            "joy": 0.001,
-            "sadness": 0.051,
-            "anger": 0.604,
-            "surprise": 0.012,
-            "disgust": 0.091,
-            "fear": 0.012
-          }
-        },
-        {
-          "id": "2009724618651599228",
-          "text": "SIRPEI, SIRCUPA y SIRTAC lideraron las subas interanuales, por cambios en contexto económico y por lo novedoso de los sistemas en otros casos. El resto alineado con la inflación. SIRCREB es el que más recauda luego del SIFERE (justifica casi otro tercio del total) https://t.co/N6TXEpH6Yd",
-          "user": "JM",
-          "username": "ScarsoJuan",
-          "date": "2026-01-09 20:31:02+00:00",
-          "sentiment": "neutro",
-          "sentiment_score": -0.002,
-          "emojis_found": [],
-          "likes": 0,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/ScarsoJuan/status/2009724618651599228",
-          "emotion": "others",
-          "emotion_probas": {
-            "others": 0.971,
-            "joy": 0.003,
-            "sadness": 0.014,
-            "anger": 0.004,
-            "surprise": 0.005,
-            "disgust": 0.002,
-            "fear": 0.002
-          }
-        }
-      ],
+      "posts": [],
       "sentiment_summary": {
         "positivo": 0,
-        "negativo": 1,
-        "neutro": 3
+        "negativo": 0,
+        "neutro": 0
       },
       "emoji_stats": {
         "total_positive_emojis": 0,
         "total_negative_emojis": 0,
         "top_emojis": {}
       },
-      "total_found": 4,
-      "emotion_summary": {
-        "anger": 2,
-        "others": 2
-      },
-      "emotion_dominant": "anger"
+      "total_found": 0,
+      "error": "Rate limit en búsqueda inicial",
+      "emotion_summary": {},
+      "emotion_dominant": "others"
     },
     {
       "keyword": "sircreb",
       "posts": [
+        {
+          "id": "2044140786145448401",
+          "text": "@alerosenfeld y el SIRCREB, IMP a debitos y creditos",
+          "user": "fernando de luca",
+          "username": "FerDeLuca1975",
+          "date": "2026-04-14 19:48:36+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": -0.198,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/FerDeLuca1975/status/2044140786145448401",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.988,
+            "joy": 0.001,
+            "sadness": 0.002,
+            "anger": 0.002,
+            "surprise": 0.004,
+            "disgust": 0.001,
+            "fear": 0.002
+          }
+        },
+        {
+          "id": "2044116394288034305",
+          "text": "Este palurdo que no tiene puta idea de cómo se produce en zonas agrícolas, viene a pedir que los productores nos hagamos las obras. Cuando pagamos impuesto inmobiliario rural, tasa por hectárea/vial, IIBB, IIGG, DEX, SIRCREB y a cambio de nada, hijos de puta...",
+          "user": "Jóse Canavese",
+          "username": "jogs_jogs",
+          "date": "2026-04-14 18:11:40+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.97,
+          "emojis_found": [],
+          "likes": 2,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/jogs_jogs/status/2044116394288034305",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.001,
+            "joy": 0.001,
+            "sadness": 0.002,
+            "anger": 0.91,
+            "surprise": 0.001,
+            "disgust": 0.085,
+            "fear": 0.001
+          }
+        },
+        {
+          "id": "2044106271117201441",
+          "text": "Entender lo que te descuentan es el primer paso para pagar lo justo.\n\n¿Te está pasando? Escribime por DM o comentá “REVISIÓN” \n\n#Impuestos #Monotributo #Ley25413 #sircreb https://t.co/rGtwCvSKtB",
+          "user": "Facundo Peralta",
+          "username": "Facundoperaltap",
+          "date": "2026-04-14 17:31:27+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": -0.032,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/Facundoperaltap/status/2044106271117201441",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.993,
+            "joy": 0.001,
+            "sadness": 0.002,
+            "anger": 0.002,
+            "surprise": 0.002,
+            "disgust": 0.0,
+            "fear": 0.001
+          }
+        },
+        {
+          "id": "2044105768215937110",
+          "text": "¿Ves débitos automáticos de Ley 25413, SIRCREB, o IIBB, que no entendés? ¿Retenciones altas que te hacen pagar de más?\n\nNo es tan normal como parece.\n\nMala categorización, falta de actualización en ARCA o configuración errónea suelen ser las causas.\n\n🧵 (...👇🏻) https://t.co/3BRhFKFKSB",
+          "user": "Facundo Peralta",
+          "username": "Facundoperaltap",
+          "date": "2026-04-14 17:29:27+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.956,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/Facundoperaltap/status/2044105768215937110",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.014,
+            "joy": 0.0,
+            "sadness": 0.013,
+            "anger": 0.94,
+            "surprise": 0.001,
+            "disgust": 0.03,
+            "fear": 0.002
+          }
+        },
+        {
+          "id": "2044098229524951256",
+          "text": "🚨Sircreb🚨\nUno de los perores males de argentina es la  @ComArbitral\nInventaron un regimen perverso uds junto a las provincias \n\nQue pasa con los bancos y las retenciones y percepciones de IIBB \nImposible liquidar asi\n@bancogalicia @Santander_Ar Banco Macro https://t.co/xqZxEMhSEo",
+          "user": "Alejandro Rosenfeld",
+          "username": "alerosenfeld",
+          "date": "2026-04-14 16:59:30+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.939,
+          "emojis_found": [],
+          "likes": 40,
+          "retweets": 8,
+          "replies": 6,
+          "url": "https://x.com/alerosenfeld/status/2044098229524951256",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.004,
+            "joy": 0.0,
+            "sadness": 0.005,
+            "anger": 0.845,
+            "surprise": 0.001,
+            "disgust": 0.142,
+            "fear": 0.002
+          }
+        },
+        {
+          "id": "2044028891963044082",
+          "text": "@JMilei Javi te pido que actualices RG 830 de AFIP. \n\nY presentes un proyecto de ley para bajar el IVA un poco.\n\nMunicipios y gobernaciones estan matando a impuestos y tasas a todos. \n\nElimina el SIRCREB de una.",
+          "user": "Vigna, Juan Manuel",
+          "username": "VIGNAJUANMANUE1",
+          "date": "2026-04-14 12:23:58+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.81,
+          "emojis_found": [],
+          "likes": 110,
+          "retweets": 8,
+          "replies": 5,
+          "url": "https://x.com/VIGNAJUANMANUE1/status/2044028891963044082",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.481,
+            "joy": 0.004,
+            "sadness": 0.02,
+            "anger": 0.447,
+            "surprise": 0.005,
+            "disgust": 0.036,
+            "fear": 0.007
+          }
+        },
+        {
+          "id": "2044016763768029188",
+          "text": "@alerosenfeld @barrani_com Tenemos incidencia ~10% en IIBB mas IVA a CF, a eso le sumamos ~2.4% Ley 25413 (cascada). Ahí está el problema argentino. Si promediamos el IVA de Chile y Uruguay y Brasil ponderado a Brasil da ~24%. Tiene que desaparecer la 25413 e IIBB,  y con él, el asesino silencioso SIRCREB.",
+          "user": "Ladrillo Veloz",
+          "username": "LadrilloVeloz",
+          "date": "2026-04-14 11:35:47+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.901,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/LadrilloVeloz/status/2044016763768029188",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.027,
+            "joy": 0.001,
+            "sadness": 0.01,
+            "anger": 0.873,
+            "surprise": 0.001,
+            "disgust": 0.087,
+            "fear": 0.001
+          }
+        },
+        {
+          "id": "2043949507264590092",
+          "text": "@Cuartiroloo @alerosenfeld Yo vivo en españa y no, les conte a un par de iibb y sircreb y me decian que estamos enfermos, y eso que es españa",
+          "user": "Congourbano Aleman",
+          "username": "congo_aleman",
+          "date": "2026-04-14 07:08:31+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.856,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/congo_aleman/status/2043949507264590092",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.724,
+            "joy": 0.002,
+            "sadness": 0.09,
+            "anger": 0.092,
+            "surprise": 0.011,
+            "disgust": 0.048,
+            "fear": 0.034
+          }
+        },
+        {
+          "id": "2043840673170800989",
+          "text": "@avella_marcos @virtuck Jaja pero mirá lo nabo que sos.\nUK no tiene IVA en alimentos, UK casi no tiene barreras arancelarias para alimentos, UK no tiene IIBB (la mayor locura impositiva de todas), UK no tiene SIRCREB",
+          "user": "Julián",
+          "username": "egjuli",
+          "date": "2026-04-13 23:56:03+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.79,
+          "emojis_found": [],
+          "likes": 2,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/egjuli/status/2043840673170800989",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.551,
+            "joy": 0.015,
+            "sadness": 0.015,
+            "anger": 0.351,
+            "surprise": 0.013,
+            "disgust": 0.054,
+            "fear": 0.002
+          }
+        },
+        {
+          "id": "2043744952677548394",
+          "text": "@laupollola @fantasmareturn @bbva_argentina @BlogDelContador @ConsejoCABA Tal cual @AGIP_BA es un desastre a la hora de volcar el SIRCREB, vence IIBB muy temprano y te muestra la mitad de lo recaudado 🤷🏻‍♂️",
+          "user": "Alito 👀",
+          "username": "amco1020",
+          "date": "2026-04-13 17:35:42+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.936,
+          "emojis_found": [
+            {
+              "emoji": "🤷",
+              "type": "negativo",
+              "count": 1
+            }
+          ],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 1,
+          "url": "https://x.com/amco1020/status/2043744952677548394",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.099,
+            "joy": 0.001,
+            "sadness": 0.067,
+            "anger": 0.76,
+            "surprise": 0.006,
+            "disgust": 0.065,
+            "fear": 0.002
+          }
+        },
+        {
+          "id": "2043664334396567955",
+          "text": "@kblowharderr o sea a vos te gusta pagar IIBB , el sircreb, iva 21% para todo, ley de debitos y creditos, imp inmobiliario, etc etc",
+          "user": "Congourbano Aleman",
+          "username": "congo_aleman",
+          "date": "2026-04-13 12:15:21+00:00",
+          "sentiment": "neutro",
+          "sentiment_score": -0.351,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/congo_aleman/status/2043664334396567955",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.894,
+            "joy": 0.002,
+            "sadness": 0.012,
+            "anger": 0.061,
+            "surprise": 0.014,
+            "disgust": 0.013,
+            "fear": 0.003
+          }
+        },
+        {
+          "id": "2043627199584981423",
+          "text": "@javierhfabre Es increíble el viento de cola que tenemos. Es hora de sacar más impuestos! No puede ser lo que paga la nafta. O que sigamos con el sircreb. Tampoco puede ser que los creditos paguen impuestos. Y que el principal deudor de los bancos sea el estado. \nEstamos saliendo, pero falta!",
+          "user": "Marian",
+          "username": "wtmarian",
+          "date": "2026-04-13 09:47:47+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.974,
+          "emojis_found": [],
+          "likes": 3,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/wtmarian/status/2043627199584981423",
+          "emotion": "anger",
+          "emotion_probas": {
+            "others": 0.005,
+            "joy": 0.0,
+            "sadness": 0.005,
+            "anger": 0.945,
+            "surprise": 0.009,
+            "disgust": 0.029,
+            "fear": 0.005
+          }
+        },
         {
           "id": "2043380725798363486",
           "text": "@lacha @LaMiradaRG Ahi estaremos Lacha\nPor favor putéa el Sircreb al aire, te sale excelente.",
@@ -1993,7 +2212,7 @@
           "sentiment": "negativo",
           "sentiment_score": -0.942,
           "emojis_found": [],
-          "likes": 50,
+          "likes": 51,
           "retweets": 6,
           "replies": 1,
           "url": "https://x.com/alerosenfeld/status/2042948723655766255",
@@ -6193,7 +6412,7 @@
               "count": 1
             }
           ],
-          "likes": 180,
+          "likes": 179,
           "retweets": 9,
           "replies": 3,
           "url": "https://x.com/grok/status/2031331217094680698",
@@ -6259,35 +6478,59 @@
       ],
       "sentiment_summary": {
         "positivo": 1,
-        "negativo": 120,
-        "neutro": 60
+        "negativo": 129,
+        "neutro": 63
       },
       "emoji_stats": {
         "total_positive_emojis": 9,
-        "total_negative_emojis": 15,
+        "total_negative_emojis": 16,
         "top_emojis": {
           "💔": 8,
           "😢": 4,
           "✔️": 3,
           "😪": 2,
           "😏": 2,
+          "🤷": 1,
           "😡": 1,
           "😂": 1,
           "😎": 1,
-          "🤗": 1,
-          "🤣": 1
+          "🤗": 1
         }
       },
-      "total_found": 181,
+      "total_found": 193,
       "emotion_summary": {
-        "others": 105,
-        "anger": 76
+        "others": 111,
+        "anger": 82
       },
       "emotion_dominant": "anger"
     },
     {
       "keyword": "sircupa",
       "posts": [
+        {
+          "id": "2044117799832813879",
+          "text": "@LaInca_ Eliminando ibb y sellos  y el sicrebo sircupa , bajando el Iva al 17",
+          "user": "Mister Mark",
+          "username": "MMarcusgo",
+          "date": "2026-04-14 18:17:16+00:00",
+          "sentiment": "negativo",
+          "sentiment_score": -0.728,
+          "emojis_found": [],
+          "likes": 0,
+          "retweets": 0,
+          "replies": 0,
+          "url": "https://x.com/MMarcusgo/status/2044117799832813879",
+          "emotion": "others",
+          "emotion_probas": {
+            "others": 0.971,
+            "joy": 0.004,
+            "sadness": 0.005,
+            "anger": 0.006,
+            "surprise": 0.009,
+            "disgust": 0.003,
+            "fear": 0.003
+          }
+        },
         {
           "id": "2043001635924787366",
           "text": "@microagencia @robertdm Arrancá con el padrón de Sircupa; descargá el .pdf y ahí vas o para Naranja o para ARBA. Necesitás ese .pdf",
@@ -6725,30 +6968,6 @@
             "disgust": 0.001,
             "fear": 0.001
           }
-        },
-        {
-          "id": "2026352825114968098",
-          "text": "@lacha @lacha  es cuenta de banco nación 😅😅 nada mas chorro que el estado mismo.. me pasa igual.. bna me cobra sircupa aún transfiriendo desde Santander de mi propia cuenta.  Que ya me lo retuvo.. son todos estafadores . Y Caputo te dice que confíes en bna .. increíble.",
-          "user": "Juan Lorenzo",
-          "username": "juanlorenzo11",
-          "date": "2026-02-24 17:45:35+00:00",
-          "sentiment": "negativo",
-          "sentiment_score": -0.932,
-          "emojis_found": [],
-          "likes": 2,
-          "retweets": 0,
-          "replies": 0,
-          "url": "https://x.com/juanlorenzo11/status/2026352825114968098",
-          "emotion": "anger",
-          "emotion_probas": {
-            "others": 0.004,
-            "joy": 0.001,
-            "sadness": 0.004,
-            "anger": 0.821,
-            "surprise": 0.003,
-            "disgust": 0.164,
-            "fear": 0.003
-          }
         }
       ],
       "sentiment_summary": {
@@ -6765,8 +6984,8 @@
       },
       "total_found": 19,
       "emotion_summary": {
-        "others": 14,
-        "anger": 5
+        "others": 15,
+        "anger": 4
       },
       "emotion_dominant": "anger"
     },
