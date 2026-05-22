@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-20T13:34:44.444234",
+  "generated_at": "2026-05-22T13:26:53.086512",
   "period": {
     "from": "2026-01-01",
-    "to": "2026-05-20"
+    "to": "2026-05-22"
   },
   "keywords": [
     {
@@ -19,7 +19,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "Rate limit en búsqueda inicial",
+      "error": "status: 404, message: \"\"",
       "emotion_summary": {},
       "emotion_dominant": "others"
     },
