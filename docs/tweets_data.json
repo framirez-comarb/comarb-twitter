@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-05T12:51:21.701203",
+  "generated_at": "2026-08-07T11:40:59.705623",
   "period": {
     "from": "2026-01-01",
-    "to": "2026-08-05"
+    "to": "2026-08-07"
   },
   "keywords": [
     {
@@ -19,7 +19,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "Rate limit en búsqueda inicial",
+      "error": "status: 404, message: \"\"",
       "emotion_summary": {},
       "emotion_dominant": "others"
     },
@@ -37,7 +37,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "Rate limit en búsqueda inicial",
+      "error": "status: 404, message: \"\"",
       "emotion_summary": {},
       "emotion_dominant": "others"
     },
@@ -55,79 +55,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "Rate limit en búsqueda inicial",
-      "emotion_summary": {},
-      "emotion_dominant": "others"
-    },
-    {
-      "keyword": "sirpei",
-      "posts": [],
-      "sentiment_summary": {
-        "positivo": 0,
-        "negativo": 0,
-        "neutro": 0
-      },
-      "emoji_stats": {
-        "total_positive_emojis": 0,
-        "total_negative_emojis": 0,
-        "top_emojis": {}
-      },
-      "total_found": 0,
-      "error": "Rate limit en búsqueda inicial",
-      "emotion_summary": {},
-      "emotion_dominant": "others"
-    },
-    {
-      "keyword": "sircreb",
-      "posts": [],
-      "sentiment_summary": {
-        "positivo": 0,
-        "negativo": 0,
-        "neutro": 0
-      },
-      "emoji_stats": {
-        "total_positive_emojis": 0,
-        "total_negative_emojis": 0,
-        "top_emojis": {}
-      },
-      "total_found": 0,
-      "error": "Rate limit en búsqueda inicial",
-      "emotion_summary": {},
-      "emotion_dominant": "others"
-    },
-    {
-      "keyword": "sircupa",
-      "posts": [],
-      "sentiment_summary": {
-        "positivo": 0,
-        "negativo": 0,
-        "neutro": 0
-      },
-      "emoji_stats": {
-        "total_positive_emojis": 0,
-        "total_negative_emojis": 0,
-        "top_emojis": {}
-      },
-      "total_found": 0,
-      "error": "Rate limit en búsqueda inicial",
-      "emotion_summary": {},
-      "emotion_dominant": "others"
-    },
-    {
-      "keyword": "sirtac",
-      "posts": [],
-      "sentiment_summary": {
-        "positivo": 0,
-        "negativo": 0,
-        "neutro": 0
-      },
-      "emoji_stats": {
-        "total_positive_emojis": 0,
-        "total_negative_emojis": 0,
-        "top_emojis": {}
-      },
-      "total_found": 0,
-      "error": "Rate limit en búsqueda inicial",
+      "error": "status: 404, message: \"\"",
       "emotion_summary": {},
       "emotion_dominant": "others"
     }
