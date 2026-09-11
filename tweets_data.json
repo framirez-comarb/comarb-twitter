@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-09T14:58:08.867313",
+  "generated_at": "2026-09-11T14:47:36.790435",
   "period": {
     "from": "2026-01-01",
-    "to": "2026-09-09"
+    "to": "2026-09-11"
   },
   "keywords": [
     {
@@ -19,7 +19,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "Rate limit en búsqueda inicial",
+      "error": "Couldn't get KEY_BYTE indices",
       "emotion_summary": {},
       "emotion_dominant": "others"
     },
@@ -37,7 +37,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "Rate limit en búsqueda inicial",
+      "error": "Couldn't get KEY_BYTE indices",
       "emotion_summary": {},
       "emotion_dominant": "others"
     },
@@ -55,7 +55,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "Rate limit en búsqueda inicial",
+      "error": "Couldn't get KEY_BYTE indices",
       "emotion_summary": {},
       "emotion_dominant": "others"
     },
@@ -73,7 +73,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "Rate limit en búsqueda inicial",
+      "error": "'ClientTransaction' object has no attribute 'key'",
       "emotion_summary": {},
       "emotion_dominant": "others"
     },
@@ -91,7 +91,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "Rate limit en búsqueda inicial",
+      "error": "'ClientTransaction' object has no attribute 'key'",
       "emotion_summary": {},
       "emotion_dominant": "others"
     },
@@ -109,7 +109,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "Rate limit en búsqueda inicial",
+      "error": "'ClientTransaction' object has no attribute 'key'",
       "emotion_summary": {},
       "emotion_dominant": "others"
     },
@@ -127,7 +127,7 @@
         "top_emojis": {}
       },
       "total_found": 0,
-      "error": "Rate limit en búsqueda inicial",
+      "error": "'ClientTransaction' object has no attribute 'key'",
       "emotion_summary": {},
       "emotion_dominant": "others"
     }
